@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<!-- Mirrored from events.csa.iisc.ac.in/rlworkshop2025/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Apr 2025 08:36:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Conference 2025 </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+<meta name="author" content="FreeHTML5.co" />
+
+<!-- 
+//////////////////////////////////////////////////////
+
+FREE HTML5 TEMPLATE 
+DESIGNED & DEVELOPED by FREEHTML5.CO
+	
+Website: 		http://freehtml5.co/
+Email: 			info@freehtml5.co
+Twitter: 		http://twitter.com/fh5co
+Facebook: 		https://www.facebook.com/fh5co
+
+//////////////////////////////////////////////////////
+ -->
+
+<!-- Facebook and Twitter integration -->
+<meta property="og:title" content=""/>
+<meta property="og:image" content=""/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content=""/>
+<meta name="twitter:title" content="" />
+<meta name="twitter:image" content="" />
+<meta name="twitter:url" content="" />
+<meta name="twitter:card" content="" />
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="shortcut icon" href="favicon.html">
+
+<!-- <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css">
+<!-- Simple Line Icons -->
+<link rel="stylesheet" href="css/simple-line-icons.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- Owl Carousel  -->
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<!-- Style -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="w_files/wks.u.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.dataTables.min.css">
+
+
+<!-- Modernizr JS -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<script>
+    function showAbst(name){
+        $.get('w_files/' + name + '.html?t=' + Date.now(), function(data){
+            $('#pdfview article').html(data)
+            $('#pdfview').show()
+            $('#pdfview article').focus()
+            $("#pdfview").scrollTop(0)
+        })
+    }
+    
+    function showChps(){
+        $('.msg_chp').html('')
+        $('.msg_chp').hide()
+        $('#pssview').show()
+        $('#pssview').focus()
+    }
+
+</script>
+
+</head>
+<body>
+<header role="banner" id="fh5co-header">
+	<div class="fluid-container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<! Mobile Toggle Menu Button >
+				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+				<!-- <img class="logo" src="w_files/IISc_Master_Logo.jpg">  -->
+				<a class="navbar-brand" href="index-2.html">  </a> 
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+					<li><a href="#" data-nav-section="speakers"><span>Speakers</span></a></li>
+					<li><a href="#" data-nav-section="schedule"><span>Schedule</span></a></li>
+					<li><a href="#" data-nav-section="organizers"><span>Organizers</span></a></li>
+					<li><a href="#" data-nav-section="links"><span>About Event</span></a></li>
+                    
+                    
+                    <li><a href="#" target="_blank" class="external">Registration</a></li>
+                    <li><a href="#" target="_blank" class="external">NITJ</a></li>
+			
+					<li><a href="#" target="_blank" class="external"> YouTube Live </a></li>
+					<li><a href="#" target="_blank" class="external"> Feedback </a></li>
+
+			</div>
+            <!-- <div class="social shadow" style="width: 35px; height: 35px; position: fixed; top: 13px; right: 15px; z-index: 1000;">
+                
+            </div> -->
+		</nav>
+  </div>
+</header>
+    
+<div id="pssview" style="display: none"> 
+    <div class="form-group">
+        <label for="pass1"> Current Password </label>
+        <input id="pass0" class="form-control" type="password">
+    </div>
+    <div class="form-group">
+        <label for="pass1"> New Password </label>
+        <input id="pass1" class="form-control" type="password">
+    </div>
+    <div class="form-group">
+        <label for="pass2"> Confirm Password </label>
+        <input id="pass2" class="form-control" type="password">
+    </div>
+    <div class="form-group">
+        <button id="btn_upp" class="btn-sm btn-primary"> Update Password </button>
+    </div>
+    <div class="form-group">
+        <button class="btn_cls btn-sm btn-default"> Close </button>
+    </div>
+    <div class="form-group">
+        <label class="msg_chp"> </label>
+    </div>
+</div>
+    
+<div id="pdfview" style="display: none"> 
+    <button class="btn_cls btn-sm btn-default"> Close </button>
+    <article></article>
+</div>
+
+<section id="fh5co-home" data-section="home" data-stellar-background-ratio="0.5" class="animated">
+	
+
+        <div id="register" class="text-wrap" style="display: none">
+			<div class="text-inner">
+				<div class="row">
+        			<div class="wrap-login100 col-md-9">
+        				<form id="frm_reg">
+        					<span style="color: white; font-weight: bold; padding: 15px 5px;">
+        						Register for Deep Reinforcement Learning Workshop
+        					</span>
+                            <br />
+                            <br />
+        
+        					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+        						<input class="input100" type="text" name="username" required placeholder="Full Name*">
+        						<span class="focus-input100"></span>
+        					</div>
+        					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter Email Address">
+        						<input class="input100" type="email" name="email" required placeholder="Email*">
+        						<span class="focus-input100"></span>
+        					</div>
+        					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter Designation">
+        						<input class="input100" type="text" name="designation" placeholder="Designation*">
+        						<span class="focus-input100"></span>
+        					</div>
+        					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter Organisation Name">
+        						<input class="input100" type="text" name="affiliation" placeholder="Affiliation*">
+        						<span class="focus-input100"></span>
+        					</div>
+        					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter name of your city">
+        						<input class="input100" type="text" name="city" placeholder="City*">
+        						<span class="focus-input100"></span>
+        					</div>
+        					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter name of your country">
+        						<input class="input100" type="text" name="country" placeholder="Country*">
+        						<span class="focus-input100"></span>
+        					</div>
+        					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter mobile number">
+        						<input class="input100" type="text" name="mobile" placeholder="Mobile Number">
+        						<span class="focus-input100"></span>
+        					</div>
+        
+        					<div class="wrap-input100 validate-input" data-validate = "Please enter captcha">
+        						<input class="input100" type="text" name="captcha" placeholder="Captcha image text">
+        						<span class="focus-input100"></span>
+                                <img id="capimg" src="api/captcha.jpg" />
+                                <img id="capref" src="images/refresh.png" width="33px" height="33px" />
+        					</div>
+        					
+                            <div class="wrap-input100 validate-input">
+        						<label for="idproof" class="btn_upld"> Upload reference document .. </label>
+        						<input class="input100" style="display: inline" type="file" id="idproof" name="idproof">
+                                <br /> <span style="color: red; font-size: 9pt; font-weight: bold; background: lightgray;"> Please note: Upload file size should be less than 2MB. </span>
+        					</div>
+        
+        					<div class="container-login100-form-btn" style="margin: 30px 0px">
+        						<button id="btn_add" class="login100-form-btn">
+        							Sign Up
+        						</button>
+        					    <button class="btn_cncl"> Cancel </button>
+        					</div>
+        
+        				</form>
+        			</div>
+        			<div class="msg_box col-md-3"> Message </div>
+			    </div>
+			</div>
+	    </div>
+		
+        <div id='login' class="text-wrap" style="display: none">
+			<div class="text-inner">
+				<div class="row">
+        			<div class="wrap-login100 col-md-9">
+        				<form id="frm_lgn">
+        					<!-- span class="login100-form-title">
+        						Sign In
+        					</span -->
+        
+        					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter Email Address">
+        						<input class="input100" type="text" name="email" placeholder="Email Address">
+        						<span class="focus-input100"></span>
+        					</div>
+        
+        					<div class="wrap-input100 validate-input" data-validate = "Please enter password">
+        						<input class="input100" type="password" name="password" placeholder="Password">
+        						<span class="focus-input100"></span>
+        					</div>
+        
+        
+        					<div class="container-login100-form-btn" style="margin-top: 25px;">
+        						<button id="btn_auth" class="login100-form-btn">
+        							Sign in
+        						</button>
+        					    <button class="btn_cncl"> Cancel </button>
+        					</div>
+        					
+                            <div class="container-login100-form-btn" style="margin-top: 25px;">
+        						<button id="btn_frgt" class="login100-form-btn">
+        							Generate Password
+        						</button>
+        					</div>
+        
+        					
+        
+        				</form>
+        			</div>
+        			<div class="msg_box col-md-3"> Message </div>
+			    </div>
+			</div>
+        </div>
+	</div>
+</section>
+<!-- section id="fh5co-services" data-section="speakers" -->
+<section id="speakers" data-section="speakers">
+    <div class="row">
+        <div class="col-md-2">
+            <h2 style="color: black;">Speakers</h2>
+            <hr />
+        </div>
+    
+        <div class="col-md-10">
+            <div class="row">
+				<!-- Dr Lipo Wang  start -->
+
+                <div class="speaker col-md-3">
+                <div class="speaker_in">
+        	    <a href="https://personal.ntu.edu.sg/elpwang/" target="_blank">
+        	   	<div class="img_wrapper">    
+        	           <img src="w_files/lipo wang.jpg">
+        	    	</div>
+        	    	<div class="name">Dr Lipo Wang </div>
+        	    	<div class= "univ">Nanyang Technological University </div>
+        	    	<div class="plac">Singapore</div>
+        	    </a>
+		    <!-- <span class="mtng_link"> 
+                    <a href="https://www.youtube.com/watch?v=TsD1I2fdVa4&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=15" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('francis_bach')">
+				Role of Evolutionary Algorithms in ML
+        	   </div>
+                </div>
+                </div>
+		
+		<!-- Dr. Lipo Wang  end -->
+		<!-- Dr Donghwi Jung Start -->
+		<div class="speaker col-md-3">
+                <div class="speaker_in">
+        	    <a href="https://pure.korea.ac.kr/en/persons/donghwi-jung/fingerprints/ " target="_blank">
+        		<div class="img_wrapper">    
+        	   	    <img src="w_files/donghwi jung.jpeg">
+        		</div>
+        		<div class="name">Dr Donghwi Jung</div>
+        		<div class="univ">Korea University</div>
+        		<div class="plac"></div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=Y-58GhRTnJg&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=4" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Dimitri_Bertsekas')">
+				Harmony Search Algorithm
+		    </div>
+		 </div>
+		 </div>
+		<!-- Dr Donghwi Jung end -->
+
+		<!-- Dr Swagatam Das star -->
+		
+                <div class="speaker col-md-3">
+                <div class="speaker_in">
+        	  <a href="https://www.isical.ac.in/~swagatam.das/main.htm" target="_blank">
+        	  <div class="img_wrapper">
+        	     <img src="w_files/swagatam das.jpg">
+        	  </div>
+        	  <div class="name">Dr Swagatam Das </div>
+        	  <div class="univ">Indian Statistical Institute</div>
+        	  <div class="plac">Kolkata</div>
+		  </a>
+		      
+		   <!-- <span class="mtng_link">
+		   <a href="https://www.youtube.com/watch?v=S3Xe6INW6tU&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=12" target="_blank" class="video_link">
+		       
+		        Watch recording
+		   </a>
+		   </span> -->
+		   <div class="abst" onClick="showAbst('shie_Mannor')">
+			Differential Evolution
+        	  </div>
+            	</div>
+                </div>
+		<!-- Dr Swagatam Das end -->		
+
+		
+		
+		<!-- Dr Bapi Dutta start -->
+				
+		<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://scholar.google.co.in/citations?user=qTB0f40AAAAJ&hl=en  " target="_blank">				
+        		<div class="img_wrapper">    
+        	            <img src="w_files/bapi dutta.jpeg">
+        		</div>        
+        		<div class="name">Dr Bapi Dutta</div>
+        		<div class="univ">University of Jaen</div>
+        		<div class="plac">Jaen, Spain</div>
+		    </a>
+		    <!-- <span class="mtng_link">
+		    <a href="https://www.youtube.com/watch?v=_AyRXMjPs-c&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=13" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Martha_White')">
+				Multi Criteria Decision Making
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Martha White end -->
+		<!-- Dr Indu Bala Start -->
+		<div class="speaker col-md-3 col-sm-4">
+            	<div class="speaker_in">
+        	    <a href="https://www.adelaide.edu.au/directory/indu.bala  " target="_blank">
+        		<div class="img_wrapper">
+        	   	    <img src="w_files/indu bala.jpg">
+        		</div>    
+        		<div class="name">Dr Indu Bala</div>
+        		<div class="univ">University of Adelaide</div>
+        		<div class="plac">Australia</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=zm00sbrHrUA&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=1" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Vaneet_Aggarwal')">
+				Particle Swarm Optimization
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Dr Indu Bala end -->
+		<!-- Dr Manoj Thakur Start -->
+		<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://som.iitmandi.ac.in/people/faculty/manoj-thakur " target="_blank">
+        		<div class="img_wrapper">    
+        	   	    <img src="w_files/manoj thakur.jpg">
+        		</div>    
+        		<div class="name">Dr Manoj Thakur</div>
+        		<div class="univ">Indian Institute of Technology</div>
+        		<div class="plac">Mandi</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=bRlcHaxg724&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=2" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('KostiaMountains')">
+				Multi-objective Optimization
+        	    </div>
+            	</div>
+            	</div>
+        <!-- Dr Manoj Thakur end -->
+		<!-- Dr JC Bansal Start -->
+		<div class="speaker col-md-3 col-sm-4">
+            	<div class="speaker_in">
+        	    <a href="https://people.sau.int/~jcbansal/  " target="_blank">
+        		<div class="img_wrapper">
+        	    	    <img src="w_files/JC bansal.jpg">
+        		</div>
+        		<div class="name">Dr JC Bansal</div>
+        		<div class="univ">South Asian University</div>
+        		<div class="plac"></div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=AYRvt-_Gc80&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=14" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Balaji')">
+				Fundamentals of Drone Swarms
+        	    </div>
+            	</div>
+                </div>
+		<!-- Dr JC Bansal end -->
+		 <!-- Dr Shubham Gupta start-->
+		 <div class="speaker col-md-3 col-sm-4">
+            	<div class="speaker_in">
+        	    <a href="https://mnnit.ac.in/profile/shubham.gupta " target="_blank">
+        		<div class="img_wrapper">    
+        	    	    <img src="w_files/2388-Dr. Shubham Photo.jpg">
+        		</div>
+        		<div class="name">Dr Shubham Gupta</div>
+        		<div class="univ">Motilal Nehru National Institute of Technology</div>
+        		<div class="plac">Allahabad</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=04HMO8oCcEs&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=5" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Vivek')">
+				Evolutionary Strategies and Computational Intelligence
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Dr Shubham Gupta end -->
+		<!-- Dr Dikshit Chauhan Start -->
+		<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en " target="_blank">
+        		<div class="img_wrapper">    
+        	            <img src="w_files/dikshit.jpeg">
+        	        </div>    
+        		<div class="name">Dr Dikshit Chauhan</div>
+        		<div class="univ">National University of Singapore</div>
+        		<div class="plac">Singapore</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=ICIAImDKw68&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=18" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Mohammad')">
+				Artificial Electric Field Algorithm
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Dr Dikshit Chauhan end -->
+		<!-- Dr Kedar Nath Das Start -->
+		<div class="speaker col-md-3 col-sm-4">
+            	<div class="speaker_in">
+        	    <a href="https://www.nits.ac.in/faculties/kedar-nath-das   " target="_blank">
+        		<div class="img_wrapper">    
+        	    	    <img src="w_files/kedar nath.jpg">
+			</div>    
+			<div class="name">Dr Kedar Nath Das</div>
+        		<div class="univ">National Institute of Technology</div>
+        	    <div class="plac">Silchar</div>
+			    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=zbtHp_G7mEc&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=8" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Avishek')">
+        		Applications of Swarm Intelligence
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Dr Kedar Nath Das end -->
+ 		<!--  Dr Anupam Yadav Start -->
+		 <div class="speaker col-md-3 col-sm-4">
+             <div class="speaker_in">
+                        <a href=https://departments.nitj.ac.in/dept/ma/Faculty/6430446b38bff038a7808524  target="_blank">
+                                <div class="img_wrapper">
+                                    <img src="w_files/anupam sir.jpg">
+                                </div>
+                                <div class="name">Dr Anupam Yadav </div>
+                                <div class="univ">Dr B R Ambedkar National Institute of Technology</div>
+                                <div class="plac">Jalandhar</div>
+                        </a>
+                        <!-- <span class="mtng_link">
+                        <a href="https://www.youtube.com/watch?v=X2fq7p9Qaeg&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=11" target="_blank" class="video_link"> Watch recording </a>
+                        </span> -->
+                        <div class="abst" onClick="showAbst('Aditya_Gopalan')">
+							Optimization in Machine Learning
+                        </div>
+                    </div>
+                </div>
+                <!--Dr Anupam Yadav  end -->
+		<!--  Dr OP Verma  Start -->
+		<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://departments.nitj.ac.in/dept/ice/Faculty/6430446638bff038a7807a2f  " target="_blank">
+        		<div class="img_wrapper">
+			    <img src="w_files/op verma.jpg">
+        		</div>
+        		<div class="name">Dr OP Verma</div>
+        		<div class="univ">Dr B R Ambedkar National Institute of Technology</div>
+        		<div class="plac">Jalandhar</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=h4CRU4lERcM&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=16" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Ashish_Hota')">
+                        Artificial Neural Networks
+        	    </div>
+            	</div>
+            	</div>
+		
+        <!-- Dr OP Verma End -->
+		<!-- Dr Harish Sharma  Start -->
+            	<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://www.rtu.ac.in/index/viewdata.php?page=Dr-Harish-Sharma183   " target="_blank">
+        		<div class="img_wrapper">    
+        	            <img src="w_files/harish sharma.jpg">
+        		</div>    
+        		<div class="name">Dr Harish Sharma</div>
+        		<div class="univ">Rajasthan Technical University</div>
+        		<div class="plac"></div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=ouQmloRpgLY&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=3" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('prashanth_la')">
+				Machine Learning Applications of Evolutionary Algorithms
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Prashanth L.A end -->
+		<!-- Dr Nilanjan Dey start -->
+		<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://sites.google.com/view/drnilanjandey/home   " target="_blank">
+        		<div class="img_wrapper">    
+        	    	    <img src="w_files/nilanjal dey (1).jpg">
+        		</div>    
+        		<div class="name">Dr Nilanjan Dey</div>
+        		<div class="univ">Techno International New Town</div>
+        		<div class="plac">Kolkata</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=TZ1zHBOLNb0&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=7" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Shishir_Kolathaya')">
+				Deep Learning
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Dr Nilanjan Dey end -->
+		<!-- Dr Hemant Kumar Singh start -->
+		<div class="speaker col-md-3">
+           	<div class="speaker_in">
+        	    <a href="https://www.unsw.edu.au/staff/hemant-singh" target="_blank">
+        		<div class="img_wrapper">
+        	   	    <img src="w_files/hemant kumar (1).jpg">
+        		</div>
+        		<div class="name">Dr Hemant Kumar Singh</div>
+        		<div class="univ">University of New South Wales</div>
+        		<div class="plac">Australia</div>
+		    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=XyMtrZAMZmc&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=9" target="_blank" class="video_link"> Watch recording </a>
+		   </span>  -->
+                   <div class="abst" onClick="showAbst('Aritra_Mitra')">
+                	Multi-/many-objective optimization and decision-making
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Dr Hemant Kumar Singh end -->
+		<!-- Prof. Carlos A. start -->
+		<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://tec.mx/en/our-faculty/eic/carlos-coello?srsltid=AfmBOoohePW2Bd82v_Z8AKZynkl4YFoV_aXuDuazwEyAaV8ZaUFP5OeS   " target="_blank">
+        		<div class="img_wrapper">
+        	    	    <img src="w_files/carlos a..jpg">
+        		</div>
+        		<div class="name">Prof. Carlos A.Coello Coello</div>
+        		<div class="univ">CINVESTAV-IPN</div>
+        		<div class="plac">Mexico</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=b0030oZnpg8&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=6" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Prasad_Savadi')">
+				Multi Objective Evolutionary Algorithms
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Prof. Carlos A. end -->
+		<!-- Dr Abhishek Gupta start -->
+		<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://iitgoa.ac.in/SMS-faculty-profile/?uid=abhishekgupta&&exp=ME " target="_blank">
+        		<div class="img_wrapper">    
+        	    	    <img src="w_files/abhishek gupta.jpg">
+        		</div>	   
+        		<div class="name">Dr Abhishek Gupta</div>
+        		<div class="univ">Indian Institute of Technology</div>
+        		<div class="plac">Goa</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=Elyag1nvIKM&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=17" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Karthikeyan_Shanmugam')">
+				Genetic Algorithms
+        	    </div>
+            	</div>
+            	</div>
+		<!-- Dr Abhishek Gupta end -->
+		
+		<!-- Gergely Neu Start
+            	<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://cs.bme.hu/~gergo" target="_blank">
+        		<div class="img_wrapper">
+        	    	    <img src="./w_files/Gergely_Neu.jpg">
+        		</div>    
+        		<div class="name">Gergely Neu</div>
+        		<div class="univ">Universitat Pompeu Fabra</div>
+        		<div class="plac">Spain</div>
+        	    </a>
+		     <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=lNqHXm-IXEE&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=10" target="_blank" class="video_link"> Watch recording </a>
+		    </span> 
+		    <div class="abst" onClick="showAbst('Gergely_Neu')">
+                	Title and Abstract
+        	    </div>
+            	</div>
+            	</div>
+		 Gergely Neu end -->
+		        
+		
+		
+		 <!-- Dr Efrén Mezura-Montes Start -->
+		 <div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://uv-mx.academia.edu/Efr%C3%A9nMezuraMontes " target="_blank">
+        		<div class="img_wrapper">
+			    <img src="w_files/Efren.jpg">
+        		</div>
+        		<div class="name">Dr Efrén Mezura-Montes</div>
+        		<div class="univ">University of Veracruz</div>
+        		<div class="plac">Mexico</div>
+        	    </a>
+		    <!-- <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=h4CRU4lERcM&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=16" target="_blank" class="video_link"> Watch recording </a>
+		    </span> -->
+		    <div class="abst" onClick="showAbst('Aviv_Tamar')">
+				Evolutionary Algorithms and Nerual Networks
+        	    </div>
+            	</div>
+            	</div>
+		
+        <!-- Dr Efrén Mezura-Montes End -->
+		<!-- M. Vidyasagar Start 
+		<div class="speaker col-md-3">
+            	<div class="speaker_in">
+        	    <a href="https://people.iith.ac.in/m_vidyasagar/" target="_blank">
+        		<div class="img_wrapper">
+			    <img src="w_files/m_vidyasagar.jpg">
+        		</div>
+        		<div class="name">M. Vidyasagar</div>
+        		<div class="univ">Indian Institute of Technology Hyderabad</div>
+        		<div class="plac"></div>
+        	    </a>
+		     <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=h4CRU4lERcM&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=16" target="_blank" class="video_link"> Watch recording </a>
+		    </span> 
+		    <div class="abst" onClick="showAbst('Vidyasagar')">
+                        A Tutorial Introduction to the Theory of Reinforcement Learning
+        	    </div>
+            	</div>
+            	</div> -->
+		
+        <!-- M. Vidyasagar End -->
+<!-- RL Simulation Start 
+                <div class="speaker col-md-3">
+                <div class="speaker_in">
+                    <!a href="https://people.iith.ac.in/m_vidyasagar/" target="_blank">
+                        <div class="img_wrapper">
+                            <img src="w_files/Media.jpg">
+                        </div>
+                        <div class="name">Lakshmi Mandal, Prakrut P. Kotecha, Aditya Shirwatkar, Vamshi K. Kurva</div>
+                        <div class="univ">Indian Institute of Science</div>
+                        <div class="plac"></div>
+                    </a>
+                     <span class="mtng_link">
+                    <a href="https://www.youtube.com/watch?v=h4CRU4lERcM&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=16" target="_blank" class="video_link"> Watch recording </a>
+                    </span> 
+                    <div class="abst" onClick="showAbst('Rl_Simulations')">
+                        RL in simulations and robotics
+                    </div>
+                </div>
+                </div>
+
+         RL Simulation End -->        
+	</div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="schedule" class="fh5co-bgcolor" data-section="schedule">
+    <!-- <div class="row" style="overflow-x: scroll">
+        <div class="col-md-2">
+	        <h2>Inaugural Session</h2>
+            <hr />
+        </div>
+        <div class="col-md-10">
+		    <table class="table table-bordered">
+			<thead>
+		        <tr>
+				    <th>Day </th>
+                    <th>3:30pm to 3:35pm</th>
+                    <th>3:35pm to 3:40pm</th>
+                    <th>3:40pm to 3:50pm</th>
+                    <th>3.50pm to 4.00pm</th>
+                </tr>
+			</thead>
+			<tbody>
+                <tr>
+                    <td><b>Thursday</b> <br /> 21st October 2021 </td>
+                    <td>
+                        Welcome by 
+                        <span class="spkr_name">Shalabh Bhatnagar</span> and 
+                        <span class="spkr_name">Ambedkar Dukkipati</span>
+                                            </td>
+                    <td>
+                        Inauguration of the workshop by 
+                        <span class="spkr_name">Prof. Y. Narahari,</span> 
+                        Professor CSA, Former Dean EECS
+                                            </td>
+                    <td>
+                        Introduction to the EECS division by 
+                        <span class="spkr_name">Prof. Rajesh Sundaresan,</span> 
+                        Dean, Division of EECS
+                                            </td>
+                    <td>
+                        Introduction to the Department of CSA by 
+                        <span class="spkr_name">Prof. Chiranjib Bhattacharyya,</span> 
+                        Chair, CSA 
+                                            </td>
+                </tr>
+			<tbody>
+    		</table>
+        </div>
+	</div> -->
+        
+    <div class="row" style="margin-top: 5vh;">
+    <div class="col-md-2">
+	<h2 style="color: black;">Schedule</h2>
+    <hr />
+    </div>
+    <div class="col-md-10" style="color: black;">
+	Timings are as per the Indian Standard Time
+	<div class="table-container">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Day </th>
+					<th>8:40am to 9:00am</th>
+					<th>      9:00am to 10:00am        </th>
+					<th>10:00am to 10:30am</th>
+                    <th>10.30am to 11.30am</th>
+					<th>11:30 am to 12:30 pm</th>
+					<th>12:30 pm to 2:00 pm</th>
+					<th>2:00 pm to 3:00 pm</th>
+					<th>3:00 pm to 4:00 pm</th>
+					<th>4:00 pm to 4:30 pm</th>
+					<th>4:30 pm to 5:30 pm</th>
+				</tr>
+					<td><b>Monday</b> <br /> 16 June 2025 </td>
+					<td></td>
+					<td><span class="spkr_name">Tutorial: ---</span> ---
+					<span class="sess_chair"><a href="" traget="_blank">PDF</a></span>
+					</td>
+					<td></td>
+					<td><span class="spkr_name">Tutorial: ---</span>---
+						<span class="sess_chair"><a href="" traget="_blank">PDF</a></span>
+					</td>
+					<td><span class="spkr_name">Tutorial: ---</span>---
+					<span class="sess_chair"><a href="" traget="_blank">PDF</a></span>
+
+					</td>
+					<td></td>
+					<td><span class="spkr_name">Tutorial: ---</span>---</td>
+<td><span class="spkr_name">Tutorial: ---</span>---</td>
+					<td></td>
+					<td><span class="spkr_name">Tutorial: ---</span>---</td>
+
+				<tr>
+					<td><b>Tuesday</b> <br /> 17 June 2025 </td>
+					<td><span class="spkr_name">---</span></td>
+					<td><span class="spkr_name">---</span> 
+					    <span class="spkr_place">---</span>
+					    <span class="sess_chair">Online <a href="" target="_blank">PDF</a></span></td>
+					<td>---</td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">--- </span></td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span></td>
+					<td>---</td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span></td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span></td>
+					<td>---</td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">--- </span></td>
+					
+				</tr>
+				<tr>
+					<td><b>Wednesday</b> <br /> 18 June 2025</td>
+					<td></td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span>
+						<span class="spkr_name">---</span><span class="spkr_place">---</span> <span class="sess_chair">---</span>
+					</td>
+					<td>--- </td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span> </td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">--- </span></td>
+					<td>--- </td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span></td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span></td>
+					<td>--- </td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span> </td>
+				<tr>
+					<td><b>Thursday</b> <br /> 19 June 2025</td>
+					<td></td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span></td>
+					<td>---</td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span></td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span></td>
+					<td>--- </td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span></td>
+					<td><span class="spkr_name">--- </span><span class="spkr_place">--- </span></td>
+					<td>---</td>
+					<td> </td>
+				<tr>
+					<td><b>Friday</b> <br /> 20 June 2025</td>
+					<td></td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span></td>
+					<td>---</td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span></td>
+				    <td><span class="spkr_name">---</span><span class="spkr_place">---</span></td>
+					<td>--- </td>
+					<td><span class="spkr_name">---</span><span class="spkr_place">---</span><span class="sess_chair">---</span></td>
+					<td><span class="spkr_name">--- </span><span class="spkr_place">--- </span></td>
+					<td>---</td>
+					<td> </td>
+					
+					<!-- <td>
+			<span class="spkr_name">
+			    Sridhar Mahadevan
+			</span>
+			<span class="spkr_place">
+			    Adobe Labs, San Jose, CA
+			</span>
+                        <span class="sess_chair">
+                            <small><i>Session Chair</i>: <b>Shishir Kolathaya</b></small>
+            			</span>
+            			<span class="mtng_link">
+                            <a href="https://www.youtube.com/watch?v=X2fq7p9Qaeg&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=11" target="_blank" style="font-variant: inherit"> Watch recording </a>
+            			</span>
+					</td>
+
+			<td>
+    			<span class="spkr_name"> Aravind Rajeswaran </span>
+	    		<span class="spkr_place"> Facebook AI Research (FAIR), USA </span>
+                        <span class="sess_chair">
+                            <small><i>Session Chair</i>: <b>Shishir Kolathaya</b></small>
+            			</span>
+            			<span class="mtng_link">
+                            <a href="https://www.youtube.com/watch?v=TZ1zHBOLNb0&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=7" target="_blank" style="font-variant: inherit"> Watch recording </a>
+            			</span>
+					</td>
+					
+		    <td> --- </td>
+
+		    <td> 
+    			<span class="spkr_name">Gaurav Pandey</span>
+    			<span class="spkr_place">IBM IRL New Delhi, India</span>
+                        <span class="sess_chair">
+                            <small><i>Session Chair</i>: <b>Arindam Khan</b></small>
+            			</span>
+            			<span class="mtng_link">
+                            <a href="https://www.youtube.com/watch?v=b0030oZnpg8&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=6" target="_blank" style="font-variant: inherit"> Watch recording </a>
+            			</span>
+            </td>
+						
+			<td>
+    			<span class="spkr_name"> Debarghya Ghoshdastidar </span>
+	    		<span class="spkr_place"> Technical University of Munich, Germany </span>
+                        <span class="sess_chair">
+                            <small><i>Session Chair</i>: <b>Arindam Khan</b></small>
+            			</span>
+            			<span class="mtng_link">
+                            <a href="https://www.youtube.com/watch?v=lNqHXm-IXEE&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=10" target="_blank" style="font-variant: inherit"> Watch recording </a>
+            			</span>
+			</td>
+
+					<td>
+			<span class="spkr_name">
+						Arunselvan Ramaswamy
+			</span>
+			<span class="spkr_place">
+			    Paderborn University Germany
+			</span>
+                        <span class="sess_chair">
+                            <small><i>Session Chair</i>: <b>Shalabh Bhatnagar</b></small>
+                        </span>
+            			<span class="mtng_link">
+                            <a href="https://www.youtube.com/watch?v=zbtHp_G7mEc&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=8" target="_blank" style="font-variant: inherit"> Watch recording </a>
+            			</span>
+					</td>
+
+					<td>
+			<span class="spkr_name">
+						Karthikeyan Shanmugam
+			</span>
+			<span class="spkr_place">
+			    IBM Research AI group, NY, USA
+			</span>
+                        <span class="sess_chair">
+                            <small><i>Session Chair</i>: <b>Shalabh Bhatnagar</b></small>
+                        </span>
+            			<span class="mtng_link">
+                            <a href="https://www.youtube.com/watch?v=Elyag1nvIKM&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=17" target="_blank" style="font-variant: inherit"> Watch recording </a>
+            			</span>
+					</td>
+
+					<td>
+			<span class="spkr_name">
+						Richard Sutton
+			</span>
+			<span class="spkr_place">
+			    DeepMind and University of Alberta
+			</span>
+                        <span class="sess_chair">
+                            <small><i>Session Chair</i>: <b>Shalabh Bhatnagar</b></small>
+                        </span>
+            			<span class="mtng_link">
+                            <a href="https://www.youtube.com/watch?v=XyMtrZAMZmc&list=PLmx4utxjUQD6yP4WtFjTxI7tKtzjLYoJg&index=9" target="_blank" style="font-variant: inherit"> Watch recording </a>
+            			</span>
+					</td> -->
+		    </td>
+			</thead>
+		</table>
+		</div>
+    </div>
+		</div>
+	</div>
+
+    <!-- <div class="row" style="overflow-x: scroll; margin-top: 5vh;">
+        <div class="col-md-2">
+	        <h2>Student Research Presentations</h2>
+            <hr />
+        </div>
+        <div class="col-md-10">
+		    <table class="table table-bordered">
+			<thead>
+		        <tr>
+				    <th>Day </th>
+                    <th>12:00pm to 12.15pm</th>
+                    <th>12:15pm to 12.30pm</th>
+                    <th>12:30pm to 12.45pm</th>
+                    <th>12:45pm to 01.00pm</th>
+                    <th>01:00pm to 01.15pm</th>
+                    <th>01:15pm to 01.30pm</th>
+                    <th>01:30pm to 01.45pm</th>
+                    <th>01:45pm to 02.00pm</th>
+                    <th>02:00pm to 02.15pm</th>
+                    <th>02:15pm to 02.30pm</th>
+                    <th>02:30pm to 02.45pm</th>
+                    <th>02:45pm to 03.00pm</th>
+                    <th>03:00pm to 03.15pm</th>
+                    <th>03:15pm to 03.30pm</th>
+                    <th>03:30pm to 03.45pm</th>
+                </tr>
+			</thead>
+			<tbody>
+                <tr>
+                    <td><b>Saturday</b> <br /> 23rd October 2021 </td>
+                    <td>
+                        <span class="spkr_name">Mohammadi Zaki</span> ECE, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Helen Thomas</span> 
+                        Civil Engg., IISc
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Sravanti Addepalli</span> 
+                        CDS, IISc
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Debangshu Banerjee</span> 
+                        ECE, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Harsh Rangwani</span> 
+                         CDS, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Rito Brata Nath</span> 
+                         Civil Engg., IIS 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Titir Dutta</span> 
+                         EE, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Break</span> 
+                    </td>
+                    <td>
+                        <span class="spkr_name">Aditya Rastogi</span> 
+                         CDS, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Ashish Srivastava</span> 
+                         CSA, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Nabanita Paul</span> 
+                         CSA, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Ranga Shaarad Ayyagari</span> 
+                         CSA, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Raghuram Bharadwaj</span> 
+                         CSA, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Vivek VP</span> 
+                         CSA, IISc 
+                                            </td>
+                    <td>
+                        <span class="spkr_name">Soumyajit Guin</span> 
+                         CSA, IISc 
+                                            </td>
+                </tr>
+			<tbody>
+    		</table>
+        </div>
+	</div> -->
+
+</section>
+
+
+<!-- div class="getting-started getting-started-1">
+	<div class="getting-grid" style="background-image:  url(images/full_image_3.jpg);">
+		<div class="desc">
+			<h2>Getting <span>Started</span></h2>
+			<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+		</div>
+	</div>
+	<a href="#" class="getting-grid2">
+		<div class="call-to-action text-center">
+			<p href="#" class="sign-up">Sign Up For Free</p>
+		</div>
+	</a>
+</div -->
+
+
+
+<!-- Organizer Section Start -->			
+	 
+	<!-- section id="fh5co-services" data-section="organizers" -->
+    <section id="organizers" data-section="organizers">
+        <div class="row">
+            <div class="col-md-2">
+                <h2 style="color: black;">Organizers</h2> <hr />
+            </div>
+            
+            <!-- Faculty Organizers Start -->	    
+	        <div class="col-md-10">
+	            <div class="row">
+    	       	    <div class="speaker col-md-3 col-sm-4 org_subtitle">
+            	        <center> <h4></h4> </center>
+                    </div>
+
+	                <a href="" target="_blank">
+	       	            <div class="speaker col-md-3 col-sm-4">
+                            <div class="speaker_in">
+    		                    <div class="img_wrapper"> <img src="w_files/DEPt.png"> </div>
+	    	                    <div class="name">Department of Mathematics and Computing</div>
+		                        <div class="univ">NIT J</div>
+		                        <div class="plac"></div>
+    		                </div>
+                        </div>
+		           <!-- </a>	   
+					<a href="" target="_blank">
+	       	            <div class="speaker col-md-3 col-sm-4">
+                            <div class="speaker_in">
+    		                    <div class="img_wrapper"> <img src=""> </div>
+	    	                    <div class="name">ABC</div>
+		                        <div class="univ">BCD</div>
+		                        <div class="plac"></div>
+    		                </div>-->
+                        </div>
+		            </a> 	        
+	            </div>		    
+                <!-- Faculty Organizers End -->	
+				<!-- Student Organizers start -->	
+                <hr />
+                <div class="row">
+        	       	<div class="speaker col-md-3 col-sm-4 org_subtitle">
+            	        <center> <h4>Students</h4> </center>
+                    </div>
+
+	                
+                        <div class="speaker col-md-3 col-sm-4">
+                            <div class="speaker_in">
+                                <div class="img_wrapper"> <img src="w_files/nitin01.png"> </div>
+                                <div class="name"> Nitin Gupta</div>
+                                <div class="univ">NIT J</div>
+                                <div class="plac"></div>
+                            </div>
+                        </div>
+	    	        
+					
+                        <div class="speaker col-md-3 col-sm-4">
+                            <div class="speaker_in">
+                                <div class="img_wrapper"> <img src=""> </div>
+                                <div class="name">Ram Sundar</div>
+                                <div class="univ">NIT J</div>
+                                <div class="plac"></div>
+                            </div>
+                        </div>
+<div class="speaker col-md-3 col-sm-4">
+                            <div class="speaker_in">
+                                <div class="img_wrapper"> <img src=""> </div>
+                                <div class="name">M</div>
+                                <div class="univ">N</div>
+                                <div class="plac"></div>
+                            </div>
+                        </div>
+	    	        
+				</div>
+				 <!-- Sponsors Start -->	    
+				 <div class="col-md-8">
+	              <div class="row">
+    	       	    <div class="sponsors col-md-4 org_subtitle">
+            	        <center> <h4>Sponsors</h4> </center>
+                    </div>
+
+	                <a href="" target="_blank">
+	       	            <div class="sponsors col-md-4">
+                            <img src="w_files/iisco.png"> 
+                        </div>
+		            </a>
+
+	                <a href="" target="_blank">
+	       	            <div class="sponsors col-md-4">
+    		                <img src="w_files/WalmartSpark.png">
+                        </div>
+						</a>
+
+	                <!--a href="https://www.wellsfargo.com/" target="_blank">
+	       	            <div class="sponsors col-md-4">
+    		                <img src="./w_files/wf.png">
+                        </div>
+		            </a-->
+		            
+	            </div>		    
+	        </div>
+            <!-- Sponsors End -->
+				
+			 </div>
+	    </div>
+    </section>
+<!-- Organizer Section End -->
+
+
+
+        <!-- Usefullinks Section Start -->			
+
+        
+		  
+        <!-- Usefullinks Section End -->
+		 
+		
+
+		<!-- SECTION: About -->
+<section id="links" class="fh5co-bg-color" data-section="links">
+	<div class="container">
+	  <div class="info-cards">
+		<!-- Card 1 -->
+		<div class="info-card">
+		  <h2>About NITJ</h2>
+		  <a href="#" target="_blank">
+			<img src="images/nitjpic.jpg" alt="NITJ Image" />
+		  </a>
+		  <p>
+			Dr B R Ambedkar National Institute of
+			Technology was established in the year 1987 as
+			Regional Engineering College and was given the
+			status of National Institute of Technology
+			(Deemed University) by the Government of India
+			on October 17, 2002 under the aegis of Ministry
+			of Education (Shiksha Mantralaya), New Delhi.
+			Now the Ministry of Education (Shiksha
+			Mantralaya), Government of India has declared
+			
+			the Institute as “Institute of National
+			Importance” under the act of Parliament-2007. A
+			large number of reputed Industrial houses in the
+			country visit the Institution and select the final
+			year students as Engineers/ Management
+			Trainees. As one of the National Institutes of
+			Technology (NIT), the Institute has the
+			responsibility of providing high quality education
+			in Engineering, Technology and Sciences to
+			produce competent technical and scientific
+			manpower for the country. The Institute offers
+			BTech, MTech, MSc, MBA and PhD programmes
+			
+			in the several disciplines of Engineering,
+			Technology and Sciences.		  </p>
+		</div>
+  
+		<!-- Card 2 -->
+		<div class="info-card">
+		  <h2>About the Dept. of Mathematics</h2>
+		  <p>
+			The Department of Mathematics, NIT Jalandhar
+			is one of the eighteen departments of the Institute.
+			The department offers MSc and PhD programs in
+			Mathematics. The department also teaches
+			Mathematics to BTech, MTech and PhD students
+			belonging to various engineering streams. The
+			department has thirteen faculty members who are
+			actively involved in research activities in addition
+			to the regular teaching activities. The faculty
+			members of the department are specialized in
+			frontier areas of Mathematics such as Algebra,
+			Matrix Analysis, Numerical Analysis, Partial
+			Differential Equations, Mechanics, Statistics,
+			Optimization, Soft Computing, etc. The
+			Department, till date, has produced 10 PhDs in
+			different branches of Mathematics. Several
+			research projects of the department are financially
+			supported by some of the leading funding
+			agencies such as DST and NBHM. The
+			Department keeps in pace with the advances in
+			technology, by providing its students state-of–the-
+			art computer facilities. The students get the
+			opportunity of attending seminars and invited
+			lectures delivered by eminent mathematicians and
+			academicians. They also get the opportunity for
+			campus placement in various national and
+			multinational companies.		  </p>
+		</div>
+  
+		<!-- Card 3 -->
+		<div class="info-card">
+		  <h2>About Summer School</h2>
+		  <p>
+			The &quot;Evolutionary Algorithms and Machine
+			Learning: Theory and Applications&quot; summer
+			school offers a comprehensive and intensive
+			
+			exploration of the intersection between
+			evolutionary algorithms (EAs) and machine
+			learning (ML). This program is designed to
+			provide participants with both theoretical
+			foundations and practical insights into how
+			evolutionary strategies can enhance machine
+			learning models and vice versa. Participants will
+			delve into the principles of evolutionary
+			algorithms, including genetic algorithms, genetic
+			programming, and other optimization techniques
+			that draw inspiration from natural evolution. The
+			program covers how these algorithms can be used
+			to solve complex optimization problems,
+			optimize neural networks, or even evolve new
+			machine learning models. Furthermore, the
+			summer school incorporates hands-on sessions
+			where attendees will apply these concepts in real-
+			world scenarios, such as optimizing hyper
+			parameters in ML models, designing adaptive
+			learning systems, or tackling large-scale
+			computational problems. Leading experts in the
+			field will share their research and experiences,
+			offering valuable perspectives on both the
+			challenges and breakthroughs in this rapidly
+			evolving domain. The summer school aims to
+			foster a collaborative learning environment,
+			where participants can engage in discussions,
+			work on projects, and gain insights into the latest
+			trends and future directions of research at the
+			intersection of evolutionary algorithms and
+			machine learning.			  </p>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+  <!-- SECTION: Highlights (5 More Cards) -->
+  <section id="highlights" class="fh5co-bg-light" data-section="highlights">
+	<div class="container">
+	  <div class="info-cards">
+		<!-- Card 4 -->
+		<div class="info-card">
+		  <h2>Target Audience</h2>
+		  <p>
+			Under Graduate, Post graduate students, research scholars and faculty members.		  </p>
+		</div>
+  
+		<!-- Card 5 -->
+		<div class="info-card">
+		  <h2>Important Dates:</h2>
+		  <p>
+			Registration Deadline: June 15th, 2025<br>
+			Event Dates: 16th June 2025 - 20th  June 2025
+					  </p>
+		</div>
+  
+		<!-- Card 6 -->
+		<div class="info-card">
+		  <h2>Contact</h2>
+		  <p>
+			Dr. Anupam Yadav<br>
+			Associate Professor <br>
+			Department of Mathematics<br> 
+			Dr B. R. Ambedkar National Institute of Technology Jalandhar, Punjab, India 
+			Email	: anupam@nitj.ac.in 
+			Mobile	: +91 9627273447
+					  </p>
+		</div>
+  
+		<!-- Card 7 -->
+		<div class="info-card">
+		  <h2>Registration Link</h2>
+		  <p>
+			The participants can register for the Summer School and pay the registration fee through the following link:
+			To be provided later
+					  </p>
+		  <img src="images/bar.jpg" alt="Registration Link" style="width:auto; height:auto; border-radius:8px; margin-bottom:15px;align-items: center; ">
+		</div>
+  
+		<!-- Card 8 -->
+		<!-- Card 8: Registration Info -->
+<div class="info-card">
+	<h2>Registration Fee</h2>
+	<p>
+	  The registration fee (non-refundable) is as follows:
+	</p>
+	<div class="table-wrapper">
+	  <table class="fee-table">
+		<thead>
+		  <tr>
+			<th>Category</th>
+			<th>Online</th>
+			<th>Offline</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Students</td>
+			<td>Rs. 1500/-</td>
+			<td>Rs. 2500/-</td>
+		  </tr>
+		  <tr>
+			<td>Faculty</td>
+			<td>Rs. 2500/-</td>
+			<td>Rs. 3500/-</td>
+		  </tr>
+		  <tr>
+			<td>Industry Person</td>
+			<td>Rs. 4000/-</td>
+			<td>Rs. 5000/-</td>
+		  </tr>
+		  <tr>
+			<td>International</td>
+			<td>USD 100/-</td>
+			<td>USD 150/-</td>
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+  </div>
+  
+	  </div>
+	</div>
+  </section>
+  
+  <!-- STYLES -->
+  <style>
+	.container {
+	  max-width: 1200px;
+	  margin: auto;
+	  padding: 40px 20px;
+	}
+  
+	.info-cards {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 20px;
+	  justify-content: space-between;
+	}
+  
+	.info-card {
+	  flex: 1 1 calc(33.33% - 20px);
+	  background: #fff;
+	  padding: 20px;
+	  border: 1px solid #ccc;
+	  box-sizing: border-box;
+	  border-radius: 5px;
+	  background-color: #f8f9fa;
+	}
+  
+	.info-card h2 {
+	  background-color: rgb(235, 197, 31);
+	  color: black;
+	  font-size: 1.2rem;
+	  padding: 10px;
+	  text-align: center;
+	  margin: -20px -20px 20px -20px;
+	}
+  
+	.info-card img {
+	  width: 100%;
+	  margin-bottom: 15px;
+	  border-radius: 5px;
+	}
+  
+	.info-card p {
+	  font-size: 0.95rem;
+	  line-height: 1.6;
+	  text-align: justify;
+	  color: black;
+	}
+  
+	/* Responsive */
+	@media (max-width: 992px) {
+	  .info-card {
+		flex: 1 1 calc(50% - 20px);
+	  }
+	}
+  
+	@media (max-width: 600px) {
+	  .info-card {
+		flex: 1 1 100%;
+	  }
+	}
+
+	/* Card Section Styles (already added earlier) */
+  /* ... */
+
+  /* Table inside Card */
+  .table-wrapper {
+    overflow-x: auto;
+    margin-top: 10px;
+  }
+
+  .fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 300px;
+  }
+
+  .fee-table th,
+  .fee-table td {
+    border: 1px solid #ccc;
+    padding: 5px 7px;
+    text-align: center;
+  }
+
+  .fee-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+font-size: larger;
+  }
+
+  .fee-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  @media (max-width: 600px) {
+    .fee-table th, .fee-table td {
+      padding: 3px 5px;
+    }
+  }
+  </style>
+  
+
+
+	<!-- div id="map" class="fh5co-map"></div -->
+
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Owl Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Counters -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&amp;sensor=false"></script>
+	<script src="js/google_map.js"></script>
+<script type="text/javascript" src="js/datatables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+
+</body>
+</html>
