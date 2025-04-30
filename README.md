@@ -1,5 +1,10 @@
-## Event
+## 📅 Event Information
 
+For detailed information about the upcoming event, please visit the link below:
+
+🔗 [Click here to view the Event Details](https://your-event-link-here.com)
+
+Stay tuned for updates and further announcements!
 <!--
 **evol-ml/evol-ml** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
