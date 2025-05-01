@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fh5co-home {
-  background-image: url('../images/image7.png');
+  background-image: url('../images/image009.png');
   /*background-color: transparent;*/
   background-size:100%,60%;
   background-repeat: no-repeat;
@@ -390,7 +390,7 @@ h1, h2, h3, h4, h5, h6 {
 /*Style for phone browsers*/
 @media (max-width: 768px) {
   #fh5co-home {
-    background-image: url('../images/image8.png');
+    background-image: url('../images/image009(1).png');
     background-position: 0px 25px;
     background-repeat: no-repeat;
     background-size: 100%,60%;
