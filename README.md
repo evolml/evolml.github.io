@@ -2,7 +2,7 @@
 
 For detailed information about the upcoming event, please visit the link below:
 
-🔗 [Click here to view the Event Details](https://evol-ml.github.io/evol-ml/)
+🔗 [Click here to view the Event Details]( https://evolml.github.io/)
 
 Stay tuned for updates and further announcements!
 <!--
