@@ -124,7 +124,7 @@ body {
       align-items: center;
     }
     .speaker-card img {
-      width: 80%;
+      width: 60%;
       height: 280px;
       object-fit: cover;
       border-radius: 8px;
