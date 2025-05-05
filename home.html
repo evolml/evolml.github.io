@@ -55,12 +55,35 @@
   </header>
 
   <!-- Header Image -->
-  <section class="header-image" role="img" aria-label="Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025) Banner">
-    <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner">
-    <div class="overlay">
-      <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
-    </div>
-  </section>
+<section class="header-image" role="img" aria-label="Summer School on EVOML 2025 Banner">
+  <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img">
+  <div class="overlay">
+    <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
+  </div>
+</section>
+
+<style>
+.header-image {
+  position: relative;
+  height: 400px; /* Fixed height */
+  overflow: hidden;
+}
+
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Focus on center of image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-image { height: 300px; }
+}
+@media (max-width: 480px) {
+  .header-image { height: 250px; }
+}
+</style>
 
   <!-- About Section -->
   <section id="about" class="py-12 px-4" role="region" aria-labelledby="about">
