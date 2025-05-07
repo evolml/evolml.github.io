@@ -570,6 +570,12 @@ body {
       font-size: 0.95rem;
       padding: 12px;
     }
+     .speakers-list {
+        padding: 0.75rem;
+      }
+      .speakers-list li {
+        font-size: 0.95rem;
+      }
     .cta-button, .download-btn {
       padding: 10px 20px;
       font-size: 0.95rem;
