@@ -239,6 +239,36 @@ body {
     text-align: justify;
     color: #1f2937;
   }
+.speakers-list {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    .speakers-list ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .speakers-list li {
+      font-size: 1.125rem;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    .speakers-list li a {
+      color: #2563eb;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+    .speakers-list li a:hover {
+      color: #1e40af;
+    }
+    .speakers-list li a:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.5);
+      border-radius: 2px;
+    }
   .fee-table {
     width: 100%;
     border-collapse: collapse;
