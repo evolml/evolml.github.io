@@ -23,20 +23,25 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/nitj.png">
 
+  <!-- Preload Header Image and Font -->
+  <link rel="preload" href="images/header1.png" as="image">
+  <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Google Fonts with font-display: swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: #f9fafb;
     }
 
-    /* Navigation */
+    /* Navigation (unchanged) */
     .nav-bar {
       background: #ffffff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -90,13 +95,17 @@
       width: 95%;
       margin: 0 auto;
       height: 400px;
+      min-height: 400px;
+      max-height: 400px;
       overflow: hidden;
+      background: #1d4ed8; /* Fallback color */
     }
     .header-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      display: block;
     }
     .header-image .overlay {
       position: absolute;
@@ -112,13 +121,16 @@
       color: white;
       text-align: center;
       padding: 1rem;
+      box-sizing: border-box;
     }
- TWIST: https://twist.com/2025/02/21/how-to-create-a-conference-event-page-in-wordpress/
     .header-image .overlay h1 {
       font-size: 2.5rem;
       font-weight: 700;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       margin: 0;
+      line-height: 1.2;
+      transition: font-size 0.3s ease;
+      will-change: font-size;
     }
     .header-image .tag-line {
       font-size: 1.25rem;
@@ -127,10 +139,14 @@
       text-align: center;
       margin-top: 0.5rem;
       padding: 0.5rem;
-      animation: fadeIn 0.6s ease-out;
+      line-height: 1.4;
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out 0.2s forwards;
+      transition: font-size 0.3s ease;
+      will-change: opacity, font-size;
     }
 
-    /* General Section Styles */
+    /* General Section Styles (unchanged) */
     .info-card {
       transition: box-shadow 0.3s ease, transform 0.3s ease;
       background: #ffffff;
@@ -156,7 +172,7 @@
       font-weight: 700;
     }
 
-    /* Speakers Grid */
+    /* Speakers Grid (unchanged) */
     .speakers-grid {
       display: flex;
       flex-wrap: wrap;
@@ -182,8 +198,8 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     .speaker-card img, .profile-card img, .department-card img, .student-card img {
-      width: 140px;
-      height: 140px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 0.5rem;
@@ -200,7 +216,7 @@
       color: #4b5563;
     }
 
-    /* Sponsors Section */
+    /* Sponsors Section (unchanged) */
     .sponsors-grid {
       display: flex;
       flex-wrap: wrap;
@@ -257,7 +273,7 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* PDF Viewer */
+    /* PDF Viewer (unchanged) */
     #pdf-container {
       text-align: center;
       margin-top: 2rem;
@@ -298,7 +314,7 @@
       background: #0891b2;
     }
 
-    /* Registration Fee Table */
+    /* Registration Fee Table (unchanged) */
     .table-wrapper {
       overflow-x: auto;
       margin-top: 1rem;
@@ -323,7 +339,7 @@
       color: #4b5563;
     }
 
-    /* CTA Button */
+    /* CTA Button (unchanged) */
     .cta-button {
       display: inline-flex;
       align-items: center;
@@ -339,7 +355,7 @@
       background: #1e40af;
     }
 
-    /* Footer */
+    /* Footer (unchanged) */
     .link-button {
       color: #1d4ed8;
       text-decoration: none;
@@ -354,8 +370,8 @@
 
     /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* Responsive Design */
@@ -379,6 +395,8 @@
       }
       .header-image {
         height: 300px;
+        min-height: 300px;
+        max-height: 300px;
       }
       .header-image .overlay h1 {
         font-size: 2rem;
@@ -420,6 +438,8 @@
     @media (max-width: 600px) {
       .header-image {
         height: 250px;
+        min-height: 250px;
+        max-height: 250px;
       }
       .header-image .overlay h1 {
         font-size: 1.5rem;
@@ -454,7 +474,7 @@
   </style>
 </head>
 <body class="min-h-screen">
-  <!-- Navigation -->
+  <!-- Navigation (unchanged) -->
   <header class="nav-bar" role="banner">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a href="https://evolml.github.io/" class="navbar-brand">Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</a>
@@ -486,7 +506,7 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About Section (unchanged) -->
   <section id="about" class="py-12 px-4" role="region" aria-labelledby="about">
     <div class="max-w-full px-4">
       <h2 id="about" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">About</h2>
@@ -514,7 +534,7 @@
     </div>
   </section>
 
-  <!-- Keynote Speakers -->
+  <!-- Keynote Speakers (unchanged) -->
   <section class="py-12 px-4" id="keynote" role="region" aria-labelledby="keynote-speakers">
     <div class="max-w-7xl mx-auto">
       <h2 id="keynote-speakers" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
@@ -643,7 +663,7 @@
     </div>
   </section>
 
-  <!-- All Speakers List -->
+  <!-- All Speakers List (unchanged) -->
   <section class="py-12 px-4" id="speakers-list" role="region" aria-labelledby="speakers-list">
     <div class="max-w-7xl mx-auto">
       <div class="info-card p-8">
@@ -661,7 +681,7 @@
             <li><a href="https://iitgoa.ac.in/SMS-faculty-profile/?uid=abhishekgupta&&exp=ME" aria-label="Visit Dr. Abhishek Gupta's profile">Dr. Abhishek Gupta</a>, Indian Institute of Technology, Goa</li>
             <li><a href="https://scholar.google.co.in/citations?user=qTB0f40AAAAJ&hl=en" aria-label="Visit Dr. Bapi Dutta's profile">Dr. Bapi Dutta</a>, University of Jaen, Jaen, Spain</li>
             <li><a href="https://www.adelaide.edu.au/directory/indu.bala" aria-label="Visit Dr. Indu Bala's profile">Dr. Indu Bala</a>, University of Adelaide, Australia</li>
-            <li><a href="https://www.nits.ac.in/faculties/kedar-nath-das" aria-label="Visit Dr. Kedar Nath Das's profile">Dr. Kedar Nath Das nadr></a>, National Institute of Technology, Silchar</li>
+            <li><a href="https://www.nits.ac.in/faculties/kedar-nath-das" aria-label="Visit Dr. Kedar Nath Das's profile">Dr. Kedar Nath Das</a>, National Institute of Technology, Silchar</li>
             <li><a href="https://www.unsw.edu.au/staff/hemant-singh" aria-label="Visit Dr. Hemant Kumar Singh's profile">Dr. Hemant Kumar Singh</a>, University of New South Wales, Australia</li>
             <li><a href="https://www.rtu.ac.in/index/viewdata.php?page=Dr-Harish-Sharma183" aria-label="Visit Dr. Harish Sharma's profile">Dr. Harish Sharma</a>, Rajasthan Technical University, Rajasthan</li>
             <li><a href="https://departments.nitj.ac.in/dept/ma/Faculty/6430446b38bff038a7808524" aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
@@ -676,11 +696,10 @@
     </div>
   </section>
 
-  <!-- Organizing Committee -->
+  <!-- Organizing Committee (unchanged) -->
   <section class="py-12 px-4" id="organizing-committee" role="region" aria-labelledby="organizing-committee">
     <div class="max-w-7xl mx-auto">
       <h2 id="organizing-committee" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Organizers</h2>
-      <!-- Department Card -->
       <div class="speakers-grid" id="department-card">
         <article class="department-card profile-card">
           <img src="images/nitj.png" alt="Department of Mathematics and Computing, NIT Jalandhar">
@@ -688,7 +707,6 @@
           <p>Dr B R Ambedkar National Institute of Technology Jalandhar, Punjab, India</p>
         </article>
       </div>
-      <!-- Researchers -->
       <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4 text-center">Researchers</h3>
       <div class="speakers-grid" id="student-cards">
         <article class="profile-card student-card">
@@ -725,7 +743,7 @@
     </div>
   </section>
 
-  <!-- Schedule (PDF Viewer) -->
+  <!-- Schedule (PDF Viewer) (unchanged) -->
   <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule">
     <div class="max-w-7xl mx-auto">
       <h2 id="schedule" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
@@ -742,10 +760,9 @@
     </div>
   </section>
 
-  <!-- Main Content -->
+  <!-- Main Content (unchanged) -->
   <section class="pt-12 pb-20 px-4">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-      <!-- Card 7: Registration Link -->
       <article class="info-card p-8 text-center" role="region" aria-labelledby="registration-link">
         <h2 id="registration-link" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Link</h2>
         <p class="text-gray-600 text-lg leading-relaxed">
@@ -762,8 +779,6 @@
         </a>
         <p class="text-gray-600 text-lg mt-4"><strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.</p>
       </article>
-
-      <!-- Card 8: Registration Fee -->
       <article class="info-card p-8" role="region" aria-labelledby="registration-fee">
         <h2 id="registration-fee" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Fee</h2>
         <p class="text-gray-600 text-lg leading-relaxed">
@@ -810,7 +825,7 @@
     </div>
   </section>
 
-  <!-- Sponsors -->
+  <!-- Sponsors (unchanged) -->
   <section class="py-12 px-4" id="sponsors" role="region" aria-labelledby="sponsors" aria-describedby="sponsors-tagline">
     <div class="max-w-7xl mx-auto">
       <div class="info-card">
@@ -837,7 +852,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (unchanged) -->
   <footer class="bg-gray-50 py-12 px-4 relative">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d4ed8] to-[#06b6d4]"></div>
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-600">
@@ -881,7 +896,7 @@
     <p class="text-center text-gray-500 mt-8 text-sm">© 2025 NIT Jalandhar. All rights reserved.</p>
   </footer>
 
-  <!-- PDF.js Script -->
+  <!-- PDF.js Script (unchanged) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
   <script>
     const url = 'pdfs/schedule.pdf';
@@ -937,7 +952,7 @@
   </script>
 
   <script>
-    // Mobile navigation toggle
+    // Mobile navigation toggle (unchanged)
     document.querySelector('.nav-toggle').addEventListener('click', () => {
       const navLinks = document.querySelector('.nav-links');
       navLinks.classList.toggle('active');
