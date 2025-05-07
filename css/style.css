@@ -55,7 +55,7 @@ body {
 
 .header-image {
     position: relative;
-    width:100%;
+    width:95%;
     margin:0 auto;
     height: 400px;
     overflow: hidden;	
@@ -119,7 +119,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.6s ease-out;
+    
   }
  .header-image .tag-line {
       font-size: 1.1rem;
