@@ -565,6 +565,11 @@ body {
     .header-image .overlay h1 {
       font-size: 1.25rem;
     }
+     .header-image .tag-line {
+      font-size: 1rem;
+      margin-top: 0.3rem;
+      padding: 0.3rem;
+    }
     #about {
       padding: 1.5rem 0.75rem;
     }
