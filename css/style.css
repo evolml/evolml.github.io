@@ -68,15 +68,7 @@ body {
   object-position: center; /* Focus on center of image */
 }
 	 
-    .header-image .tag-line {
-    font-size: 1.25rem;
-    color: #ffffff;
-    font-style: italic;
-    text-align: center;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    animation: fadeIn 0.6s ease-out;
-  }
+   
 .header-image .tag-line {
     font-size: 1.25rem;
     color: #ffffff;
