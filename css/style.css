@@ -151,7 +151,7 @@ body {
       padding: 1rem;
       box-sizing: border-box;
       display: flex;
-	
+	margin:0 auto;
       display: inline-block;
       line-height: auto;
       flex-direction: column;
