@@ -27,7 +27,7 @@
   <link rel="preload" href="images/header1.png" as="image">
   <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Google Fonts with font-display: swap -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
@@ -41,7 +41,7 @@
       background: #f9fafb;
     }
 
-    /* Navigation (unchanged) */
+    /* Navigation */
     .nav-bar {
       background: #ffffff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -98,7 +98,7 @@
       min-height: 400px;
       max-height: 400px;
       overflow: hidden;
-      background: #1d4ed8; /* Fallback color */
+      background: #1d4ed8;
     }
     .header-img {
       width: 100%;
@@ -146,7 +146,7 @@
       will-change: opacity, font-size;
     }
 
-    /* General Section Styles (unchanged) */
+    /* General Section Styles */
     .info-card {
       transition: box-shadow 0.3s ease, transform 0.3s ease;
       background: #ffffff;
@@ -172,20 +172,20 @@
       font-weight: 700;
     }
 
-    /* Speakers Grid (unchanged) */
+    /* Speakers Grid */
     .speakers-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem; /* Increased gap for larger cards */
     }
     .speaker-card, .profile-card, .department-card, .student-card {
       background: #f2f2f2;
-      width: 220px;
-      height: 280px;
+      width: 250px; /* Increased from 220px */
+      height: 320px; /* Increased from 280px */
       border-radius: 8px;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem; /* Increased padding */
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -198,11 +198,11 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     .speaker-card img, .profile-card img, .department-card img, .student-card img {
-      width: 120px;
-      height: 120px;
+      width: 150px; /* Increased from 120px */
+      height: 150px; /* Increased from 120px */
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem; /* Adjusted for spacing */
     }
     .speaker-card h3, .profile-card h3, .department-card h3, .student-card h3 {
       margin: 0.5rem 0;
@@ -216,7 +216,7 @@
       color: #4b5563;
     }
 
-    /* Sponsors Section (unchanged) */
+    /* Sponsors Section */
     .sponsors-grid {
       display: flex;
       flex-wrap: wrap;
@@ -273,7 +273,7 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* PDF Viewer (unchanged) */
+    /* PDF Viewer */
     #pdf-container {
       text-align: center;
       margin-top: 2rem;
@@ -314,7 +314,7 @@
       background: #0891b2;
     }
 
-    /* Registration Fee Table (unchanged) */
+    /* Registration Fee Table */
     .table-wrapper {
       overflow-x: auto;
       margin-top: 1rem;
@@ -339,7 +339,7 @@
       color: #4b5563;
     }
 
-    /* CTA Button (unchanged) */
+    /* CTA Button */
     .cta-button {
       display: inline-flex;
       align-items: center;
@@ -355,7 +355,7 @@
       background: #1e40af;
     }
 
-    /* Footer (unchanged) */
+    /* Footer */
     .link-button {
       color: #1d4ed8;
       text-decoration: none;
@@ -414,12 +414,12 @@
         margin: -1.5rem -1.5rem 1rem -1.5rem;
       }
       .speaker-card, .profile-card, .department-card, .student-card {
-        width: 200px;
-        height: 260px;
+        width: 230px; /* Adjusted from 200px */
+        height: 300px; /* Adjusted from 260px */
       }
       .speaker-card img, .profile-card img, .department-card img, .student-card img {
-        width: 110px;
-        height: 110px;
+        width: 140px; /* Adjusted from 110px */
+        height: 140px; /* Adjusted from 110px */
       }
       .sponsor-card {
         width: 200px;
@@ -450,12 +450,12 @@
         padding: 0.3rem;
       }
       .speaker-card, .profile-card, .department-card, .student-card {
-        width: 180px;
-        height: 240px;
+        width: 210px; /* Adjusted from 180px */
+        height: 280px; /* Adjusted from 240px */
       }
       .speaker-card img, .profile-card img, .department-card img, .student-card img {
-        width: 100px;
-        height: 100px;
+        width: 130px; /* Adjusted from 100px */
+        height: 130px; /* Adjusted from 100px */
       }
       .sponsor-card {
         width: 180px;
@@ -497,7 +497,7 @@
     </div>
   </header>
 
-  <!-- Header Image -->
+  <!-- Header Image (unchanged) -->
   <section class="header-image" role="img" aria-label="Summer School on EVOML 2025 Banner" aria-describedby="header-tagline">
     <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img">
     <div class="overlay">
@@ -534,7 +534,7 @@
     </div>
   </section>
 
-  <!-- Keynote Speakers (unchanged) -->
+  <!-- Keynote Speakers -->
   <section class="py-12 px-4" id="keynote" role="region" aria-labelledby="keynote-speakers">
     <div class="max-w-7xl mx-auto">
       <h2 id="keynote-speakers" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
