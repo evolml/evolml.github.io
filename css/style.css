@@ -458,6 +458,13 @@ body {
     .info-card {
       padding: 1.5rem;
     }
+      .speakers-list {
+        padding: 1rem;
+      }
+      .speakers-list li {
+        font-size: 1rem;
+      }
+     
     .text-4xl {
       font-size: 2.25rem;
     }
