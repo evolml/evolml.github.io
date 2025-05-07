@@ -4,86 +4,487 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Conference 2025</title>
-  <meta name="description" content="Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025) at NIT Jalandhar">
+  <title>EvoML-2025</title>
+  <meta name="description" content="Summer School on EVOML 2025 at NIT Jalandhar">
   <meta name="keywords" content="conference, summer school, EVOML, NIT Jalandhar, machine learning">
   <meta name="author" content="NIT Jalandhar">
 
   <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025) ">
-  <meta property="og:image" content="https://via.placeholder.com/200">
-  <meta property="og:url" content="https://bablu2023.github.io/evoml/">
-  <meta property="og:site_name" content="Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025) ">
+  <meta property="og:title" content="Summer School on EVOML 2025">
+  <meta property="og:image" content="images/nitj.png">
+  <meta property="og:url" content="https://evolml.github.io/">
+  <meta property="og:site_name" content="Summer School on EVOML">
   <meta property="og:description" content="Join the Summer School on EVOML 2025 at NIT Jalandhar.">
   <meta name="twitter:title" content="Summer School on EVOML 2025">
-  <meta name="twitter:image" content="https://via.placeholder.com/200">
-  <meta name="twitter:url" content="https://bablu2023.github.io/evolml/">
+  <meta name="twitter:image" content="images/nitj.png">
+  <meta name="twitter:url" content="https://evolml.github.io/">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="images/nitj.png">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
 
   <style>
-    
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      background: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+    .nav-links li a {
+      color: #1f2937;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover, .nav-links li a.active {
+      color: #1d4ed8;
+    }
+    .nav-toggle .close-icon {
+      display: none;
+    }
+    .nav-toggle[aria-expanded="true"] .hamburger-icon {
+      display: none;
+    }
+    .nav-toggle[aria-expanded="true"] .close-icon {
+      display: block;
+    }
+
+    /* Header Image */
+    .header-image {
+      position: relative;
+      width: 95%;
+      margin: 0 auto;
+      height: 400px;
+      overflow: hidden;
+    }
+    .header-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .header-image .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+ TWIST: https://twist.com/2025/02/21/how-to-create-a-conference-event-page-in-wordpress/
+    .header-image .overlay h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      margin: 0;
+    }
+    .header-image .tag-line {
+      font-size: 1.25rem;
+      color: #ffffff;
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* General Section Styles */
+    .info-card {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      background: #ffffff;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(45deg, #1d4ed8, #06b6d4) border-box;
+      animation: fadeIn 0.6s ease-out;
+      padding: 2rem;
+    }
+    .info-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+    .info-card h2 {
+      background: linear-gradient(90deg, #1e40af, #0ea5e9);
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 10px;
+      text-align: center;
+      margin: -2rem -2rem 1rem -2rem;
+      border-radius: 12px 12px 0 0;
+      font-weight: 700;
+    }
+
+    /* Speakers Grid */
+    .speakers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .speaker-card, .profile-card, .department-card, .student-card {
+      background: #f2f2f2;
+      width: 220px;
+      height: 280px;
+      border-radius: 8px;
+      text-align: center;
+      padding: 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .speaker-card:hover, .profile-card:hover, .department-card:hover, .student-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .speaker-card img, .profile-card img, .department-card img, .student-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+    .speaker-card h3, .profile-card h3, .department-card h3, .student-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+      color: #000000;
+      font-weight: 500;
+    }
+    .speaker-card p, .profile-card p, .department-card p, .student-card p {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: #4b5563;
+    }
+
+    /* Sponsors Section */
+    .sponsors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .sponsor-card {
+      background: #f2f2f2;
+      width: 220px;
+      height: 250px;
+      border-radius: 8px;
+      text-align: center;
+      padding: 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sponsor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .sponsor-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+    .sponsor-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .sponsor-card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #000000;
+      font-weight: 500;
+    }
+    .tag-line {
+      font-size: 1rem;
+      color: #1d4ed8;
+      font-style: italic;
+      text-align: center;
+      margin: 0 0 1.5rem;
+      padding: 0.5rem 0;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* PDF Viewer */
+    #pdf-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    #pdf-render {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      max-width: 100%;
+    }
+    #controls {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    #controls button {
+      background: #1d4ed8;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #controls button:hover {
+      background: #1e40af;
+    }
+    .download-btn {
+      background: #06b6d4;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #0891b2;
+    }
+
+    /* Registration Fee Table */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .fee-table th, .fee-table td {
+      border: 1px solid #e5e7eb;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .fee-table th {
+      background: #1d4ed8;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .fee-table td {
+      background: #ffffff;
+      color: #4b5563;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1d4ed8;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .cta-button:hover {
+      background: #1e40af;
+    }
+
+    /* Footer */
+    .link-button {
+      color: #1d4ed8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .link-button:hover {
+      color: #1e40af;
+    }
+    .social-icon:hover {
+      color: #1d4ed8;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .header-image {
+        height: 300px;
+      }
+      .header-image .overlay h1 {
+        font-size: 2rem;
+      }
+      .header-image .tag-line {
+        font-size: 1.1rem;
+        margin-top: 0.4rem;
+        padding: 0.4rem;
+      }
+      .info-card {
+        padding: 1.5rem;
+      }
+      .info-card h2 {
+        font-size: 1.25rem;
+        margin: -1.5rem -1.5rem 1rem -1.5rem;
+      }
+      .speaker-card, .profile-card, .department-card, .student-card {
+        width: 200px;
+        height: 260px;
+      }
+      .speaker-card img, .profile-card img, .department-card img, .student-card img {
+        width: 110px;
+        height: 110px;
+      }
+      .sponsor-card {
+        width: 200px;
+        height: 230px;
+      }
+      .sponsor-card img {
+        width: 140px;
+        height: 140px;
+      }
+      .tag-line {
+        font-size: 0.95rem;
+        margin: 0 0 1rem;
+        padding: 0.4rem 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .header-image {
+        height: 250px;
+      }
+      .header-image .overlay h1 {
+        font-size: 1.5rem;
+      }
+      .header-image .tag-line {
+        font-size: 1rem;
+        margin-top: 0.3rem;
+        padding: 0.3rem;
+      }
+      .speaker-card, .profile-card, .department-card, .student-card {
+        width: 180px;
+        height: 240px;
+      }
+      .speaker-card img, .profile-card img, .department-card img, .student-card img {
+        width: 100px;
+        height: 100px;
+      }
+      .sponsor-card {
+        width: 180px;
+        height: 210px;
+      }
+      .sponsor-card img {
+        width: 130px;
+        height: 130px;
+      }
+      .tag-line {
+        font-size: 0.9rem;
+        margin: 0 0 0.75rem;
+        padding: 0.3rem 0;
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen">
   <!-- Navigation -->
   <header class="nav-bar" role="banner">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="https://bablu2023.github.io/evoml/" class="navbar-brand">Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025) </a>
+      <a href="https://evolml.github.io/" class="navbar-brand">Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
-        <svg class="w-6 h-6" fill="none" stroke="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-6 h-6 hamburger-icon" fill="none" stroke="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg class="w-6 h-6 close-icon" fill="none" stroke="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about" class="active">About</a></li>
         <li><a href="#registration-link">Registration</a></li>
         <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#">Poster</a></li>
-        <li><a href="#">Accommodation</a></li>
-        <li><a href="#">Live</a></li>
+        <li><a href="javascript:void(0)" aria-label="Poster link placeholder, to be updated">Poster</a></li>
+        <li><a href="javascript:void(0)" aria-label="Accommodation link placeholder, to be updated">Accommodation</a></li>
+        <li><a href="javascript:void(0)" aria-label="Live link placeholder, to be updated">Live</a></li>
       </ul>
     </div>
   </header>
 
   <!-- Header Image -->
-<section class="header-image" role="img" aria-label="Summer School on EVOML 2025 Banner">
-  <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img">
-  <div class="overlay">
-    <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
-  </div>
-</section>
-
-<style>
-.header-image {
-  position: relative;
-  height: 400px; /* Fixed height */
-  overflow: hidden;
-}
-
-.header-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center; /* Focus on center of image */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .header-image { height: 300px; }
-}
-@media (max-width: 480px) {
-  .header-image { height: 250px; }
-}
-</style>
+  <section class="header-image" role="img" aria-label="Summer School on EVOML 2025 Banner" aria-describedby="header-tagline">
+    <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img">
+    <div class="overlay">
+      <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
+      <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p>
+    </div>
+  </section>
 
   <!-- About Section -->
   <section id="about" class="py-12 px-4" role="region" aria-labelledby="about">
@@ -92,7 +493,7 @@
       <p class="text-lg text-gray-600 leading-relaxed">
         The <strong>"Evolutionary Algorithms and Machine Learning: Theory and Applications"</strong> 
         summer school offers a comprehensive and intensive exploration of the intersection 
-        between <strong>evolutionary algorithms (EAs)</strong> and <strong>machine learning (ML)</strong>. This program is 
+        between <strong>Evolutionary Algorithms (EAs)</strong> and <strong>Machine Learning (ML)</strong>. This program is 
         designed to provide participants with both theoretical foundations and practical 
         insights into how evolutionary strategies can enhance machine 
         learning models and vice versa. Participants will delve into the principles of 
@@ -108,179 +509,167 @@
         engage in discussions, work on projects, and gain insights into the latest trends 
         and future directions of research at the intersection of evolutionary algorithms and machine learning.
       </p>
-      <p class="text-lg text-gray-600 mt-4"><strong>When?</strong> 16th June 2025 – 20th June 2025</p>
-      <p class="text-lg text-gray-600"><strong>Where?</strong> Dr B R Ambedkar National Institute of Technology Jalandhar, Punjab, India.</p>
+      <p class="text-lg text-gray-600 mt-4"><strong>When?</strong> 16th June 2025 – 20th June 2025 (Hybrid Mode)</p>
+      <p class="text-lg text-gray-600"><strong>Where?</strong> Department of Mathematics and Computing, Dr B R Ambedkar National Institute of Technology Jalandhar, Punjab, India.</p>
     </div>
   </section>
 
-
- <!-- Keynote Speakers -->
- <section class="py-12 px-4" id="speakers" role="region" aria-labelledby="speakers-section">
-  <div class="max-w-7xl mx-auto">
-    <h2 id="speakers-section" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
-    <div class="speakers-grid">
-      <!-- Speaker 1 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/lipo_wang.png" alt="Stephen J. Wright, speaker">
-        <h3>Stephen J. Wright</h3>
-        <p>Nanyang Technological University</p>
-        <p>Singapore</p>
-      </article>
-      <!-- Speaker 2 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/donghwi_jung.png" alt="Dr. Donghwi Jung, speaker">
-        <h3>Dr. Donghwi Jung</h3>
-        <p>Korea University</p>
-        <p>Korea</p>
-      </article>
-      <!-- Speaker 3 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/s" alt="Dr. Swagatam Das, speaker">
-        <h3>Dr. Swagatam Das</h3>
-        <p>Indian Statistical Institute</p>
-        <p>Kolkata</p>
-      </article>
-      <!-- Speaker 4 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/an" alt="Andrés L. Medaglia, speaker">
-        <h3>Andrés L. Medaglia</h3>
-        <p>Universidad de los Andes (Colombia)</p>
-        <p>Colombia</p>
-      </article>
-      <!-- Speaker 5 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/bapi_dutta.png" alt="Dr. Bapi Dutta, speaker">
-        <h3>Dr. Bapi Dutta</h3>
-        <p>University of Jaen</p>
-        <p>Jaen, Spain</p>
-      </article>
-      <!-- Speaker 6 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/indu_bala.png" alt="Dr. Indu Bala, speaker">
-        <h3>Dr. Indu Bala</h3>
-        <p>University of Adelaide</p>
-        <p>Australia</p>
-      </article>
-      <!-- Speaker 7 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/manoj_thakur.png" alt="Dr. Manoj Thakur, speaker">
-        <h3>Dr. Manoj Thakur</h3>
-        <p>Indian Institute of Technology</p>
-        <p>Mandi</p>
-      </article>
-      <!-- Speaker 8 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/JC_bansal.png" alt="Dr. JC Bansal, speaker">
-        <h3>Dr. JC Bansal</h3>
-        <p>South Asian University</p>
-      </article>
-      <!-- Speaker 9 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/2388-Dr._Shubham_Photo.png" alt="Dr. Shubham Gupta, speaker">
-        <h3>Dr. Shubham Gupta</h3>
-        <p>Motilal Nehru National Institute of Technology</p>
-        <p>Allahabad</p>
-      </article>
-      <!-- Speaker 10 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/dikshit.png" alt="Dr. Dikshit Chauhan, speaker">
-        <h3>Dr. Dikshit Chauhan</h3>
-        <p>National University of Singapore</p>
-        <p>Singapore</p>
-      </article>
-      <!-- Speaker 11 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/kedar_nath.png" alt="Dr. Kedar Nath Das, speaker">
-        <h3>Dr. Kedar Nath Das</h3>
-        <p>National Institute of Technology</p>
-        <p>Silchar</p>
-      </article>
-      <!-- Speaker 12 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/anupam_sir.png" alt="Dr. Anupam Yadav, speaker">
-        <h3>Dr. Anupam Yadav</h3>
-        <p>Dr B R Ambedkar National Institute of Technology</p>
-        <p>Jalandhar</p>
-      </article>
-      <!-- Speaker 13 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/op_verma.png" alt="Dr. OP Verma, speaker">
-        <h3>Dr. OP Verma</h3>
-        <p>Dr B R Ambedkar National Institute of Technology</p>
-        <p>Jalandhar</p>
-      </article>
-      <!-- Speaker 14 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/harish_sharma.png" alt="Dr. Harish Sharma, speaker">
-        <h3>Dr. Harish Sharma</h3>
-        <p>Rajasthan Technical University</p>
-        <p>Rajasthan</p>
-      </article>
-      <!-- Speaker 15 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/nn" alt="Dr. Nilanjan Dey, speaker">
-        <h3>Dr. Nilanjan Dey</h3>
-        <p>Techno International New Town</p>
-        <p>Kolkata</p>
-      </article>
-      <!-- Speaker 16 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/hemant kumar (1).jpg" alt="Dr. Hemant Kumar Singh, speaker">
-        <h3>Dr. Hemant Kumar Singh</h3>
-        <p>University of New South Wales</p>
-        <p>Australia</p>
-      </article>
-      <!-- Speaker 17 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/carlos a..jpg" alt="Prof. Carlos A. Coello Coello, speaker">
-        <h3>Prof. Carlos A. Coello Coello</h3>
-        <p>CINVESTAV-IPN</p>
-        <p>Mexico</p>
-      </article>
-      <!-- Speaker 18 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/abhishek gupta.jpg" alt="Dr. Abhishek Gupta, speaker">
-        <h3>Dr. Abhishek Gupta</h3>
-        <p>Indian Institute of Technology</p>
-        <p>Goa</p>
-      </article>
-      <!-- Speaker 19 -->
-      <article class="speaker-card">
-        <img class="speaker-image" src="w_files/Efren.jpg" alt="Dr. Efrén Mezura-Montes, speaker">
-        <h3>Dr. Efrén Mezura-Montes</h3>
-        <p>University of Veracruz</p>
-        <p>Mexico</p>
-      </article>
+  <!-- Keynote Speakers -->
+  <section class="py-12 px-4" id="keynote" role="region" aria-labelledby="keynote-speakers">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="keynote-speakers" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <img src="w_files/lipo_wang.png" alt="Portrait of Prof Lipo Wang">
+          <h3>Prof Lipo Wang</h3>
+          <p>Nanyang Technological University</p>
+          <p>Singapore</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Kusum_Deep.png" alt="Portrait of Prof Kusum Deep">
+          <h3>Prof Kusum Deep</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Roorkee</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Efren (2).png" alt="Portrait of Dr Efrén Mezura-Montes">
+          <h3>Dr Efrén Mezura-Montes</h3>
+          <p>University of Veracruz</p>
+          <p>Mexico</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/donghwi_jung.png" alt="Portrait of Dr Donghwi Jung">
+          <h3>Dr Donghwi Jung</h3>
+          <p>Korea University</p>
+          <p>Korea</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Anupum_Trivedi.png" alt="Portrait of Dr Anupam Trivedi">
+          <h3>Dr Anupam Trivedi</h3>
+          <p>National University of Singapore</p>
+          <p>Singapore</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/manoj_thakur.png" alt="Portrait of Dr Manoj Thakur">
+          <h3>Dr Manoj Thakur</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Mandi</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Dr._Sanjay.png.jpg" alt="Portrait of Prof Sanjay Singh">
+          <h3>Prof Sanjay Singh</h3>
+          <p>Senior Pr. Scientist</p>
+          <p>Head CSIR-CEERI</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/JC_bansal.png" alt="Portrait of Dr JC Bansal">
+          <h3>Dr JC Bansal</h3>
+          <p>South Asian University</p>
+          <p></p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/abhishek_gupta.png" alt="Portrait of Dr Abhishek Gupta">
+          <h3>Dr Abhishek Gupta</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Goa</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/bapi_dutta.png" alt="Portrait of Dr Bapi Dutta">
+          <h3>Dr Bapi Dutta</h3>
+          <p>University of Jaen</p>
+          <p>Jaen, Spain</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/indu.png" alt="Portrait of Dr Indu Bala">
+          <h3>Dr Indu Bala</h3>
+          <p>University of Adelaide</p>
+          <p>Australia</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/kedar_nath.png" alt="Portrait of Dr Kedar Nath Das">
+          <h3>Dr Kedar Nath Das</h3>
+          <p>National Institute of Technology</p>
+          <p>Silchar</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/hemant_kumar.png" alt="Portrait of Dr Hemant Kumar Singh">
+          <h3>Dr Hemant Kumar Singh</h3>
+          <p>University of New South Wales</p>
+          <p>Australia</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/harish_sharma.png" alt="Portrait of Dr Harish Sharma">
+          <h3>Dr Harish Sharma</h3>
+          <p>Rajasthan Technical University</p>
+          <p>Rajasthan</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/anupam_sir.png" alt="Portrait of Dr Anupam Yadav">
+          <h3>Dr Anupam Yadav</h3>
+          <p>Dr B R Ambedkar National Institute of Technology</p>
+          <p>Jalandhar</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/op_verma.png" alt="Portrait of Dr OP Verma">
+          <h3>Dr OP Verma</h3>
+          <p>Dr B R Ambedkar National Institute of Technology</p>
+          <p>Jalandhar</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/2388-Dr._Shubham_Photo.png" alt="Portrait of Dr Shubham Gupta">
+          <h3>Dr Shubham Gupta</h3>
+          <p>Motilal Nehru National Institute of Technology</p>
+          <p>Allahabad</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/dikshit.png" alt="Portrait of Dr Dikshit Chauhan">
+          <h3>Dr Dikshit Chauhan</h3>
+          <p>National University of Singapore</p>
+          <p>Singapore</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Aninda+Bose.png" alt="Portrait of Mr Aninda Bose">
+          <h3>Mr Aninda Bose</h3>
+          <p>Executive Editor Springer Nature group</p>
+          <p></p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/scindhiya.jpg" alt="Portrait of Dr Scindhiya Laxmi">
+          <h3>Dr Scindhiya Laxmi</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Dhanbad</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
- <!-- All Speakers List -->
+  <!-- All Speakers List -->
   <section class="py-12 px-4" id="speakers-list" role="region" aria-labelledby="speakers-list">
     <div class="max-w-7xl mx-auto">
       <div class="info-card p-8">
         <h2 id="speakers-list" class="text-4xl font-bold text-gray-900 tracking-tight">All Speakers</h2>
         <div class="speakers-list">
           <ul>
-            <li><a href="https://example.com/stephen-j-wright" aria-label="Visit Stephen J. Wright's profile">Stephen J. Wright</a>, Nanyang Technological University, Singapore</li>
-            <li><a href="https://example.com/donghwi-jung" aria-label="Visit Dr. Donghwi Jung's profile">Dr. Donghwi Jung</a>, Korea University, Korea</li>
-            <li><a href="https://example.com/swagatam-das" aria-label="Visit Dr. Swagatam Das's profile">Dr. Swagatam Das</a>, Indian Statistical Institute, Kolkata</li>
-            <li><a href="https://example.com/andres-l-medaglia" aria-label="Visit Andrés L. Medaglia's profile">Andrés L. Medaglia</a>, Universidad de los Andes, Colombia</li>
-            <li><a href="https://example.com/bapi-dutta" aria-label="Visit Dr. Bapi Dutta's profile">Dr. Bapi Dutta</a>, University of Jaen, Jaen, Spain</li>
-            <li><a href="https://example.com/indu-bala" aria-label="Visit Dr. Indu Bala's profile">Dr. Indu Bala</a>, University of Adelaide, Australia</li>
-            <li><a href="https://example.com/manoj-thakur" aria-label="Visit Dr. Manoj Thakur's profile">Dr. Manoj Thakur</a>, Indian Institute of Technology, Mandi</li>
-            <li><a href="https://example.com/jc-bansal" aria-label="Visit Dr. JC Bansal's profile">Dr. JC Bansal</a>, South Asian University</li>
-            <li><a href="https://example.com/shubham-gupta" aria-label="Visit Dr. Shubham Gupta's profile">Dr. Shubham Gupta</a>, Motilal Nehru National Institute of Technology, Allahabad</li>
-            <li><a href="https://example.com/dikshit-chauhan" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
-            <li><a href="https://example.com/kedar-nath-das" aria-label="Visit Dr. Kedar Nath Das's profile">Dr. Kedar Nath Das</a>, National Institute of Technology, Silchar</li>
-            <li><a href="https://example.com/anupam-yadav" aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
-            <li><a href="https://example.com/op-verma" aria-label="Visit Dr. OP Verma's profile">Dr. OP Verma</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
-            <li><a href="https://example.com/harish-sharma" aria-label="Visit Dr. Harish Sharma's profile">Dr. Harish Sharma</a>, Rajasthan Technical University, Rajasthan</li>
-            <li><a href="https://example.com/nilanjan-dey" aria-label="Visit Dr. Nilanjan Dey's profile">Dr. Nilanjan Dey</a>, Techno International New Town, Kolkata</li>
-            <li><a href="https://example.com/hemant-kumar-singh" aria-label="Visit Dr. Hemant Kumar Singh's profile">Dr. Hemant Kumar Singh</a>, University of New South Wales, Australia</li>
-            <li><a href="https://example.com/carlos-a-coello-coello" aria-label="Visit Prof. Carlos A. Coello Coello's profile">Prof. Carlos A. Coello Coello</a>, CINVESTAV-IPN, Mexico</li>
-            <li><a href="https://example.com/abhishek-gupta" aria-label="Visit Dr. Abhishek Gupta's profile">Dr. Abhishek Gupta</a>, Indian Institute of Technology, Goa</li>
-            <li><a href="https://example.com/efren-mezura-montes" aria-label="Visit Dr. Efrén Mezura-Montes's profile">Dr. Efrén Mezura-Montes</a>, University of Veracruz, Mexico</li>
+            <li><a href="https://personal.ntu.edu.sg/elpwang/" aria-label="Visit Dr Lipo Wang's profile">Dr. Lipo Wang</a>, Nanyang Technological University, Singapore</li>
+            <li><a href="https://www.iitr.ac.in/~MA/Deep_Kusum" aria-label="Visit Prof Kusum Deep's profile">Prof Kusum Deep</a>, Indian Institute of Technology, Roorkee </li>
+            <li><a href="https://uv-mx.academia.edu/Efr%C3%A9nMezuraMontes" aria-label="Visit Dr Efrén Mezura-Montes's profile">Dr. Efrén Mezura-Montes</a>, University of Veracruz, Mexico</li>
+            <li><a href="https://pure.korea.ac.kr/en/persons/donghwi-jung/fingerprints/" aria-label="Visit Dr Donghwi Jung's profile">Dr. Donghwi Jung</a>, Korea University, Korea</li>
+            <li><a href="https://scholar.google.com.sg/citations?user=WFpIByoAAAAJ&hl=en" aria-label="Visit Dr Anupam Trivedi's profile">Dr. Anupam Trivedi</a>, National University of Singapore, Singapore</li>
+            <li><a href="https://som.iitmandi.ac.in/people/faculty/manoj-thakur" aria-label="Visit Dr. Manoj Thakur's profile">Dr. Manoj Thakur</a>, Indian Institute of Technology, Mandi</li>
+            <li><a href="https://sites.google.com/site/sanjaycsirceeri/" aria-label="Visit Prof Sanjay Singh's profile">Prof Sanjay Singh</a>, Senior Pr. Scientist Head CSIR-CEERI</li>      
+            <li><a href="https://people.sau.int/~jcbansal/" aria-label="Visit Dr. JC Bansal's profile">Dr. JC Bansal</a>, South Asian University</li>
+            <li><a href="https://iitgoa.ac.in/SMS-faculty-profile/?uid=abhishekgupta&&exp=ME" aria-label="Visit Dr. Abhishek Gupta's profile">Dr. Abhishek Gupta</a>, Indian Institute of Technology, Goa</li>
+            <li><a href="https://scholar.google.co.in/citations?user=qTB0f40AAAAJ&hl=en" aria-label="Visit Dr. Bapi Dutta's profile">Dr. Bapi Dutta</a>, University of Jaen, Jaen, Spain</li>
+            <li><a href="https://www.adelaide.edu.au/directory/indu.bala" aria-label="Visit Dr. Indu Bala's profile">Dr. Indu Bala</a>, University of Adelaide, Australia</li>
+            <li><a href="https://www.nits.ac.in/faculties/kedar-nath-das" aria-label="Visit Dr. Kedar Nath Das's profile">Dr. Kedar Nath Das nadr></a>, National Institute of Technology, Silchar</li>
+            <li><a href="https://www.unsw.edu.au/staff/hemant-singh" aria-label="Visit Dr. Hemant Kumar Singh's profile">Dr. Hemant Kumar Singh</a>, University of New South Wales, Australia</li>
+            <li><a href="https://www.rtu.ac.in/index/viewdata.php?page=Dr-Harish-Sharma183" aria-label="Visit Dr. Harish Sharma's profile">Dr. Harish Sharma</a>, Rajasthan Technical University, Rajasthan</li>
+            <li><a href="https://departments.nitj.ac.in/dept/ma/Faculty/6430446b38bff038a7808524" aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
+            <li><a href="https://departments.nitj.ac.in/dept/ice/Faculty/6430446638bff038a7807a2f" aria-label="Visit Dr. OP Verma's profile">Dr. OP Verma</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
+            <li><a href="https://mnnit.ac.in/profile/shubham.gupta" aria-label="Visit Dr. Shubham Gupta's profile">Dr. Shubham Gupta</a>, Motilal Nehru National Institute of Technology, Allahabad</li>
+            <li><a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
+            <li><a href="https://www.springer.com/fr/authors-editors/aninda-bose/5084?srsltid=AfmBOopFWGzPJSaKR7WPADMOKNJRzBbTPRMBfMJDx0uZPKEEfdoIFsL1" aria-label="Visit Mr Aninda Bose's profile">Mr Aninda Bose</a>, Executive Editor Springer Nature group</li>
+            <li><a href="https://www.iitism.ac.in/faculty-details?faculty=scindhiya" aria-label="Visit Dr Scindhiya Laxmi's profile">Dr Scindhiya Laxmi</a>, Indian Institute of Technology Dhanbad</li>
           </ul>
         </div>
       </div>
@@ -301,113 +690,57 @@
       </div>
       <!-- Researchers -->
       <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4 text-center">Researchers</h3>
-     <div class="speakers-grid" id="student-cards">
-		 
-		  <div class="profile-card student-card">
-			<img src="w_files/deepika.png" alt="">
-			<h3>Deepika Khurana</h3>
-			<p>PhD Student</p>
-		        </div>
-			
-		  <div class="profile-card student-card">
-			<img src="w_files/Shrishti.png" alt="">
-			<h3>Shrishti Chamoli</h3>
-			<p>PhD Student</p>
-		        </div>
-			
-		  <div class="profile-card student-card">
-			<img src="w_files/nitin01__1.png" alt="">
-			<h3>Nitin Gupta</h3>
-			<p>PhD Student</p>
-		        </div>
-	          <div class="profile-card student-card">
-			<img src="w_files/myphoto.jpg" alt="">
-			<h3>Bablu Kumar Sah</h3>
-			<p>PhD Student</p>
-		        </div>
-		
-			
-		  <div class="profile-card student-card">
-			<img src="w_files/Ram_S.png" alt="">
-			<h3>Ram Sundar</h3>
-			<p>PhD Student</p>
-		        </div>
-
-		<div class="profile-card student-card">
-			<img src="w_files/Ram.png" alt="">
-			<h3>Vidhi Sharma</h3>
-			<p>PhD Student</p>
-		        </div>
-		</div>
+      <div class="speakers-grid" id="student-cards">
+        <article class="profile-card student-card">
+          <img src="w_files/Deepika.jpeg" alt="Portrait of Deepika Khurana">
+          <h3>Deepika Khurana</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="profile-card student-card">
+          <img src="w_files/Shrishti.png" alt="Portrait of Shrishti Chamoli">
+          <h3>Shrishti Chamoli</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="profile-card student-card">
+          <img src="w_files/nitin01__1.png" alt="Portrait of Nitin Gupta">
+          <h3>Nitin Gupta</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="profile-card student-card">
+          <img src="w_files/myphoto.jpg" alt="Portrait of Bablu Kumar Sah">
+          <h3>Bablu Kumar Sah</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="profile-card student-card">
+          <img src="w_files/Ram_S.png" alt="Portrait of Ram Sundar">
+          <h3>Ram Sundar</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="profile-card student-card">
+          <img src="w_files/vidhi.jpeg" alt="Portrait of Vidhi Sharma">
+          <h3>Vidhi Sharma</h3>
+          <p>PhD Student</p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- Schedule (PDF Viewer) -->
   <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule">
-    <div class="max-w-7xl mx-auto" >
+    <div class="max-w-7xl mx-auto">
       <h2 id="schedule" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
-
-
-	    <div id="pdf-container">
-    <canvas id="pdf-render"></canvas>
-    <div id="controls">
-      <button id="prev-page">Previous</button>
-      <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
-      <button id="next-page">Next</button>
-	      <a href="pdfs/schedule.pdf" download class="download-btn">Download PDF</a>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-  <script>
-    const url = 'pdfs/schedule.pdf';
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
-
-    let pdfDoc = null,
-        pageNum = 1,
-        canvas = document.getElementById('pdf-render'),
-        ctx = canvas.getContext('2d');
-
-    function renderPage(num) {
-      pdfDoc.getPage(num).then(function(page) {
-        const viewport = page.getViewport({ scale: 1.5 });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        const renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        page.render(renderContext).promise.then(function () {
-          document.getElementById('page-num').textContent = num;
-        });
-      });
-    }
-
-    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-      pdfDoc = pdfDoc_;
-      document.getElementById('page-count').textContent = pdfDoc.numPages;
-      renderPage(pageNum);
-    });
-
-    document.getElementById('next-page').addEventListener('click', function () {
-      if (pageNum >= pdfDoc.numPages) return;
-      pageNum++;
-      renderPage(pageNum);
-    });
-
-    document.getElementById('prev-page').addEventListener('click', function () {
-      if (pageNum <= 1) return;
-      pageNum--;
-      renderPage(pageNum);
-    });
-  </script>
-	  
+      <div id="pdf-container">
+        <div id="error-message" class="hidden text-red-600 text-center">Failed to load PDF. Please try downloading it.</div>
+        <canvas id="pdf-render"></canvas>
+        <div id="controls">
+          <button id="prev-page">Previous</button>
+          <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
+          <button id="next-page">Next</button>
+          <a href="pdfs/schedule.pdf" download class="download-btn">Download PDF</a>
+        </div>
+      </div>
     </div>
   </section>
-
-  
-
-  <div class="bg-pattern"></div>
 
   <!-- Main Content -->
   <section class="pt-12 pb-20 px-4">
@@ -415,25 +748,29 @@
       <!-- Card 7: Registration Link -->
       <article class="info-card p-8 text-center" role="region" aria-labelledby="registration-link">
         <h2 id="registration-link" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Link</h2>
-        <p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
+        <p class="text-gray-600 text-lg leading-relaxed">
           Register and pay the fee through the official portal:
-         
         </p>
         <img src="images/EVO_ QR.png" alt="Registration QR Code" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description">
+        <p class="text-gray-600 text-sm mt-2">Scan the QR code or click the button to register.</p>
         <p id="qr-code-description" class="sr-only">QR code for Summer School registration</p>
-	       <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-            Go to Registration
-          </a>
+        <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+          Go to Registration
+        </a>
+        <p class="text-gray-600 text-lg mt-4"><strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.</p>
       </article>
 
       <!-- Card 8: Registration Fee -->
       <article class="info-card p-8" role="region" aria-labelledby="registration-fee">
         <h2 id="registration-fee" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Fee</h2>
-        <p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
+        <p class="text-gray-600 text-lg leading-relaxed">
           The non-refundable registration fee structure is as follows:
+        </p>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
         </p>
         <div class="table-wrapper">
           <table class="fee-table" role="grid" aria-describedby="fee-table-description">
@@ -473,6 +810,33 @@
     </div>
   </section>
 
+  <!-- Sponsors -->
+  <section class="py-12 px-4" id="sponsors" role="region" aria-labelledby="sponsors" aria-describedby="sponsors-tagline">
+    <div class="max-w-7xl mx-auto">
+      <div class="info-card">
+        <h2 id="sponsors" class="text-4xl font-bold text-gray-900 tracking-tight">Sponsors</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6 text-center">
+          We are grateful for the support of our sponsors, whose contributions make this event possible.
+        </p>
+        <p class="tag-line" id="sponsors-tagline">Technically and Financially Sponsored by SCRS</p>
+        <div class="sponsors-grid">
+          <article class="sponsor-card">
+            <a href="https://www.scrs.in/" target="_blank" aria-label="Visit Soft Computing Research Society website">
+              <img src="images/scrs.png" alt="Soft Computing Research Society logo">
+              <h3>Soft Computing Research Society</h3>
+            </a>
+          </article>
+          <article class="sponsor-card">
+            <a href="https://www.nitj.ac.in" target="_blank" aria-label="Visit NIT Jalandhar website">
+              <img src="images/nitj.png" alt="NIT Jalandhar logo">
+              <h3>NIT Jalandhar</h3>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-gray-50 py-12 px-4 relative">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d4ed8] to-[#06b6d4]"></div>
@@ -485,21 +849,18 @@
       <div>
         <h3 class="text-lg font-medium mb-4">Contact Us</h3>
         <p>Dr. Anupam Yadav<br>
-            Associate Professor<br>
-            Department of Mathematics<br>
-            Dr B. R. Ambedkar National Institute of Technology Jalandhar, Punjab, India.
-            Mobile : +91 9627273447<br>
-            </p>
-            <p>Email: <a  type="email" href="mailto:anupam@nitj.ac.in" class="link-button">anupam@nitj.ac.in</a></p>
-       
+          Associate Professor<br>
+          Department of Mathematics<br>
+          Dr B. R. Ambedkar National Institute of Technology Jalandhar, Punjab, India.<br>
+          Mobile: +91 9627273447
+        </p>
+        <p>Email: <a type="email" href="mailto:anupam@nitj.ac.in" class="link-button">anupam@nitj.ac.in</a></p>
       </div>
       <div>
-        <h3 class="text-lg font-medium mb-4">Quick Links</h3>
-        <p><a href="#" class="link-button">Events</a></p>
+        <h3 class="text-lg font-medium mb-4">Query</h3>
+        <p><a href="javascript:void(0)" class="link-button" aria-label="Events link placeholder, to be updated">Events</a></p>
         <p><a href="https://departments.nitj.ac.in/dept/ma/Home" class="link-button">Official Website</a></p>
-        
-        <p>Email: <a  type="email" href="mailto:evolml@nitj.ac.in" class="link-button">evolml@nitj.ac.in</a></p>
-        <p>Phone: +91-000000000</p>
+        <p>Email: <a type="email" href="mailto:evolml@nitj.ac.in" class="link-button">evolml@nitj.ac.in</a></p>
       </div>
       <div>
         <h3 class="text-lg font-medium mb-4">Follow Us</h3>
@@ -509,7 +870,7 @@
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
             </svg>
           </a>
-          <a href="https://linkedin.com" class="social-icon text-gray-600" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/nitjalandhar" class="social-icon text-gray-600" aria-label="LinkedIn">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
             </svg>
@@ -584,8 +945,5 @@
       document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
     });
   </script>
-
-
-
 </body>
 </html>
