@@ -205,7 +205,7 @@ body {
     }
   .info-card {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    background: #ffffff;
+   
     border: 2px solid transparent;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
