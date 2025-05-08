@@ -413,17 +413,16 @@ body {
       font-size: 1rem;
       max-width: 100%;
     }
-    .speaker-card {
-      width: 280px;
-      height: 420px;
-    }
-    .speaker-card img {
-      width: 280px;
-      height: 390px;
-    }
-    .speaker-card h3, .speaker-card p {
-      font-size: 1.3rem;
-    }
+	  .speakers-grid {
+        gap: 1.25rem; /* Reduced from 2rem */
+      }
+      .speaker-card {
+        width: 200px; /* Reduced from 230px */
+        height: 260px; /* Reduced from 300px */
+        padding: 1rem; /* Consistent with desktop */
+      }
+    
+  
     .sponsor-card {
         width: 200px;
         height: 230px;
