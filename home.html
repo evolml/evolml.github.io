@@ -177,15 +177,15 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem; /* Increased gap for larger cards */
+      gap: 2rem;
     }
     .speaker-card, .profile-card, .department-card, .student-card {
       background: #f2f2f2;
-      width: 250px; /* Increased from 220px */
-      height: 320px; /* Increased from 280px */
+      width: 250px;
+      height: 320px;
       border-radius: 8px;
       text-align: center;
-      padding: 1.5rem; /* Increased padding */
+      padding: 1.5rem;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -198,11 +198,11 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     .speaker-card img, .profile-card img, .department-card img, .student-card img {
-      width: 150px; /* Increased from 120px */
-      height: 150px; /* Increased from 120px */
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 0.75rem; /* Adjusted for spacing */
+      margin-bottom: 0.75rem;
     }
     .speaker-card h3, .profile-card h3, .department-card h3, .student-card h3 {
       margin: 0.5rem 0;
@@ -414,12 +414,12 @@
         margin: -1.5rem -1.5rem 1rem -1.5rem;
       }
       .speaker-card, .profile-card, .department-card, .student-card {
-        width: 230px; /* Adjusted from 200px */
-        height: 300px; /* Adjusted from 260px */
+        width: 230px;
+        height: 300px;
       }
       .speaker-card img, .profile-card img, .department-card img, .student-card img {
-        width: 140px; /* Adjusted from 110px */
-        height: 140px; /* Adjusted from 110px */
+        width: 140px;
+        height: 140px;
       }
       .sponsor-card {
         width: 200px;
@@ -449,13 +449,17 @@
         margin-top: 0.3rem;
         padding: 0.3rem;
       }
+      .speakers-grid {
+        gap: 1.5rem; /* Adjusted for mobile */
+      }
       .speaker-card, .profile-card, .department-card, .student-card {
-        width: 210px; /* Adjusted from 180px */
-        height: 280px; /* Adjusted from 240px */
+        width: 240px; /* Increased from 210px */
+        height: 300px; /* Increased from 280px */
+        padding: 1.25rem; /* Adjusted for balance */
       }
       .speaker-card img, .profile-card img, .department-card img, .student-card img {
-        width: 130px; /* Adjusted from 100px */
-        height: 130px; /* Adjusted from 100px */
+        width: 130px;
+        height: 130px;
       }
       .sponsor-card {
         width: 180px;
@@ -687,7 +691,9 @@
             <li><a href="https://departments.nitj.ac.in/dept/ma/Faculty/6430446b38bff038a7808524" aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
             <li><a href="https://departments.nitj.ac.in/dept/ice/Faculty/6430446638bff038a7807a2f" aria-label="Visit Dr. OP Verma's profile">Dr. OP Verma</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
             <li><a href="https://mnnit.ac.in/profile/shubham.gupta" aria-label="Visit Dr. Shubham Gupta's profile">Dr. Shubham Gupta</a>, Motilal Nehru National Institute of Technology, Allahabad</li>
-            <li><a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
+            <li><a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore,
+
+ Singapore</li>
             <li><a href="https://www.springer.com/fr/authors-editors/aninda-bose/5084?srsltid=AfmBOopFWGzPJSaKR7WPADMOKNJRzBbTPRMBfMJDx0uZPKEEfdoIFsL1" aria-label="Visit Mr Aninda Bose's profile">Mr Aninda Bose</a>, Executive Editor Springer Nature group</li>
             <li><a href="https://www.iitism.ac.in/faculty-details?faculty=scindhiya" aria-label="Visit Dr Scindhiya Laxmi's profile">Dr Scindhiya Laxmi</a>, Indian Institute of Technology Dhanbad</li>
           </ul>
@@ -696,7 +702,7 @@
     </div>
   </section>
 
-  <!-- Organizing Committee (unchanged) -->
+  <!-- Organizing Committee -->
   <section class="py-12 px-4" id="organizing-committee" role="region" aria-labelledby="organizing-committee">
     <div class="max-w-7xl mx-auto">
       <h2 id="organizing-committee" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Organizers</h2>
