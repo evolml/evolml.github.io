@@ -177,9 +177,23 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem; /* Reduced from 2rem */
     }
-    .speaker-card, .profile-card, .department-card, .student-card {
+    .speaker-card {
+      background: #f2f2f2;
+      width: 220px; /* Reduced from 250px */
+      height: 280px; /* Reduced from 320px */
+      border-radius: 8px;
+      text-align: center;
+      padding: 1rem; /* Reduced from 1.5rem */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-card, .department-card, .student-card {
       background: #f2f2f2;
       width: 250px;
       height: 320px;
@@ -198,8 +212,8 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     .speaker-card img {
-      width: 120px; /* Updated to 120px */
-      height: 120px; /* Updated to 120px */
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 0.75rem;
@@ -420,7 +434,15 @@
         font-size: 1.25rem;
         margin: -1.5rem -1.5rem 1rem -1.5rem;
       }
-      .speaker-card, .profile-card, .department-card, .student-card {
+      .speakers-grid {
+        gap: 1.25rem; /* Reduced from 2rem */
+      }
+      .speaker-card {
+        width: 200px; /* Reduced from 230px */
+        height: 260px; /* Reduced from 300px */
+        padding: 1rem; /* Consistent with desktop */
+      }
+      .profile-card, .department-card, .student-card {
         width: 230px;
         height: 300px;
       }
@@ -457,9 +479,14 @@
         padding: 0.3rem;
       }
       .speakers-grid {
-        gap: 1.5rem;
+        gap: 1rem; /* Reduced from 1.5rem */
       }
-      .speaker-card, .profile-card, .department-card, .student-card {
+      .speaker-card {
+        width: 200px; /* Reduced from 240px */
+        height: 260px; /* Reduced from 300px */
+        padding: 1rem; /* Consistent with desktop */
+      }
+      .profile-card, .department-card, .student-card {
         width: 240px;
         height: 300px;
         padding: 1.25rem;
@@ -551,115 +578,115 @@
       <h2 id="keynote-speakers" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
       <div class="speakers-grid">
         <article class="speaker-card">
-          <img src="w_files/lipo_wang.jpg" alt="Portrait of Prof Lipo Wang">
+          <img src="w_files/lipo_wang.png" alt="Portrait of Prof Lipo Wang">
           <h3>Prof Lipo Wang</h3>
           <p>Nanyang Technological University</p>
           <p>Singapore</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Kusum_Deep.jpg" alt="Portrait of Prof Kusum Deep">
+          <img src="w_files/Kusum_Deep.png" alt="Portrait of Prof Kusum Deep">
           <h3>Prof Kusum Deep</h3>
           <p>Indian Institute of Technology</p>
           <p>Roorkee</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Efren.jpg" alt="Portrait of Dr Efrén Mezura-Montes">
+          <img src="w_files/Efren (2).png" alt="Portrait of Dr Efrén Mezura-Montes">
           <h3>Dr Efrén Mezura-Montes</h3>
           <p>University of Veracruz</p>
           <p>Mexico</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/donghwi_jung.jpg" alt="Portrait of Dr Donghwi Jung">
+          <img src="w_files/donghwi_jung.png" alt="Portrait of Dr Donghwi Jung">
           <h3>Dr Donghwi Jung</h3>
           <p>Korea University</p>
           <p>Korea</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Anupum_Trivedi.jpg" alt="Portrait of Dr Anupam Trivedi">
+          <img src="w_files/Anupum_Trivedi.png" alt="Portrait of Dr Anupam Trivedi">
           <h3>Dr Anupam Trivedi</h3>
           <p>National University of Singapore</p>
           <p>Singapore</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/manoj_thakur.jpg" alt="Portrait of Dr Manoj Thakur">
+          <img src="w_files/manoj_thakur.png" alt="Portrait of Dr Manoj Thakur">
           <h3>Dr Manoj Thakur</h3>
           <p>Indian Institute of Technology</p>
           <p>Mandi</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Dr._Sanjay.jpg" alt="Portrait of Prof Sanjay Singh">
+          <img src="w_files/Dr._Sanjay.png.jpg" alt="Portrait of Prof Sanjay Singh">
           <h3>Prof Sanjay Singh</h3>
           <p>Senior Pr. Scientist</p>
           <p>Head CSIR-CEERI</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/JC_bansal.jpg" alt="Portrait of Dr JC Bansal">
+          <img src="w_files/JC_bansal.png" alt="Portrait of Dr JC Bansal">
           <h3>Dr JC Bansal</h3>
           <p>South Asian University</p>
           <p></p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/abhishek_gupta.jpg" alt="Portrait of Dr Abhishek Gupta">
+          <img src="w_files/abhishek_gupta.png" alt="Portrait of Dr Abhishek Gupta">
           <h3>Dr Abhishek Gupta</h3>
           <p>Indian Institute of Technology</p>
           <p>Goa</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/bapi_dutta.jpg" alt="Portrait of Dr Bapi Dutta">
+          <img src="w_files/bapi_dutta.png" alt="Portrait of Dr Bapi Dutta">
           <h3>Dr Bapi Dutta</h3>
           <p>University of Jaen</p>
           <p>Jaen, Spain</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/indu.jpg" alt="Portrait of Dr Indu Bala">
+          <img src="w_files/indu.png" alt="Portrait of Dr Indu Bala">
           <h3>Dr Indu Bala</h3>
           <p>University of Adelaide</p>
           <p>Australia</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/kedar_nath.jpg" alt="Portrait of Dr Kedar Nath Das">
+          <img src="w_files/kedar_nath.png" alt="Portrait of Dr Kedar Nath Das">
           <h3>Dr Kedar Nath Das</h3>
           <p>National Institute of Technology</p>
           <p>Silchar</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/hemant_kumar.jpg" alt="Portrait of Dr Hemant Kumar Singh">
+          <img src="w_files/hemant_kumar.png" alt="Portrait of Dr Hemant Kumar Singh">
           <h3>Dr Hemant Kumar Singh</h3>
           <p>University of New South Wales</p>
           <p>Australia</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/harish_sharma.jpg" alt="Portrait of Dr Harish Sharma">
+          <img src="w_files/harish_sharma.png" alt="Portrait of Dr Harish Sharma">
           <h3>Dr Harish Sharma</h3>
           <p>Rajasthan Technical University</p>
           <p>Rajasthan</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/anupam_sir.jpg" alt="Portrait of Dr Anupam Yadav">
+          <img src="w_files/anupam_sir.png" alt="Portrait of Dr Anupam Yadav">
           <h3>Dr Anupam Yadav</h3>
           <p>Dr B R Ambedkar National Institute of Technology</p>
           <p>Jalandhar</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/op_verma.jpg" alt="Portrait of Dr OP Verma">
+          <img src="w_files/op_verma.png" alt="Portrait of Dr OP Verma">
           <h3>Dr OP Verma</h3>
           <p>Dr B R Ambedkar National Institute of Technology</p>
           <p>Jalandhar</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/2388-Dr._Shubham_Photo.jpg" alt="Portrait of Dr Shubham Gupta">
+          <img src="w_files/2388-Dr._Shubham_Photo.png" alt="Portrait of Dr Shubham Gupta">
           <h3>Dr Shubham Gupta</h3>
           <p>Motilal Nehru National Institute of Technology</p>
           <p>Allahabad</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/dikshit.jpg" alt="Portrait of Dr Dikshit Chauhan">
+          <img src="w_files/dikshit.png" alt="Portrait of Dr Dikshit Chauhan">
           <h3>Dr Dikshit Chauhan</h3>
           <p>National University of Singapore</p>
           <p>Singapore</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Aninda+Bose.jpg" alt="Portrait of Mr Aninda Bose">
+          <img src="w_files/Aninda+Bose.png" alt="Portrait of Mr Aninda Bose">
           <h3>Mr Aninda Bose</h3>
           <p>Executive Editor Springer Nature group</p>
           <p></p>
