@@ -147,7 +147,7 @@ body {
       gap: 1.5rem; /* Reduced from 2rem */
     }
     .speaker-card {
-      background: transparent;
+      background: #f2f2f2;
       width: 220px; /* Reduced from 250px */
       height: 280px; /* Reduced from 320px */
       border-radius: 8px;
