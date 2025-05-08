@@ -528,17 +528,16 @@ body {
       font-size: 0.95rem;
       max-width: 100%;
     }
-    .speaker-card {
-      width: 250px;
-      height: 380px;
-    }
-    .speaker-card img {
-      width: 250px;
-      height: 350px;
-    }
-    .speaker-card h3, .speaker-card p {
-      font-size: 1.2rem;
-    }
+	  .speakers-grid {
+        gap: 1rem; /* Reduced from 1.5rem */
+      }
+      .speaker-card {
+        width: 200px; /* Reduced from 240px */
+        height: 260px; /* Reduced from 300px */
+        padding: 1rem; /* Consistent with desktop */
+      }
+    
+   
     .sponsor-card {
         width: 180px;
         height: 210px;
