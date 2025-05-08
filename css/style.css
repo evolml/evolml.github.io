@@ -425,8 +425,8 @@ body {
   
     .sponsor-card {
 	    background:#f2f2f2;
-        width: 200px;
-        height: 230px;
+        width: 220px;
+        height: 240px;
       }
       .sponsor-card img {
         width: 140px;
@@ -533,7 +533,7 @@ body {
         gap: 1rem; /* Reduced from 1.5rem */
       }
       .speaker-card {
-        width: 200px; /* Reduced from 240px */
+        width: 220px; /* Reduced from 240px */
         height: 260px; /* Reduced from 300px */
         padding: 1rem; /* Consistent with desktop */
       }
