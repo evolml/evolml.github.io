@@ -409,9 +409,7 @@
   <script>
     const url = 'pdfs/schedule.pdf';
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
-	   const url = 'pdfs/brochure.pdf';
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
-
+	   
     let pdfDoc = null,
         pageNum = 1,
         canvas = document.getElementById('pdf-render'),
