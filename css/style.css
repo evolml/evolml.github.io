@@ -382,6 +382,62 @@ body {
       text-align: center;
       margin-top: 1rem;
     }
+ /* Sponsors Section */
+    .sponsors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .sponsor-card {
+      background: #f2f2f2;
+      width: 220px;
+      height: 250px;
+      border-radius: 8px;
+      text-align: center;
+      padding: 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sponsor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .sponsor-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+    .sponsor-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .sponsor-card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #000000;
+      font-weight: 500;
+    }
+    .tag-line {
+      font-size: 1rem;
+      color: #1d4ed8;
+      font-style: italic;
+      text-align: center;
+      margin: 0 0 1.5rem;
+      padding: 0.5rem 0;
+      animation: fadeIn 0.6s ease-out;
+    }
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
