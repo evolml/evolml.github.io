@@ -409,6 +409,8 @@
   <script>
     const url = 'pdfs/schedule.pdf';
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+	   const url = 'pdfs/brochure.pdf';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
 
     let pdfDoc = null,
         pageNum = 1,
@@ -604,6 +606,8 @@
       <div>
         <h3 class="text-lg font-medium mb-4">Query</h3>
         <p><a href="#" class="link-button">Events</a></p>
+	       <p> <a href="pdfs/brochure.pdf" download class="link-button">Brochure PDF</a></p>
+	
         <p><a href="https://departments.nitj.ac.in/dept/ma/Home" class="link-button">Official Website</a></p>
         
         <p>Email: <a  type="email" href="mailto:evolml@nitj.ac.in" class="link-button">evolml@nitj.ac.in</a></p>
