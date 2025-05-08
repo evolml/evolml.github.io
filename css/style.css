@@ -139,113 +139,70 @@ body {
   #about p strong {
     color: #1f2937;
   }
-  .speakers-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.2rem;
-  }
-  .speaker-card {
-  background: transparent;
-      width: 180px;
-      height: 300px;
-      border-radius: 8px;
-      text-align: center;
-      padding: 0.3rem;
-      box-sizing: border-box;
+ /* Speakers Grid */
+    .speakers-grid {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      gap: 1.5rem; /* Reduced from 2rem */
     }
-    .speaker-card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-    .speaker-card h3 {
-      margin: 0.2rem 0 0.1rem;
-      font-size: 1rem;
-	  color: black;
-	  font-weight:bold ;
-    }
-    .speaker-card p {
-      margin: 0;
-      font-size: 0.75rem;
-	  color: rgb(46, 45, 45)
-	  font-weight: bold;
-    }
-.sponsor-card {
+    .speaker-card {
       background: #f2f2f2;
-      width: 220px;
-      height: 250px;
+      width: 220px; /* Reduced from 250px */
+      height: 280px; /* Reduced from 320px */
       border-radius: 8px;
       text-align: center;
-      padding: 1rem;
+      padding: 1rem; /* Reduced from 1.5rem */
       box-sizing: border-box;
       display: flex;
-	margin:0 auto;
-      display: inline-block;
-      line-height: auto;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .sponsor-card:hover {
+    .profile-card, .department-card, .student-card {
+      background: #f2f2f2;
+      width: 250px;
+      height: 320px;
+      border-radius: 8px;
+      text-align: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .speaker-card:hover, .profile-card:hover, .department-card:hover, .student-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
-    .sponsor-card img {
+    .speaker-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
+    }
+    .profile-card img, .department-card img, .student-card img {
       width: 150px;
       height: 150px;
-      object-fit: contain;
-      margin-bottom: 0.5rem;
-	    margin:0 auto;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
     }
-    .sponsor-card h3 {
-      margin: 0;
+    .speaker-card h3, .profile-card h3, .department-card h3, .student-card h3 {
+      margin: 0.5rem 0;
       font-size: 1.25rem;
-      color: black;
+      color: #000000;
       font-weight: 500;
     }
-
-  .profile-card {
-    width: 220px;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  .profile-card img {
-    width: 140px;
-    height: 155px;
-    object-fit: cover;
-    border-radius: 5%;
-    margin: 0.5rem;
-  }
-  #department-card .department-card {
-    background-color: #fff;
-    border: 2px solid #1c7ed6;
-    width: 500px;
-    height: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #student-cards .student-card {
-    background-color: #fff;
-    border: 2px solid #3a7ca5;
-    width: 240px;
-    height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+    .speaker-card p, .profile-card p, .department-card p, .student-card p {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: #4b5563;
+    }
   .info-card {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     background: #ffffff;
