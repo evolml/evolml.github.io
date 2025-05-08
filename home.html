@@ -197,7 +197,14 @@
       transform: translateY(-4px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
-    .speaker-card img, .profile-card img, .department-card img, .student-card img {
+    .speaker-card img {
+      width: 120px; /* Updated to 120px */
+      height: 120px; /* Updated to 120px */
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
+    }
+    .profile-card img, .department-card img, .student-card img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
@@ -417,7 +424,7 @@
         width: 230px;
         height: 300px;
       }
-      .speaker-card img, .profile-card img, .department-card img, .student-card img {
+      .profile-card img, .department-card img, .student-card img {
         width: 140px;
         height: 140px;
       }
@@ -450,14 +457,14 @@
         padding: 0.3rem;
       }
       .speakers-grid {
-        gap: 1.5rem; /* Adjusted for mobile */
+        gap: 1.5rem;
       }
       .speaker-card, .profile-card, .department-card, .student-card {
-        width: 240px; /* Increased from 210px */
-        height: 300px; /* Increased from 280px */
-        padding: 1.25rem; /* Adjusted for balance */
+        width: 240px;
+        height: 300px;
+        padding: 1.25rem;
       }
-      .speaker-card img, .profile-card img, .department-card img, .student-card img {
+      .profile-card img, .department-card img, .student-card img {
         width: 130px;
         height: 130px;
       }
@@ -691,9 +698,7 @@
             <li><a href="https://departments.nitj.ac.in/dept/ma/Faculty/6430446b38bff038a7808524" aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
             <li><a href="https://departments.nitj.ac.in/dept/ice/Faculty/6430446638bff038a7807a2f" aria-label="Visit Dr. OP Verma's profile">Dr. OP Verma</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
             <li><a href="https://mnnit.ac.in/profile/shubham.gupta" aria-label="Visit Dr. Shubham Gupta's profile">Dr. Shubham Gupta</a>, Motilal Nehru National Institute of Technology, Allahabad</li>
-            <li><a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore,
-
- Singapore</li>
+            <li><a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
             <li><a href="https://www.springer.com/fr/authors-editors/aninda-bose/5084?srsltid=AfmBOopFWGzPJSaKR7WPADMOKNJRzBbTPRMBfMJDx0uZPKEEfdoIFsL1" aria-label="Visit Mr Aninda Bose's profile">Mr Aninda Bose</a>, Executive Editor Springer Nature group</li>
             <li><a href="https://www.iitism.ac.in/faculty-details?faculty=scindhiya" aria-label="Visit Dr Scindhiya Laxmi's profile">Dr Scindhiya Laxmi</a>, Indian Institute of Technology Dhanbad</li>
           </ul>
@@ -702,7 +707,7 @@
     </div>
   </section>
 
-  <!-- Organizing Committee -->
+  <!-- Organizing Committee (unchanged) -->
   <section class="py-12 px-4" id="organizing-committee" role="region" aria-labelledby="organizing-committee">
     <div class="max-w-7xl mx-auto">
       <h2 id="organizing-committee" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Organizers</h2>
