@@ -162,7 +162,7 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
     }
 .department-card{
 	width:360px; /* Reduced from 250px */
