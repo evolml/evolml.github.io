@@ -165,8 +165,8 @@ body {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 .department-card{
-	width: 260px; /* Reduced from 250px */
-      height: 340px; /* Reduced from 320px */
+	width:360px; /* Reduced from 250px */
+      height: 400px; /* Reduced from 320px */
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 0.75rem;
