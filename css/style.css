@@ -161,9 +161,13 @@ body {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .profile-card, .department-card, .student-card {
+	    width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
       background: #f2f2f2;
-      width: 250px;
-      height: 320px;
+      
       border-radius: 8px;
       text-align: center;
       padding: 1.5rem;
