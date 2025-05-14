@@ -187,6 +187,9 @@
       justify-content: center;
       align-items: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 95%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .speaker-card,
@@ -225,6 +228,7 @@
     .department-card img {
       width: clamp(80px, 12vw, 110px);
       height: clamp(80px, 12vw, 110px);
+      object-fit: contain;
     }
 
     .sponsor-card img {
@@ -568,12 +572,35 @@
       }
       .speaker-card,
       .student-card {
-        width: 200px;
-        height: 260px;
+        width: 276px;
+        height: 359px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 115px;
+        height: 115px;
+      }
+      .speaker-card h3,
+      .student-card h3 {
+        font-size: 1.2rem;
+      }
+      .speaker-card p,
+      .student-card p {
+        font-size: 0.95rem;
       }
       .department-card {
-        width: 240px;
-        height: 300px;
+        width: 304px;
+        height: 380px;
+      }
+      .department-card img {
+        width: 99px;
+        height: 99px;
+      }
+      .department-card h3 {
+        font-size: 1.3rem;
+      }
+      .department-card p {
+        font-size: 1.05rem;
       }
       .sponsor-card {
         width: 220px;
@@ -636,12 +663,35 @@
       }
       .speaker-card,
       .student-card {
-        width: 180px;
-        height: 240px;
+        width: 248px;
+        height: 331px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 115px;
+        height: 115px;
+      }
+      .speaker-card h3,
+      .student-card h3 {
+        font-size: 1.2rem;
+      }
+      .speaker-card p,
+      .student-card p {
+        font-size: 0.95rem;
       }
       .department-card {
-        width: 220px;
-        height: 280px;
+        width: 278px;
+        height: 354px;
+      }
+      .department-card img {
+        width: 99px;
+        height: 99px;
+      }
+      .department-card h3 {
+        font-size: 1.3rem;
+      }
+      .department-card p {
+        font-size: 1.05rem;
       }
       .sponsor-card {
         width: 180px;
@@ -720,41 +770,43 @@
       }
       .speaker-card,
       .student-card {
-        width: 160px;
-        height: 220px;
+        width: 221px;
+        height: 304px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 104px;
+        height: 104px;
+      }
+      .speaker-card h3,
+      .student-card h3 {
+        font-size: 1.1rem;
+      }
+      .speaker-card p,
+      .student-card p {
+        font-size: 0.9rem;
       }
       .department-card {
-        width: 200px;
-        height: 260px;
+        width: 253px;
+        height: 329px;
+      }
+      .department-card img {
+        width: 88px;
+        height: 88px;
+      }
+      .department-card h3 {
+        font-size: 1.2rem;
+      }
+      .department-card p {
+        font-size: 0.95rem;
       }
       .sponsor-card {
         width: 160px;
         height: 200px;
       }
-      .speaker-card img,
-      .student-card img {
-        width: 80px;
-        height: 80px;
-      }
-      .department-card img {
-        width: 70px;
-        height: 70px;
-      }
       .sponsor-card img {
         width: 100px;
         height: 100px;
-      }
-      .speaker-card h3,
-      .student-card h3,
-      .department-card h3,
-      .sponsor-card h3 {
-        font-size: 1rem;
-      }
-      .speaker-card p,
-      .student-card p,
-      .department-card p,
-      .sponsor-card p {
-        font-size: 0.8rem;
       }
       #about {
         padding: 1rem 0.8rem;
@@ -829,41 +881,43 @@
       }
       .speaker-card,
       .student-card {
-        width: 140px;
-        height: 200px;
+        width: 193px;
+        height: 276px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 92px;
+        height: 92px;
+      }
+      .speaker-card h3,
+      .student-card h3 {
+        font-size: 1rem;
+      }
+      .speaker-card p,
+      .student-card p {
+        font-size: 0.85rem;
       }
       .department-card {
-        width: 180px;
-        height: 240px;
+        width: 228px;
+        height: 304px;
+      }
+      .department-card img {
+        width: 77px;
+        height: 77px;
+      }
+      .department-card h3 {
+        font-size: 1.1rem;
+      }
+      .department-card p {
+        font-size: 0.9rem;
       }
       .sponsor-card {
         width: 140px;
         height: 180px;
       }
-      .speaker-card img,
-      .student-card img {
-        width: 70px;
-        height: 70px;
-      }
-      .department-card img {
-        width: 60px;
-        height: 60px;
-      }
       .sponsor-card img {
         width: 80px;
         height: 80px;
-      }
-      .speaker-card h3,
-      .student-card h3,
-      .department-card h3,
-      .sponsor-card h3 {
-        font-size: 0.9rem;
-      }
-      .speaker-card p,
-      .student-card p,
-      .department-card p,
-      .sponsor-card p {
-        font-size: 0.75rem;
       }
       #about p {
         font-size: 0.8rem;
