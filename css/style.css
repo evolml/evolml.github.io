@@ -80,7 +80,7 @@ body {
   }
 .department-card {
   width: 400px; /* Increased from 360px */
-  height: 460px; /* Increased from 400px */
+  height: 440px; /* Increased from 400px */
   border-radius: 8px; /* Removed 50% to maintain rectangular shape */
   object-fit: cover;
   margin-bottom: 0.75rem;
@@ -95,8 +95,8 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .department-card img {
-  width: 140px; /* Slightly increased for balance */
-  height: 140px;
+  width: 120px; /* Slightly increased for balance */
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.75rem;
@@ -565,10 +565,21 @@ body {
       .sponsor-card h3 {
         font-size: 1.1rem;
       }
-    #department-card .department-card {
-      width: 400px;
-      height: 280px;
-    }
+  .department-card {
+    width: 360px;
+    height: 420px;
+  }
+  .department-card img {
+    width: 130px;
+    height: 130px;
+  }
+  .department-card h3 {
+    font-size: 1.25rem;
+  }
+  .department-card p {
+    font-size: 1rem;
+  }
+}
     #student-cards .student-card {
       width: 220px;
       height: 260px;
