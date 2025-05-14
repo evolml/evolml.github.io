@@ -23,414 +23,313 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico">
 
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<style>
+
+  <style>
     /* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  min-height: 100vh;
-  color: #1f2937;
-  background: #ffffff;
-  position: relative;
-  overflow-x: hidden;
-}
+    body {
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      color: #1f2937;
+      background: #ffffff;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-/* Utility Classes */
-.max-w-7xl {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-}
+    /* Navigation */
+    .nav-bar {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
 
-.grid {
-  display: grid;
-}
+    .navbar-brand {
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-.gap-12 {
-  gap: 3rem;
-}
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.grid-cols-1 {
-  grid-template-columns: 1fr;
-}
+    .nav-links li a {
+      color: black;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
 
-@media (min-width: 768px) {
-  .md\:grid-cols-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #f84f4f;
+    }
 
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
+    .nav-links li a:focus {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+    .nav-toggle {
+      display: none;
+      color: black;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
 
-.pt-12 {
-  padding-top: 3rem;
-}
+    .nav-toggle svg {
+      stroke: black;
+    }
 
-.pb-20 {
-  padding-bottom: 5rem;
-}
+    .nav-toggle:focus {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
 
-.text-4xl {
-  font-size: 2.25rem;
-}
+    /* Header Image */
+    .header-image {
+      position: relative;
+      width: 95%;
+      margin: 0 auto;
+      height: 400px;
+      overflow: hidden;
+    }
 
-.font-bold {
-  font-weight: 700;
-}
+    .header-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
 
-.text-gray-900 {
-  color: #1f2937;
-}
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
 
-.text-gray-600 {
-  color: #4b5563;
-}
+    .overlay h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-.text-lg {
-  font-size: 1.125rem;
-}
+    .tag-line {
+      font-size: 1.1rem;
+      color: #ffffff;
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.4rem;
+      padding: 0.4rem;
+      animation: fadeIn 0.6s ease-out;
+    }
 
-.leading-relaxed {
-  line-height: 1.625;
-}
+    /* About Section */
+    #about {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
+    #about p {
+      text-align: justify;
+      font-size: 1.125rem;
+      color: #4b5563;
+      line-height: 1.6;
+      max-width: 100%;
+      margin: 0 auto 1rem;
+    }
 
-.mt-4 {
-  margin-top: 1rem;
-}
+    #about p strong {
+      color: #1f2937;
+    }
+    #about mark {
+      background: #e0f2fe;
+      padding: 0.2rem 0.4rem;
+    }
 
-.text-center {
-  text-align: center;
-}
+    /* Speakers Section */
+    .speakers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.tracking-tight {
-  letter-spacing: -0.025em;
-}
+    .speaker-card,
+    .student-card,
+    .department-card,
+    .sponsor-card {
+      border-radius: 8px;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 1.2rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
+    .speaker-card,
+    .student-card {
+      width: 220px;
+      height: 280px;
+    }
 
-/* Navigation */
-.nav-bar {
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 1rem 2rem;
-}
+    .department-card {
+      width: 260px;
+      height: 320px;
+      background: linear-gradient(#ffffff, #f9fafb);
+      border: 1px solid #e5e7eb;
+      padding: 1.2rem;
+    }
 
-.navbar-brand {
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-decoration: none;
-}
+    .speaker-card:hover,
+    .student-card:hover,
+    .department-card:hover,
+    .sponsor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
 
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .speaker-card img,
+    .student-card img,
+    .department-card img,
+    .sponsor-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
+    }
 
-.nav-links li a {
-  color: black;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+    .department-card img {
+      width: 110px;
+      height: 110px;
+    }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-  color: #f84f4f;
-}
+    .sponsor-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
 
-.nav-links li a:focus {
-  outline: 2px solid #1d4ed8;
-  outline-offset: 2px;
-}
+    .speaker-card h3,
+    .student-card h3,
+    .department-card h3,
+    .sponsor-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+      color: #000000;
+      font-weight: 500;
+    }
 
-.nav-toggle {
-  display: none;
-  color: black;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
+    .department-card h3 {
+      font-size: 1.25rem;
+    }
 
-.nav-toggle svg {
-  stroke: black;
-}
+    .sponsor-card h3 {
+      font-size: 1.25rem;
+    }
 
-.nav-toggle:focus {
-  outline: 2px solid #1d4ed8;
-  outline-offset: 2px;
-}
+    .speaker-card p,
+    .student-card p,
+    .department-card p,
+    .sponsor-card p {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: #4b5563;
+    }
 
-/* Header Image */
-.header-image {
-  position: relative;
-  width: 95%;
-  margin: 0 auto;
-  height: 400px;
-  overflow: hidden;
-}
+    .department-card p {
+      font-size: 1rem;
+    }
 
-.header-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+    /* All Speakers List */
+    .info-card {
+      padding: 2rem;
+      text-align: center;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(45deg, #1d4ed8, #06b6d4) border-box;
+      animation: fadeIn 0.6s ease-out;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
+    .info-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
 
-.overlay h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
+    .speakers-list {
+      margin: 0 auto;
+      padding: 1.5rem;
+      text-align: left;
+    }
 
-.tag-line {
-  font-size: 1.1rem;
-  color: #ffffff;
-  font-style: italic;
-  text-align: center;
-  margin-top: 0.4rem;
-  padding: 0.4rem;
-  animation: fadeIn 0.6s ease-out;
-}
+    .speakers-list ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 800px;
+      margin: 0;
+    }
 
-/* About Section */
-#about {
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
+    .speakers-list li {
+      font-size: 1.125rem;
+      color: #1f2937;
+      line-height: 1.6;
+      text-align: left;
+    }
 
-#about h2 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 1.5rem;
-}
+    .speakers-list li a {
+      color: #2563eb;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
 
-#about p {
-  text-align: justify;
-  font-size: 1.125rem;
-  color: #4b5563;
-  line-height: 1.6;
-  max-width: 100%;
-  margin: 0 auto 1rem;
-}
+    .speakers-list li a:hover {
+      color: #1e40af;
+    }
 
-#about p strong {
-  color: #1f2937;
-}
-
-#about mark {
-  background: #e0f2fe;
-  padding: 0.2rem 0.4rem;
-}
-
-/* Speakers Section */
-.speakers-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.speaker-card,
-.student-card,
-.department-card,
-.sponsor-card {
-  width: 220px;
-  height: 280px;
-  border-radius: 8px;
-  background: #f2f2f2;
-  text-align: center;
-  padding: 1.2rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.department-card {
-  width: 400px;
-  height: 440px;
-  background: linear-gradient(#ffffff, #f9fafb);
-  border: 1px solid #e5e7eb;
-  padding: 1.5rem;
-}
-
-.speaker-card:hover,
-.student-card:hover,
-.department-card:hover,
-.sponsor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.speaker-card:focus-within,
-.student-card:focus-within,
-.department-card:focus-within,
-.sponsor-card:focus-within {
-  outline: 2px solid #1d4ed8;
-  outline-offset: 2px;
-}
-
-.speaker-card img,
-.student-card img,
-.department-card img,
-.sponsor-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 0.75rem;
-}
-
-.department-card img {
-  width: 120px;
-  height: 120px;
-}
-
-.sponsor-card img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-}
-
-.speaker-card h3,
-.student-card h3,
-.department-card h3,
-.sponsor-card h3 {
-  margin: 0.5rem 0;
-  font-size: 1.25rem;
-  color: #000000;
-  font-weight: 500;
-}
-
-.department-card h3 {
-  font-size: 1.35rem;
-}
-
-.sponsor-card h3 {
-  font-size: 1.25rem;
-}
-
-.speaker-card p,
-.student-card p,
-.department-card p,
-.sponsor-card p {
-  margin: 0.2rem 0;
-  font-size: 1rem;
-  color: #4b5563;
-}
-
-.department-card p {
-  font-size: 1.1rem;
-}
-
-/* All Speakers List */
-.speakers-list {
-  margin: 0 auto;
-  padding: 1.5rem;
-}
-
-.speakers-list ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.speakers-list li {
-  font-size: 1.125rem;
-  color: #1f2937;
-  line-height: 1.6;
-}
-
-.speakers-list li a {
-  color: #2563eb;
-  text-decoration: underline;
-  transition: color 0.2s ease;
-}
-
-.speakers-list li a:hover {
-  color: #1e40af;
-}
-
-.speakers-list li a:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.5);
-  border-radius: 2px;
-}
-
-/* Organizing Committee */
-#organizing-committee h3 {
-  font-size: 1.5rem;
-}
-
-#pdf-container {
-	
+    /* PDF Viewer */
+    #pdf-container {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -440,15 +339,20 @@ body {
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
       background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(45deg, #1d4ed8, #06b6d4) border-box;
-      max-width: 100%;
+      max-width: 1400px;
       margin: 0 auto;
+      width: 100%;
     }
+
     #pdf-render {
       border: 1px solid #d1d5db;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       max-width: 100%;
+      width: 100%;
+      height: auto;
     }
+
     #controls {
       display: flex;
       align-items: center;
@@ -457,7 +361,8 @@ body {
       flex-wrap: wrap;
       justify-content: center;
     }
- #controls button {
+
+    #controls button {
       background: #1d4ed8;
       color: #ffffff;
       padding: 0.5rem 1rem;
@@ -466,495 +371,299 @@ body {
       cursor: pointer;
       transition: background 0.3s;
     }
-    #controls span {
-      font-size: 1rem;
-      color: #1f2937;
+
+    #controls button:hover {
+      background: #1e40af;
     }
+
+    .download-btn {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: linear-gradient(90deg, #1e40af, #0ea5e9);
+      transform: translateY(-2px);
+    }
+
     #error-message {
       color: #dc2626;
       font-size: 1rem;
       text-align: center;
       margin-top: 1rem;
     }
- /* Registration Section */
-.info-card {
-  padding: 2rem;
-  text-align: center;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(45deg, #1d4ed8, #06b6d4) border-box;
-  animation: fadeIn 0.6s ease-out;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
 
-.info-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  transform: translateY(-4px);
-}
+    .hidden {
+      display: none;
+    }
 
-.info-card:focus-within {
-  outline: 2px solid #1d4ed8;
-  outline-offset: 2px;
-}
+    /* Registration Section */
+    .cta-button {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      animation: pulse 2s infinite;
+      text-decoration: none;
+    }
 
-.info-card h2 {
-  background: linear-gradient(90deg, #1e40af, #0ea5e9);
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 10px;
-  text-align: center;
-  margin: -2rem -2rem 1rem -2rem;
-  border-radius: 12px 12px 0 0;
-}
+    .cta-button:hover {
+      background: linear-gradient(90deg, #1e40af, #0ea5e9);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
 
-.info-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: justify;
-  color: #1f2937;
-}
+    /* Fee Table */
+    .table-wrapper {
+      margin-top: 1rem;
+      width: 100%;
+      overflow-x: auto;
+    }
 
-.info-card img {
-  width: 100%;
-  max-width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 1rem;
-}
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
 
-.cta-button {
-  background: linear-gradient(90deg, #1d4ed8, #06b6d4);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  animation: pulse 2s infinite;
-  text-decoration: none;
-  margin-top: 1rem;
-}
+    .fee-table th,
+    .fee-table td {
+      border: 1px solid #d1d5db;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
 
-.cta-button:hover,
-.cta-button:focus {
-  background: linear-gradient(90deg, #1e40af, #0ea5e9);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
+    .fee-table th {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      font-weight: 600;
+    }
 
-.cta-button:focus {
-  outline: 2px solid #1d4ed8;
-  outline-offset: 2px;
-}
+    .fee-table tr:nth-child(even) {
+      background: #f9fafb;
+    }
 
-.cta-button svg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
+    .fee-table tr:hover {
+      background: #e0f2fe;
+    }
 
-/* Fee Table */
-.table-wrapper {
-  margin-top: 1rem;
-  width: 100%;
-  overflow-x: auto;
-}
+    /* Sponsors Section */
+    .sponsor-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
 
-.fee-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: auto;
-}
+    .sponsors-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.fee-table th,
-.fee-table td {
-  border: 1px solid #d1d5db;
-  padding: 12px;
-  text-align: center;
-  font-size: 0.95rem;
-  font-weight: 400;
-}
+    /* Footer */
+    footer .link-button {
+      color: #1d4ed8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-.fee-table th {
-  background: linear-gradient(90deg, #1d4ed8, #06b6d4);
-  color: white;
-  font-weight: 600;
-}
+    footer .link-button:hover {
+      color: #06b6d4;
+    }
 
-.fee-table tr:nth-child(even) {
-  background: #f9fafb;
-}
+    .social-icon {
+      transition: color 0.3s ease;
+    }
 
-.fee-table tr:hover {
-  background: #e0f2fe;
-  position: relative;
-}
+    .social-icon:hover {
+      color: #1d4ed8;
+    }
 
-.fee-table tr:hover::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #06b6d4;
-}
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-/* Sponsors Section */
-.sponsors-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
 
-.sponsor-card {
-  background: #f2f2f2;
-  width: 220px;
-  height: 250px;
-  border-radius: 8px;
-  text-align: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 0;
+        background: white;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .header-image {
+        width: 95%;
+        height: 300px;
+      }
+      .overlay h1 {
+        font-size: 1.75rem;
+      }
+      .tag-line {
+        font-size: 0.75rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 200px; /* Updated: Decreased size */
+        height: 260px; /* Updated: Decreased size */
+      }
+      .department-card {
+        width: 240px;
+        height: 300px;
+      }
+      .sponsor-card {
+        width: 220px;
+        height: 240px;
+      }
+      .fee-table {
+        display: block;
+      }
+      .fee-table thead {
+        display: none;
+      }
+      .fee-table tbody,
+      .fee-table tr {
+        display: block;
+        margin-bottom: 1.25rem;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+      }
+      .fee-table td {
+        display: block;
+        text-align: left;
+        padding: 14px;
+        border: none;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .fee-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #1d4ed8;
+        display: block;
+        margin-bottom: 6px;
+      }
+      footer .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      footer .flex {
+        justify-content: center;
+      }
+    }
 
-.sponsor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
+    @media (max-width: 600px) {
+      .header-image {
+        height: 200px;
+      }
+      .overlay h1 {
+        font-size: 1.25rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 180px; /* Updated: Decreased size */
+        height: 240px; /* Updated: Decreased size */
+      }
+      .department-card {
+        width: 220px;
+        height: 280px;
+      }
+      .sponsor-card {
+        width: 180px;
+        height: 210px;
+      }
+    }
 
-.sponsor-card a {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-}
+    /* Enhanced Styles for Registration Headers */
+    #registration-fee, #registration-link {
+      position: relative;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 0.8s ease-out;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.3s ease;
+    }
 
-/* Footer */
-footer {
-  background: #f9fafb;
-  padding: 3rem 1rem;
-  position: relative;
-}
+    #registration-fee::after, #registration-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      border-radius: 2px;
+    }
 
-footer .bg-gradient-to-r {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(to right, #1d4ed8, #06b6d4);
-}
+    #registration-fee:hover, #registration-link:hover {
+      transform: scale(1.05);
+    }
 
-footer img {
-  height: 48px;
-  margin-bottom: 1rem;
-}
+    #registration-link {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-footer h3 {
-  font-size: 1.125rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
+    #registration-link::before {
+      content: '★';
+      color: #1d4ed8;
+      margin-right: 0.5rem;
+    }
 
-footer p {
-  font-size: 0.875rem;
-  color: #4b5563;
-  margin-bottom: 0.5rem;
-}
+    @media (max-width: 768px) {
+      #registration-fee, #registration-link {
+        font-size: 1.75rem;
+      }
+    }
 
-.link-button {
-  color: #1d4ed8;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.link-button:hover,
-.link-button:focus {
-  color: #06b6d4;
-}
-
-.link-button:focus {
-  outline: 2px solid #1d4ed8;
-  outline-offset: 2px;
-}
-
-.social-icon {
-  transition: color 0.3s ease;
-}
-
-.social-icon:hover,
-.social-icon:focus {
-  color: #1d4ed8;
-}
-
-.social-icon:focus {
-  outline: 2px solid #1d4ed8;
-  outline-offset: 2px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 1rem 0;
-    background: white;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .nav-toggle {
-    display: block;
-  }
-  .header-image {
-    width: 95%;
-    height: 300px;
-  }
-  .overlay h1 {
-    font-size: 1.75rem;
-  }
-  .tag-line {
-    font-size: 0.75rem;
-    margin-top: 0.3rem;
-    padding: 0.3rem;
-  }
-  #about {
-    padding: 1.5rem 1.25rem;
-  }
-  #about h2 {
-    font-size: 2rem;
-  }
-  #about p {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-  .speakers-grid {
-    gap: 1.25rem;
-  }
-  .speaker-card,
-  .student-card {
-    width: 200px;
-    height: 260px;
-    padding: 1rem;
-  }
-  .student-card img {
-    width: 120px;
-    height: 135px;
-  }
-  .sponsor-card {
-    width: 220px;
-    height: 240px;
-  }
-  .sponsor-card img {
-    width: 140px;
-    height: 140px;
-  }
-  .sponsor-card h3 {
-    font-size: 1.1rem;
-  }
-  .department-card {
-    width: 360px;
-    height: 420px;
-  }
-  .department-card img {
-    width: 130px;
-    height: 130px;
-  }
-  .department-card h3 {
-    font-size: 1.25rem;
-  }
-  .department-card p {
-    font-size: 1rem;
-  }
-  .info-card {
-    padding: 1.5rem;
-  }
-  .info-card h2 {
-    font-size: 1.25rem;
-    margin: -1.5rem -1.5rem 1rem -1.5rem;
-  }
-  .speakers-list {
-    padding: 1rem;
-  }
-  .speakers-list li {
-    font-size: 1rem;
-  }
-  .text-4xl {
-    font-size: 2.25rem;
-  }
-  .text-lg {
-    font-size: 1.125rem;
-  }
-  .cta-button,
-  .download-btn {
-    padding: 12px 24px;
-    font-size: 1rem;
-  }
-  #pdf-container {
-    padding: 1rem;
-  }
-  #pdf-render {
-    max-width: 100%;
-  }
-  #controls {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .fee-table {
-    display: block;
-  }
-  .fee-table thead {
-    display: none;
-  }
-  .fee-table tbody,
-  .fee-table tr {
-    display: block;
-    margin-bottom: 1.25rem;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-  }
-  .fee-table td {
-    display: block;
-    text-align: left;
-    padding: 14px;
-    border: none;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  .fee-table td:before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #1d4ed8;
-    display: block;
-    margin-bottom: 6px;
-  }
-  .fee-table td:last-child {
-    border-bottom: none;
-  }
-  footer .grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  footer .flex {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .nav-bar {
-    padding: 1rem;
-  }
-  .header-image {
-    width: 95%;
-    height: 200px;
-  }
-  .overlay h1 {
-    font-size: 1.25rem;
-  }
-  .tag-line {
-    font-size: 0.75rem;
-    margin-top: 0.3rem;
-    padding: 0.3rem;
-  }
-  #about {
-    padding: 1.25rem 0.5rem;
-  }
-  #about h2 {
-    font-size: 1.75rem;
-  }
-  #about p {
-    font-size: 0.95rem;
-    max-width: 100%;
-  }
-  .speakers-grid {
-    gap: 1rem;
-  }
-  .speaker-card,
-  .student-card {
-    width: 180px;
-    height: 240px;
-    padding: 1rem;
-  }
-  .student-card img {
-    width: 100px;
-    height: 115px;
-  }
-  .sponsor-card {
-    width: 180px;
-    height: 210px;
-  }
-  .sponsor-card img {
-    width: 130px;
-    height: 130px;
-  }
-  .sponsor-card h3 {
-    font-size: 1rem;
-  }
-  .department-card {
-    width: 320px;
-    height: 380px;
-  }
-  .department-card img {
-    width: 120px;
-    height: 120px;
-  }
-  .department-card h3 {
-    font-size: 1.15rem;
-  }
-  .department-card p {
-    font-size: 0.95rem;
-  }
-  .info-card h2 {
-    font-size: 1.25rem;
-    margin: -1.5rem -1.5rem 1rem -1.5rem;
-  }
-  .speakers-list {
-    padding: 0.75rem;
-  }
-  .speakers-list li {
-    font-size: 0.95rem;
-  }
-  .cta-button,
-  .download-btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-  #pdf-container {
-    padding: 0.75rem;
-  }
-  .fee-table td {
-    font-size: 0.95rem;
-    padding: 12px;
-  }
-}
-    </style>
+    @media (max-width: 600px) {
+      #registration-fee, #registration-link {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
 <body class="min-h-screen">
   <!-- Navigation -->
   <header class="nav-bar" role="banner">
@@ -966,19 +675,19 @@ footer p {
         </svg>
       </button>
       <ul class="nav-links" id="nav-links" role="navigation">
-        <li><a href="#about" class="active">About</a></li>
-        <li><a href="#registration">Registration</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#poster">Poster</a></li>
-        <li><a href="#accommodation">Accommodation</a></li>
-        <li><a href="#live">Live</a></li>
+        <li><a href="#about" class="active" aria-label="Navigate to About section">About</a></li>
+        <li><a href="#registration-link" aria-label="Navigate to Registration section">Registration</a></li>
+        <li><a href="#schedule" aria-label="Navigate to Schedule section">Schedule</a></li>
+        <li><a href="#poster" aria-label="Navigate to Poster section">Poster</a></li>
+        <li><a href="#accommodation" aria-label="Navigate to Accommodation section">Accommodation</a></li>
+        <li><a href="#live" aria-label="Navigate to Live section">Live</a></li>
       </ul>
     </div>
   </header>
 
   <!-- Header Image -->
   <section class="header-image" role="img" aria-label="Summer School on EVOML 2025 Banner" aria-describedby="header-tagline">
-    <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img">
+    <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img" loading="eager">
     <div class="overlay">
       <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
       <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p>
@@ -1019,119 +728,119 @@ footer p {
       <h2 id="keynote-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
       <div class="speakers-grid">
         <article class="speaker-card">
-          <img src="w_files/lipo_wang.jpg" alt="Portrait of Prof Lipo Wang">
+          <img src="w_files/lipo_wang.jpg" alt="Portrait of Prof Lipo Wang" loading="lazy">
           <h3>Prof Lipo Wang</h3>
           <p>Nanyang Technological University</p>
           <p>Singapore</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Kusum_Deep.jpg" alt="Portrait of Prof Kusum Deep">
+          <img src="w_files/Kusum_Deep.jpg" alt="Portrait of Prof Kusum Deep" loading="lazy">
           <h3>Prof Kusum Deep</h3>
           <p>Indian Institute of Technology</p>
           <p>Roorkee</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Efren.jpg" alt="Portrait of Dr Efrén Mezura-Montes">
+          <img src="w_files/Efren.jpg" alt="Portrait of Dr Efrén Mezura-Montes" loading="lazy">
           <h3>Dr Efrén Mezura-Montes</h3>
           <p>University of Veracruz</p>
           <p>Mexico</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/donghwi_jung.jpg" alt="Portrait of Dr Donghwi Jung">
+          <img src="w_files/donghwi_jung.jpg" alt="Portrait of Dr Donghwi Jung" loading="lazy">
           <h3>Dr Donghwi Jung</h3>
           <p>Korea University</p>
           <p>Korea</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Anupum_Trivedi.jpg" alt="Portrait of Dr Anupam Trivedi">
+          <img src="w_files/Anupum_Trivedi.jpg" alt="Portrait of Dr Anupam Trivedi" loading="lazy">
           <h3>Dr Anupam Trivedi</h3>
           <p>National University of Singapore</p>
           <p>Singapore</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/manoj_thakur.jpg" alt="Portrait of Dr Manoj Thakur">
+          <img src="w_files/manoj_thakur.jpg" alt="Portrait of Dr Manoj Thakur" loading="lazy">
           <h3>Dr Manoj Thakur</h3>
           <p>Indian Institute of Technology</p>
           <p>Mandi</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Dr._Sanjay.jpg" alt="Portrait of Prof Sanjay Singh">
+          <img src="w_files/Dr._Sanjay.jpg" alt="Portrait of Prof Sanjay Singh" loading="lazy">
           <h3>Prof Sanjay Singh</h3>
           <p>Senior Pr. Scientist</p>
           <p>Head CSIR-CEERI</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/JC_bansal.jpg" alt="Portrait of Dr JC Bansal">
+          <img src="w_files/JC_bansal.jpg" alt="Portrait of Dr JC Bansal" loading="lazy">
           <h3>Dr JC Bansal</h3>
           <p>South Asian University</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/abhishek_gupta.jpg" alt="Portrait of Dr Abhishek Gupta">
+          <img src="w_files/abhishek_gupta.jpg" alt="Portrait of Dr Abhishek Gupta" loading="lazy">
           <h3>Dr Abhishek Gupta</h3>
           <p>Indian Institute of Technology</p>
           <p>Goa</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/bapi_dutta.jpg" alt="Portrait of Dr Bapi Dutta">
+          <img src="w_files/bapi_dutta.jpg" alt="Portrait of Dr Bapi Dutta" loading="lazy">
           <h3>Dr Bapi Dutta</h3>
           <p>University of Jaen</p>
           <p>Jaen, Spain</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/indu.png" alt="Portrait of Dr Indu Bala">
+          <img src="w_files/indu.png" alt="Portrait of Dr Indu Bala" loading="lazy">
           <h3>Dr Indu Bala</h3>
           <p>University of Adelaide</p>
           <p>Australia</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/kedar_nath.jpg" alt="Portrait of Dr Kedar Nath Das">
+          <img src="w_files/kedar_nath.jpg" alt="Portrait of Dr Kedar Nath Das" loading="lazy">
           <h3>Dr Kedar Nath Das</h3>
           <p>National Institute of Technology</p>
           <p>Silchar</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/hemant_kumar.jpg" alt="Portrait of Dr Hemant Kumar Singh">
+          <img src="w_files/hemant_kumar.jpg" alt="Portrait of Dr Hemant Kumar Singh" loading="lazy">
           <h3>Dr Hemant Kumar Singh</h3>
           <p>University of New South Wales</p>
           <p>Australia</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/harish_sharma.jpg" alt="Portrait of Dr Harish Sharma">
+          <img src="w_files/harish_sharma.jpg" alt="Portrait of Dr Harish Sharma" loading="lazy">
           <h3>Dr Harish Sharma</h3>
           <p>Rajasthan Technical University</p>
           <p>Rajasthan</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/anupam_sir.png" alt="Portrait of Dr Anupam Yadav">
+          <img src="w_files/anupam_sir.png" alt="Portrait of Dr Anupam Yadav" loading="lazy">
           <h3>Dr Anupam Yadav</h3>
           <p>Dr B R Ambedkar National Institute of Technology</p>
           <p>Jalandhar</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/op_sir.png" alt="Portrait of Dr OP Verma">
+          <img src="w_files/op_sir.png" alt="Portrait of Dr OP Verma" loading="lazy">
           <h3>Dr OP Verma</h3>
           <p>Dr B R Ambedkar National Institute of Technology</p>
           <p>Jalandhar</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/2388-Dr._Shubham_Photo.jpg" alt="Portrait of Dr Shubham Gupta">
+          <img src="w_files/2388-Dr._Shubham_Photo.jpg" alt="Portrait of Dr Shubham Gupta" loading="lazy">
           <h3>Dr Shubham Gupta</h3>
           <p>Motilal Nehru National Institute of Technology</p>
           <p>Allahabad</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/dikshit.jpg" alt="Portrait of Dr Dikshit Chauhan">
+          <img src="w_files/dikshit.jpg" alt="Portrait of Dr Dikshit Chauhan" loading="lazy">
           <h3>Dr Dikshit Chauhan</h3>
           <p>National University of Singapore</p>
           <p>Singapore</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/Aninda+Bose.jpg" alt="Portrait of Mr Aninda Bose">
+          <img src="w_files/Aninda+Bose.jpg" alt="Portrait of Mr Aninda Bose" loading="lazy">
           <h3>Mr Aninda Bose</h3>
           <p>Executive Editor Springer Nature group</p>
         </article>
         <article class="speaker-card">
-          <img src="w_files/scindhiya.jpg" alt="Portrait of Dr Scindhiya Laxmi">
+          <img src="w_files/scindhiya.jpg" alt="Portrait of Dr Scindhiya Laxmi" loading="lazy">
           <h3>Dr Scindhiya Laxmi</h3>
           <p>Indian Institute of Technology</p>
           <p>Dhanbad</p>
@@ -1177,149 +886,93 @@ footer p {
   <section class="py-12 px-4" id="organizing-committee" role="region" aria-labelledby="organizing-committee-heading">
     <div class="max-w-7xl mx-auto">
       <h2 id="organizing-committee-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Organizers</h2>
-      <!-- Department Card -->
       <div class="speakers-grid">
         <article class="department-card">
-          <img src="images/nitj.png" alt="Department of Mathematics and Computing, NIT Jalandhar">
+          <img src="images/nitj.png" alt="Department of Mathematics and Computing, NIT Jalandhar" loading="lazy">
           <h3>Department of Mathematics and Computing</h3>
           <p>Dr B R Ambedkar National Institute of Technology Jalandhar, Punjab, India</p>
         </article>
       </div>
-      <!-- Researchers -->
       <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4 text-center">Researchers</h3>
       <div class="speakers-grid" id="student-cards">
         <article class="student-card">
-          <img src="w_files/Deepika.jpeg" alt="Portrait of Deepika Khurana">
+          <img src="w_files/Deepika.jpeg" alt="Portrait of Deepika Khurana" loading="lazy">
           <h3>Deepika Khurana</h3>
           <p>PhD Student</p>
         </article>
         <article class="student-card">
-          <img src="w_files/Shrishti.png" alt="Portrait of Shrishti Chamoli">
+          <img src="w_files/Shrishti.png" alt="Portrait of Shrishti Chamoli" loading="lazy">
           <h3>Shrishti Chamoli</h3>
           <p>PhD Student</p>
         </article>
         <article class="student-card">
-          <img src="w_files/nitin01__1.png" alt="Portrait of Nitin Gupta">
+          <img src="w_files/nitin01__1.png" alt="Portrait of Nitin Gupta" loading="lazy">
           <h3>Nitin Gupta</h3>
           <p>PhD Student</p>
         </article>
         <article class="student-card">
-          <img src="w_files/myphoto.jpg" alt="Portrait of Bablu Kumar Sah">
+          <img src="w_files/myphoto.jpg" alt="Portrait of Bablu Kumar Sah" loading="lazy">
           <h3>Bablu Kumar Sah</h3>
           <p>PhD Student</p>
         </article>
         <article class="student-card">
-          <img src="w_files/Ram_S.png" alt="Portrait of Ram Sundar">
+          <img src="w_files/Ram_S.png" alt="Portrait of Ram Sundar" loading="lazy">
           <h3>Ram Sundar</h3>
           <p>PhD Student</p>
         </article>
         <article class="student-card">
-          <img src="w_files/vidhi.jpeg" alt="Portrait of Vidhi Sharma">
+          <img src="w_files/vidhi.jpeg" alt="Portrait of Vidhi Sharma" loading="lazy">
           <h3>Vidhi Sharma</h3>
           <p>PhD Student</p>
         </article>
       </div>
     </div>
   </section>
+
   <!-- Schedule (PDF Viewer) -->
-  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule">
-    <div class="max-w-7xl mx-auto" >
-      <h2 id="schedule" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
-
-
-	    <div id="pdf-container">
-    <canvas id="pdf-render"></canvas>
-    <div id="controls">
-      <button id="prev-page">Previous</button>
-      <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
-      <button id="next-page">Next</button>
-	   
-	      <a href="pdfs/schedule.pdf" download class="download-btn">Download PDF</a>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-  <script>
-    const url = 'pdfs/schedule.pdf';
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
-	   
-    let pdfDoc = null,
-        pageNum = 1,
-        canvas = document.getElementById('pdf-render'),
-        ctx = canvas.getContext('2d');
-
-    function renderPage(num) {
-      pdfDoc.getPage(num).then(function(page) {
-        const viewport = page.getViewport({ scale: 1.5 });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        const renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        page.render(renderContext).promise.then(function () {
-          document.getElementById('page-num').textContent = num;
-        });
-      });
-    }
-
-    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-      pdfDoc = pdfDoc_;
-      document.getElementById('page-count').textContent = pdfDoc.numPages;
-      renderPage(pageNum);
-    });
-
-    document.getElementById('next-page').addEventListener('click', function () {
-      if (pageNum >= pdfDoc.numPages) return;
-      pageNum++;
-      renderPage(pageNum);
-    });
-
-    document.getElementById('prev-page').addEventListener('click', function () {
-      if (pageNum <= 1) return;
-      pageNum--;
-      renderPage(pageNum);
-    });
-  </script>
-	  
+  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule-heading">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="schedule-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
+      <div id="pdf-container">
+        <canvas id="pdf-render" aria-label="PDF schedule viewer"></canvas>
+        <div id="controls">
+          <button id="prev-page" aria-label="Previous page">Previous</button>
+          <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
+          <button id="next-page" aria-label="Next page">Next</button>
+          <a href="pdfs/schedule.pdf" download class="download-btn" aria-label="Download schedule PDF">Download PDF</a>
+        </div>
+        <div id="error-message" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
+      </div>
     </div>
   </section>
 
-  
-
-  <div class="bg-pattern"></div>
-
-  <!-- Main Content -->
-  <section class="pt-12 pb-20 px-4">
+  <!-- Registration Section -->
+  <section class="pt-12 pb-20 px-4" id="registration">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-      <!-- Card 7: Registration Link -->
       <article class="info-card p-8 text-center" role="region" aria-labelledby="registration-link">
         <h2 id="registration-link" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Link</h2>
-        <p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
+        <p class="text-gray-600 text-lg leading-relaxed">
           Register and pay the fee through the official portal:
-         
         </p>
-        <img src="images/EVO_ QR.png" alt="Registration QR Code" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description">
+        <img src="images/EVO_QR.png" alt="Registration QR Code for Summer School" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description" loading="lazy">
         <p id="qr-code-description" class="sr-only">QR code for Summer School registration</p>
-	       <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-            Go to Registration
-          </a><br>
-	       <strong> Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+        <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration page">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+          Go to Registration
+        </a>
+        <p class="text-gray-600 text-lg leading-relaxed mt-2">
+          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+        </p>
       </article>
-
-      <!-- Card 8: Registration Fee -->
       <article class="info-card p-8" role="region" aria-labelledby="registration-fee">
         <h2 id="registration-fee" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Fee</h2>
-        <p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
+        <p class="text-gray-600 text-lg leading-relaxed">
           The non-refundable registration fee structure is as follows:
         </p>
-	<p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
-        <strong> Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
-         
+        <p class="text-gray-600 text-lg leading-relaxed">
+          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
         </p>
         <div class="table-wrapper">
           <table class="fee-table" role="grid" aria-describedby="fee-table-description">
@@ -1371,7 +1024,7 @@ footer p {
         <div class="sponsors-grid">
           <article class="sponsor-card">
             <a href="https://www.scrs.in/" target="_blank" aria-label="Visit Soft Computing Research Society website">
-              <img src="images/scrs.png" alt="Soft Computing Research Society logo">
+              <img src="images/scrs.png" alt="Soft Computing Research Society logo" loading="lazy">
               <h3>Soft Computing Research Society</h3>
             </a>
           </article>
@@ -1385,7 +1038,7 @@ footer p {
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d4ed8] to-[#06b6d4]"></div>
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-600">
       <div>
-        <img src="images/nitj.png" alt="NIT Jalandhar Logo" class="h-12 mb-4" aria-label="NIT Jalandhar Logo">
+        <img src="images/nitj.png" alt="NIT Jalandhar Logo" class="h-12 mb-4" aria-label="NIT Jalandhar Logo" loading="lazy">
         <p>Dr B R Ambedkar National Institute of Technology</p>
         <p>Jalandhar, Punjab, India</p>
       </div>
@@ -1409,12 +1062,12 @@ footer p {
       <div>
         <h3 class="text-lg font-medium mb-4">Follow Us</h3>
         <div class="flex space-x-4">
-          <a href="https://twitter.com/nitj" class="social-icon text-gray-600" aria-label="Twitter">
+          <a href="https://twitter.com/nitj" class="social-icon text-gray-600" aria-label="Follow NIT Jalandhar on Twitter">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
             </svg>
           </a>
-          <a href="https://linkedin.com" class="social-icon text-gray-600" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/school/nitjalandhar/" class="social-icon text-gray-600" aria-label="Follow NIT Topics">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
             </svg>
@@ -1425,33 +1078,6 @@ footer p {
     <p class="text-center text-gray-500 mt-8 text-sm">© 2025 NIT Jalandhar. All rights reserved.</p>
   </footer>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
-<script>
-  const url = 'pdfs/schedule.pdf';
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.worker.min.js';
-  let pdfDoc = null,
-      pageNum = 1,
-      canvas = document.getElementById('pdf-render'),
-      ctx = canvas.getContext('2d'),
-      errorMessage = document.getElementById('error-message');
-  function renderPage(num) {
-    pdfDoc.getPage(num).then(function(page) {
-      const scale = window.innerWidth < 768 ? 1.0 : 1.5;
-      const viewport = page.getViewport({ scale: scale });
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      const renderContext = {
-        canvasContext: ctx,
-        viewport: viewport
-      };
-      page.render(renderContext).promise.then(function () {
-        document.getElementById('page-num').textContent = num;
-        errorMessage.classList.add('hidden');
-      });
-    }).catch(function(error) {
-      console.error('Error rendering page:', error);
-      error*System: * Today's date and time is 12:39 PM IST on Wednesday, May 14, 2025.
   <!-- PDF.js Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
   <script>
@@ -1466,14 +1092,17 @@ footer p {
 
     function renderPage(num) {
       pdfDoc.getPage(num).then(function(page) {
-        const scale = window.innerWidth < 768 ? 1.0 : 1.5;
-        const viewport = page.getViewport({ scale: scale });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+        const containerWidth = document.getElementById('pdf-container').offsetWidth - 32; // Account for padding
+        const viewport = page.getViewport({ scale: 1.0 });
+        const scale = Math.min(containerWidth / viewport.width, 1.8);
+        const scaledViewport = page.getViewport({ scale: scale });
+
+        canvas.width = scaledViewport.width;
+        canvas.height = scaledViewport.height;
 
         const renderContext = {
           canvasContext: ctx,
-          viewport: viewport
+          viewport: scaledViewport
         };
         page.render(renderContext).promise.then(function () {
           document.getElementById('page-num').textContent = num;
@@ -1492,6 +1121,13 @@ footer p {
     }).catch(function(error) {
       console.error('Error loading PDF:', error);
       errorMessage.classList.remove('hidden');
+    });
+
+    // Update canvas size on window resize
+    window.addEventListener('resize', () => {
+      if (pdfDoc) {
+        renderPage(pageNum);
+      }
     });
 
     document.getElementById('next-page').addEventListener('click', function () {
