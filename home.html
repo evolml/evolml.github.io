@@ -1278,6 +1278,22 @@ footer p {
     </div>
   </section>
 
+  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule-heading">
+  <div class="max-w-7xl mx-auto">
+    <h2 id="schedule-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
+    <div id="pdf-container">
+      <div id="error-message" class="hidden text-red-600 text-center mb-4">Error loading PDF. Please try again or download the PDF.</div>
+      <canvas id="pdf-render"></canvas>
+      <div id="controls">
+        <button id="prev-page">Previous</button>
+        <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
+        <button id="next-page">Next</button>
+        <a href="pdfs/schedule.pdf" download class="download-btn">Download PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- Registration Section -->
   <section id="registration" class="pt-12 pb-20 px-4" role="region" aria-labelledby="registration-heading">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -1411,6 +1427,33 @@ footer p {
     <p class="text-center text-gray-500 mt-8 text-sm">© 2025 NIT Jalandhar. All rights reserved.</p>
   </footer>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
+<script>
+  const url = 'pdfs/schedule.pdf';
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.worker.min.js';
+  let pdfDoc = null,
+      pageNum = 1,
+      canvas = document.getElementById('pdf-render'),
+      ctx = canvas.getContext('2d'),
+      errorMessage = document.getElementById('error-message');
+  function renderPage(num) {
+    pdfDoc.getPage(num).then(function(page) {
+      const scale = window.innerWidth < 768 ? 1.0 : 1.5;
+      const viewport = page.getViewport({ scale: scale });
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      const renderContext = {
+        canvasContext: ctx,
+        viewport: viewport
+      };
+      page.render(renderContext).promise.then(function () {
+        document.getElementById('page-num').textContent = num;
+        errorMessage.classList.add('hidden');
+      });
+    }).catch(function(error) {
+      console.error('Error rendering page:', error);
+      error*System: * Today's date and time is 12:39 PM IST on Wednesday, May 14, 2025.
   <!-- PDF.js Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
   <script>
