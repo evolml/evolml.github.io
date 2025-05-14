@@ -27,10 +27,656 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
 
   <style>
-   
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      color: #1f2937;
+      background: #ffffff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .navbar-brand {
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: black;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #f84f4f;
+    }
+
+    .nav-links li a:focus {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      color: black;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .nav-toggle svg {
+      stroke: black;
+    }
+
+    .nav-toggle:focus {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+
+    /* Header Image */
+    .header-image {
+      position: relative;
+      width: 95%;
+      margin: 0 auto;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .header-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .overlay h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.05em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .overlay h1.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tag-line {
+      font-size: 1.1rem;
+      color: #ffffff;
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.4rem;
+      padding: 0.4rem;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* About Section */
+    #about {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    #about p {
+      text-align: justify;
+      font-size: 1.125rem;
+      color: #4b5563;
+      line-height: 1.6;
+      max-width: 100%;
+      margin: 0 auto 1rem;
+    }
+
+    #about p strong {
+      color: #1f2937;
+    }
+    #about mark {
+      background: #e0f2fe;
+      padding: 0.2rem 0.4rem;
+    }
+
+    /* Speakers Section */
+    .speakers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .speaker-card,
+    .student-card,
+    .department-card,
+    .sponsor-card {
+      border-radius: 8px;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 1.2rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .speaker-card,
+    .student-card {
+      width: 220px;
+      height: 280px;
+    }
+
+    .department-card {
+      width: 260px;
+      height: 320px;
+      background: linear-gradient(#ffffff, #f9fafb);
+      border: 1px solid #e5e7eb;
+      padding: 1.2rem;
+    }
+
+    .speaker-card:hover,
+    .student-card:hover,
+    .department-card:hover,
+    .sponsor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .speaker-card img,
+    .student-card img,
+    .department-card img,
+    .sponsor-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
+    }
+
+    .department-card img {
+      width: 110px;
+      height: 110px;
+    }
+
+    .sponsor-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .speaker-card h3,
+    .student-card h3,
+    .department-card h3,
+    .sponsor-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+      color: #000000;
+      font-weight: 500;
+    }
+
+    .department-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .sponsor-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .speaker-card p,
+    .student-card p,
+    .department-card p,
+    .sponsor-card p {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: #4b5563;
+    }
+
+    .department-card p {
+      font-size: 1rem;
+    }
+
+    /* All Speakers List */
+    .info-card {
+      padding: 2rem;
+      text-align: center;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(45deg, #1d4ed8, #06b6d4) border-box;
+      animation: fadeIn 0.6s ease-out;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .speakers-list {
+      margin: 0 auto;
+      padding: 1.5rem;
+      text-align: left;
+    }
+
+    .speakers-list ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 800px;
+      margin: 0;
+    }
+
+    .speakers-list li {
+      font-size: 1.125rem;
+      color: #1f2937;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .speakers-list li a {
+      color: #2563eb;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    .speakers-list li a:hover {
+      color: #1e40af;
+    }
+
+    /* PDF Viewer */
+    #pdf-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      background: #ffffff;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(45deg, #1d4ed8, #06b6d4) border-box;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    #pdf-render {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+
+    #controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #controls button {
+      background: #1d4ed8;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #controls button:hover {
+      background: #1e40af;
+    }
+
+    .download-btn {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: linear-gradient(90deg, #1e40af, #0ea5e9);
+      transform: translateY(-2px);
+    }
+
+    .download-btn:focus {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+
+    #error-message {
+      color: #dc2626;
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Registration Section */
+    .cta-button {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      animation: pulse 2s infinite;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(90deg, #1e40af, #0ea5e9);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Fee Table */
+    .table-wrapper {
+      margin-top: 1rem;
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    .fee-table th,
+    .fee-table td {
+      border: 1px solid #d1d5db;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .fee-table th {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      font-weight: 600;
+    }
+
+    .fee-table tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .fee-table tr:hover {
+      background: #e0f2fe;
+    }
+
+    /* Sponsors Section */
+    .sponsor-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .sponsors-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer .link-button {
+      color: #1d4ed8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer .link-button:hover {
+      color: #06b6d4;
+    }
+
+    .social-icon {
+      transition: color 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: #1d4ed8;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    /* Responsive Adjustments */
+    @media ( attrition: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 0;
+        background: white;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .header-image {
+        width: 95%;
+        height: 300px;
+      }
+      .overlay h1 {
+        font-size: 2rem;
+      }
+      .tag-line {
+        font-size: 0.75rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 200px;
+        height: 260px;
+      }
+      .department-card {
+        width: 240px;
+        height: 300px;
+      }
+      .sponsor-card {
+        width: 220px;
+        height: 240px;
+      }
+      .fee-table {
+        display: block;
+      }
+      .fee-table thead {
+        display: none;
+      }
+      .fee-table tbody,
+      .fee-table tr {
+        display: block;
+        margin-bottom: 1.25rem;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+      }
+      .fee-table td {
+        display: block;
+        text-align: left;
+        padding: 14px;
+        border: none;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .fee-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #1d4ed8;
+        display: block;
+        margin-bottom: 6px;
+      }
+      footer .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      footer .flex {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-image {
+        height: 200px;
+      }
+      .overlay h1 {
+        font-size: 1.5rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 180px;
+        height: 240px;
+      }
+      .department-card {
+        width: 220px;
+        height: 280px;
+      }
+      .sponsor-card {
+        width: 180px;
+        height: 210px;
+      }
+    }
+
+    /* Enhanced Styles for Registration Headers */
+    #registration-fee, #registration-link {
+      position: relative;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 0.8s ease-out;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.3s ease;
+    }
+
+    #registration-fee::after, #registration-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      border-radius: 2px;
+    }
+
+    #registration-fee:hover, #registration-link:hover {
+      transform: scale(1.05);
+    }
+
+    #registration-link {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #registration-link::before {
+      content: '★';
+      color: #1d4ed8;
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      #registration-fee, #registration-link {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #registration-fee, #registration-link {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen">
@@ -60,6 +706,7 @@
     <div class="overlay">
       <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
       <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p>
+      <a href="https://example.com/quiz" target="_blank" class="download-btn" aria-label="Take the quiz">Take Quiz</a>
     </div>
   </section>
 
@@ -299,9 +946,9 @@
   </section>
 
   <!-- Schedule (PDF Viewer) -->
-  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule">
+  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule-heading">
     <div class="max-w-7xl mx-auto">
-      <h2 id="schedule" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
+      <h2 id="schedule-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
       <div id="pdf-container">
         <canvas id="pdf-render" aria-label="PDF schedule viewer"></canvas>
         <div id="controls">
@@ -309,6 +956,7 @@
           <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
           <button id="next-page" aria-label="Next page">Next</button>
           <a href="pdfs/schedule.pdf" download class="download-btn" aria-label="Download schedule PDF">Download PDF</a>
+          <a href="https://example.com/quiz" target="_blank" class="download-btn" aria-label="Take the quiz">Take Quiz</a>
         </div>
         <div id="error-message" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
       </div>
@@ -530,6 +1178,18 @@
       const isExpanded = navLinks.classList.contains('active');
       document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
     });
+
+    // Intersection Observer for overlay heading animation
+    const heading = document.querySelector('.overlay h1');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          heading.classList.add('visible');
+          observer.unobserve(heading); // Run animation only once
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(heading);
   </script>
 </body>
 </html>
