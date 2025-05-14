@@ -1260,68 +1260,105 @@ footer p {
       </div>
     </div>
   </section>
-
   <!-- Schedule (PDF Viewer) -->
-  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule-heading">
-    <div class="max-w-7xl mx-auto">
-      <h2 id="schedule-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
-      <div id="pdf-container">
-        <div id="error-message" class="hidden text-red-600 text-center mb-4">Error loading PDF. Please try again or download the PDF.</div>
-        <canvas id="pdf-render"></canvas>
-        <div id="controls">
-          <button id="prev-page">Previous</button>
-          <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
-          <button id="next-page">Next</button>
-          <a href="pdfs/schedule.pdf" download class="download-btn">Download PDF</a>
-        </div>
-      </div>
+  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule">
+    <div class="max-w-7xl mx-auto" >
+      <h2 id="schedule" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
+
+
+	    <div id="pdf-container">
+    <canvas id="pdf-render"></canvas>
+    <div id="controls">
+      <button id="prev-page">Previous</button>
+      <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
+      <button id="next-page">Next</button>
+	   
+	      <a href="pdfs/schedule.pdf" download class="download-btn">Download PDF</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script>
+    const url = 'pdfs/schedule.pdf';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+	   
+    let pdfDoc = null,
+        pageNum = 1,
+        canvas = document.getElementById('pdf-render'),
+        ctx = canvas.getContext('2d');
+
+    function renderPage(num) {
+      pdfDoc.getPage(num).then(function(page) {
+        const viewport = page.getViewport({ scale: 1.5 });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        page.render(renderContext).promise.then(function () {
+          document.getElementById('page-num').textContent = num;
+        });
+      });
+    }
+
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+      pdfDoc = pdfDoc_;
+      document.getElementById('page-count').textContent = pdfDoc.numPages;
+      renderPage(pageNum);
+    });
+
+    document.getElementById('next-page').addEventListener('click', function () {
+      if (pageNum >= pdfDoc.numPages) return;
+      pageNum++;
+      renderPage(pageNum);
+    });
+
+    document.getElementById('prev-page').addEventListener('click', function () {
+      if (pageNum <= 1) return;
+      pageNum--;
+      renderPage(pageNum);
+    });
+  </script>
+	  
     </div>
   </section>
 
-  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule-heading">
-  <div class="max-w-7xl mx-auto">
-    <h2 id="schedule-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
-    <div id="pdf-container">
-      <div id="error-message" class="hidden text-red-600 text-center mb-4">Error loading PDF. Please try again or download the PDF.</div>
-      <canvas id="pdf-render"></canvas>
-      <div id="controls">
-        <button id="prev-page">Previous</button>
-        <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
-        <button id="next-page">Next</button>
-        <a href="pdfs/schedule.pdf" download class="download-btn">Download PDF</a>
-      </div>
-    </div>
-  </div>
-</section>
+  
 
-  <!-- Registration Section -->
-  <section id="registration" class="pt-12 pb-20 px-4" role="region" aria-labelledby="registration-heading">
+  <div class="bg-pattern"></div>
+
+  <!-- Main Content -->
+  <section class="pt-12 pb-20 px-4">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-      <!-- Registration Link -->
-      <article class="info-card p-8 text-center" role="region" aria-labelledby="registration-link-heading">
-        <h2 id="registration-link-heading" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Link</h2>
-        <p class="text-gray-600 text-lg leading-relaxed text-center">
+      <!-- Card 7: Registration Link -->
+      <article class="info-card p-8 text-center" role="region" aria-labelledby="registration-link">
+        <h2 id="registration-link" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Link</h2>
+        <p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
           Register and pay the fee through the official portal:
+         
         </p>
-        <img src="images/EVO_QR.png" alt="Registration QR Code" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description">
+        <img src="images/EVO_ QR.png" alt="Registration QR Code" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description">
         <p id="qr-code-description" class="sr-only">QR code for Summer School registration</p>
-        <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-          Go to Registration
-        </a><br>
-        <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+	       <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+            Go to Registration
+          </a><br>
+	       <strong> Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
       </article>
 
-      <!-- Registration Fee -->
-      <article class="info-card p-8" role="region" aria-labelledby="registration-fee-heading">
-        <h2 id="registration-fee-heading" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Fee</h2>
-        <p class="text-gray-600 text-lg leading-relaxed text-center">
+      <!-- Card 8: Registration Fee -->
+      <article class="info-card p-8" role="region" aria-labelledby="registration-fee">
+        <h2 id="registration-fee" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Fee</h2>
+        <p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
           The non-refundable registration fee structure is as follows:
         </p>
-        <p class="text-gray-600 text-lg leading-relaxed text-center">
-          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+	<p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
+        <strong> Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+         
         </p>
         <div class="table-wrapper">
           <table class="fee-table" role="grid" aria-describedby="fee-table-description">
