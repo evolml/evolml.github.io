@@ -57,7 +57,7 @@
 
     .navbar-brand {
       color: black;
-      font-size: 1.5rem;
+      font-size: clamp(1.25rem, 3vw, 1.5rem);
       font-weight: 700;
       text-decoration: none;
     }
@@ -68,12 +68,14 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      transition: all 0.3s ease;
     }
 
     .nav-links li a {
       color: black;
       font-weight: 500;
       text-decoration: none;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
       transition: color 0.2s ease;
     }
 
@@ -94,10 +96,13 @@
       cursor: pointer;
       background: none;
       border: none;
+      padding: 0.5rem;
     }
 
     .nav-toggle svg {
       stroke: black;
+      width: 24px;
+      height: 24px;
     }
 
     .nav-toggle:focus {
@@ -112,6 +117,7 @@
       margin: 0 auto;
       height: 400px;
       overflow: hidden;
+      aspect-ratio: 16 / 9;
     }
 
     .header-img {
@@ -134,11 +140,11 @@
       justify-content: center;
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: clamp(0.5rem, 2vw, 1rem);
     }
 
     .overlay h1 {
-      font-size: 2.5rem;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
       font-weight: 700;
       color: #ffffff;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 255, 255, 0.3);
@@ -146,6 +152,7 @@
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 1s ease-out, transform 1s ease-out;
+      margin-bottom: 0.5rem;
     }
 
     .overlay h1.visible {
@@ -154,7 +161,7 @@
     }
 
     .tag-line {
-      font-size: 1.1rem;
+      font-size: clamp(0.7rem, 2.5vw, 1.1rem);
       color: #ffffff;
       font-style: italic;
       text-align: center;
@@ -165,13 +172,13 @@
 
     /* About Section */
     #about {
-      padding: 2rem 1.5rem;
+      padding: clamp(1rem, 5vw, 2rem) clamp(1rem, 3vw, 1.5rem);
       text-align: center;
     }
 
     #about p {
       text-align: justify;
-      font-size: 1.125rem;
+      font-size: clamp(0.9rem, 2.5vw, 1.125rem);
       color: #4b5563;
       line-height: 1.6;
       max-width: 100%;
@@ -191,7 +198,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.2rem;
+      gap: clamp(0.8rem, 2vw, 1.2rem);
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
@@ -204,7 +211,7 @@
       border-radius: 8px;
       background: #f2f2f2;
       text-align: center;
-      padding: 1.2rem;
+      padding: clamp(0.8rem, 2vw, 1.2rem);
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -215,16 +222,16 @@
 
     .speaker-card,
     .student-card {
-      width: 220px;
-      height: 280px;
+      width: clamp(160px, 25vw, 220px);
+      height: clamp(220px, 35vw, 280px);
     }
 
     .department-card {
-      width: 260px;
-      height: 320px;
+      width: clamp(200px, 30vw, 260px);
+      height: clamp(260px, 40vw, 320px);
       background: linear-gradient(#ffffff, #f9fafb);
       border: 1px solid #e5e7eb;
-      padding: 1.2rem;
+      padding: clamp(0.8rem, 2vw, 1.2rem);
     }
 
     .speaker-card:hover,
@@ -239,21 +246,21 @@
     .student-card img,
     .department-card img,
     .sponsor-card img {
-      width: 120px;
-      height: 120px;
+      width: clamp(80px, 15vw, 120px);
+      height: clamp(80px, 15vw, 120px);
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 0.75rem;
     }
 
     .department-card img {
-      width: 110px;
-      height: 110px;
+      width: clamp(80px, 12vw, 110px);
+      height: clamp(80px, 12vw, 110px);
     }
 
     .sponsor-card img {
-      width: 150px;
-      height: 150px;
+      width: clamp(100px, 20vw, 150px);
+      height: clamp(100px, 20vw, 150px);
       object-fit: contain;
     }
 
@@ -262,17 +269,17 @@
     .department-card h3,
     .sponsor-card h3 {
       margin: 0.5rem 0;
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
       color: #000000;
       font-weight: 500;
     }
 
     .department-card h3 {
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
     }
 
     .sponsor-card h3 {
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
     }
 
     .speaker-card p,
@@ -280,17 +287,17 @@
     .department-card p,
     .sponsor-card p {
       margin: 0.2rem 0;
-      font-size: 1rem;
+      font-size: clamp(0.8rem, 2vw, 1rem);
       color: #4b5563;
     }
 
     .department-card p {
-      font-size: 1rem;
+      font-size: clamp(0.8rem, 2vw, 1rem);
     }
 
     /* All Speakers List */
     .info-card {
-      padding: 2rem;
+      padding: clamp(1rem, 3vw, 2rem);
       text-align: center;
       border: 2px solid transparent;
       border-radius: 12px;
@@ -307,7 +314,7 @@
 
     .speakers-list {
       margin: 0 auto;
-      padding: 1.5rem;
+      padding: clamp(1rem, 2vw, 1.5rem);
       text-align: left;
     }
 
@@ -322,7 +329,7 @@
     }
 
     .speakers-list li {
-      font-size: 1.125rem;
+      font-size: clamp(0.9rem, 2.5vw, 1.125rem);
       color: #1f2937;
       line-height: 1.6;
       text-align: left;
@@ -342,8 +349,8 @@
     #pdf-container {
       display: flex;
       flex-direction: column;
-      align-items by: center;
-      padding: 1.5rem;
+      align-items: center;
+      padding: clamp(1rem, 2vw, 1.5rem);
       background: #ffffff;
       border: 2px solid transparent;
       border-radius: 12px;
@@ -366,7 +373,7 @@
     #controls {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: clamp(0.5rem, 2vw, 1rem);
       margin-top: 1rem;
       flex-wrap: wrap;
       justify-content: center;
@@ -375,10 +382,11 @@
     #controls button {
       background: #1d4ed8;
       color: #ffffff;
-      padding: 0.5rem 1rem;
+      padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem);
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       transition: background 0.3s;
     }
 
@@ -389,10 +397,10 @@
     .download-btn {
       background: linear-gradient(90deg, #1d4ed8, #06b6d4);
       color: white;
-      padding: 12px 24px;
+      padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px);
       border-radius: 4px;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: clamp(0.8rem, 2vw, 1rem);
       text-decoration: none;
       transition: background 0.3s ease, transform 0.3s ease;
     }
@@ -415,10 +423,10 @@
     .cta-button {
       background: linear-gradient(90deg, #1d4ed8, #06b6d4);
       color: white;
-      padding: 12px 24px;
+      padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px);
       border-radius: 4px;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: clamp(0.8rem, 2vw, 1rem);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: inline-flex;
       align-items: center;
@@ -449,9 +457,9 @@
     .fee-table th,
     .fee-table td {
       border: 1px solid #d1d5db;
-      padding: 12px;
+      padding: clamp(8px, 2vw, 12px);
       text-align: center;
-      font-size: 0.95rem;
+      font-size: clamp(0.8rem, 2vw, 0.95rem);
       font-weight: 400;
     }
 
@@ -483,8 +491,9 @@
 
     .sponsors-grid {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 1.2rem;
+      gap: clamp(0.8rem, 2vw, 1.2rem);
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
@@ -495,6 +504,7 @@
       color: #1d4ed8;
       text-decoration: none;
       transition: color 0.3s ease;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
     }
 
     footer .link-button:hover {
@@ -521,6 +531,43 @@
     }
 
     /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+      .speakers-grid,
+      .sponsors-grid {
+        gap: 1rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 200px;
+        height: 260px;
+      }
+      .department-card {
+        width: 240px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .nav-bar {
+        padding: 1rem 1.5rem;
+      }
+      .header-image {
+        height: 350px;
+      }
+      .overlay {
+        padding: 0.8rem;
+      }
+      #about {
+        padding: 1.5rem 1rem;
+      }
+      .info-card {
+        padding: 1.5rem;
+      }
+      #pdf-container {
+        padding: 1rem;
+      }
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -529,6 +576,10 @@
         width: 100%;
         padding: 1rem 0;
         background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
       .nav-links.active {
         display: flex;
@@ -593,6 +644,10 @@
       footer .flex {
         justify-content: center;
       }
+      #registration-fee,
+      #registration-link {
+        font-size: 1.75rem;
+      }
     }
 
     @media (max-width: 600px) {
@@ -601,6 +656,14 @@
       }
       .overlay h1 {
         font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+      }
+      .overlay {
+        padding: 0.5rem;
+      }
+      .download-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
       }
       .speaker-card,
       .student-card {
@@ -615,12 +678,247 @@
         width: 180px;
         height: 210px;
       }
+      #about p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      #pdf-container {
+        padding: 0.8rem;
+      }
+      #controls {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .info-card {
+        padding: 1rem;
+      }
+      #registration-fee,
+      #registration-link {
+        font-size: 1.5rem;
+      }
+      .cta-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      .fee-table th,
+      .fee-table td {
+        padding: 10px;
+        font-size: 0.85rem;
+      }
+      footer .grid {
+        gap: 1.5rem;
+      }
+      footer p,
+      footer .link-button {
+        font-size: 0.85rem;
+      }
+      .social-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+      .nav-links li a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+      }
+      .nav-toggle svg {
+        width: 20px;
+        height: 20px;
+      }
+      .header-image {
+        height: 180px;
+      }
+      .overlay h1 {
+        font-size: 1.25rem;
+      }
+      .tag-line {
+        font-size: 0.65rem;
+        margin-top: 0.2rem;
+      }
+      .download-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+      .speakers-grid,
+      .sponsors-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .speaker-card,
+      .student-card {
+        width: 160px;
+        height: 220px;
+      }
+      .department-card {
+        width: 200px;
+        height: 260px;
+      }
+      .sponsor-card {
+        width: 160px;
+        height: 200px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 80px;
+        height: 80px;
+      }
+      .department-card img {
+        width: 70px;
+        height: 70px;
+      }
+      .sponsor-card img {
+        width: 100px;
+        height: 100px;
+      }
+      .speaker-card h3,
+      .student-card h3,
+      .department-card h3,
+      .sponsor-card h3 {
+        font-size: 1rem;
+      }
+      .speaker-card p,
+      .student-card p,
+      .department-card p,
+      .sponsor-card p {
+        font-size: 0.8rem;
+      }
+      #about {
+        padding: 1rem 0.8rem;
+      }
+      #about p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+      .info-card {
+        padding: 0.8rem;
+      }
+      .speakers-list {
+        padding: 1rem;
+      }
+      .speakers-list li {
+        font-size: 0.95rem;
+      }
+      #pdf-container {
+        padding: 0.5rem;
+      }
+      #controls button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+      .fee-table th,
+      .fee-table td {
+        padding: 8px;
+        font-size: 0.8rem;
+      }
+      .table-wrapper {
+        margin-top: 0.5rem;
+      }
+      .cta-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+      footer .grid {
+        gap: 1rem;
+      }
+      footer h3 {
+        font-size: 1rem;
+      }
+      footer p,
+      footer .link-button {
+        font-size: 0.8rem;
+      }
+      .social-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+      .nav-links li a {
+        font-size: 0.85rem;
+      }
+      .header-image {
+        height: 160px;
+      }
+      .overlay h1 {
+        font-size: 1.1rem;
+      }
+      .tag-line {
+        font-size: 0.6rem;
+      }
+      .download-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 140px;
+        height: 200px;
+      }
+      .department-card {
+        width: 180px;
+        height: 240px;
+      }
+      .sponsor-card {
+        width: 140px;
+        height: 180px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 70px;
+        height: 70px;
+      }
+      .department-card img {
+        width: 60px;
+        height: 60px;
+      }
+      .sponsor-card img {
+        width: 80px;
+        height: 80px;
+      }
+      .speaker-card h3,
+      .student-card h3,
+      .department-card h3,
+      .sponsor-card h3 {
+        font-size: 0.9rem;
+      }
+      .speaker-card p,
+      .student-card p,
+      .department-card p,
+      .sponsor-card p {
+        font-size: 0.75rem;
+      }
+      #about p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+      }
+      .speakers-list li {
+        font-size: 0.85rem;
+      }
+      .info-card {
+        padding: 0.6rem;
+      }
+      #registration-fee,
+      #registration-link {
+        font-size: 1.25rem;
+      }
+      .fee-table td:before {
+        font-size: 0.75rem;
+      }
     }
 
     /* Enhanced Styles for Registration Headers */
     #registration-fee, #registration-link {
       position: relative;
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 5vw, 2rem);
       font-weight: 800;
       text-align: center;
       padding-bottom: 0.5rem;
@@ -657,18 +955,6 @@
       content: '★';
       color: #1d4ed8;
       margin-right: 0.5rem;
-    }
-
-    @media (max-width: 768px) {
-      #registration-fee, #registration-link {
-        font-size: 1.75rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      #registration-fee, #registration-link {
-        font-size: 1.5rem;
-      }
     }
   </style>
 </head>
@@ -1102,9 +1388,9 @@
 
     function renderPage(num) {
       pdfDoc.getPage(num).then(function(page) {
-        const containerWidth = document.getElementById('pdf-container').offsetWidth - 32; // Account for padding
+        const containerWidth = document.getElementById('pdf-container').offsetWidth - 32;
         const viewport = page.getViewport({ scale: 1.0 });
-        const scale = Math.min(containerWidth / viewport.width, 1.8); // Responsive scaling
+        const scale = Math.min(containerWidth / viewport.width, 1.8);
         const scaledViewport = page.getViewport({ scale: scale });
 
         canvas.width = scaledViewport.width;
@@ -1139,7 +1425,6 @@
       errorMessage.classList.remove('hidden');
     });
 
-    // Update canvas size on window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
@@ -1178,7 +1463,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           heading.classList.add('visible');
-          observer.unobserve(heading); // Run animation only once
+          observer.unobserve(heading);
         }
       });
     }, { threshold: 0.5 });
