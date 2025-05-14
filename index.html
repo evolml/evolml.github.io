@@ -30,7 +30,15 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* Grid container */
+ /* Section container */
+section {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Grid container */
 .max-w-7xl {
   max-width: 80rem;
   margin-left: auto;
@@ -139,23 +147,26 @@
   height: 1.5rem;
 }
 
-/* Fee Table */
+/* Table Wrapper */
 .table-wrapper {
   margin-top: 1rem;
+  width: 100%;
+  overflow-x: auto;
 }
 
+/* Fee Table */
 .fee-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 300px;
+  table-layout: auto;
 }
 
 .fee-table th,
 .fee-table td {
   border: 1px solid #d1d5db;
-  padding: 16px;
+  padding: 12px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 400;
 }
 
@@ -188,6 +199,7 @@
 @media (max-width: 768px) {
   .fee-table {
     display: block;
+    width: 100%;
   }
   .fee-table thead {
     display: none;
@@ -195,23 +207,37 @@
   .fee-table tbody,
   .fee-table tr {
     display: block;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     border: 1px solid #d1d5db;
-    border-radius: 10px;
+    border-radius: 8px;
   }
   .fee-table td {
     display: block;
     text-align: left;
-    padding: 14px;
+    padding: 10px;
     border: none;
     border-bottom: 1px solid #e5e7eb;
+    font-size: 0.9rem;
   }
   .fee-table td:before {
     content: attr(data-label);
     font-weight: 600;
     color: #1d4ed8;
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+  }
+  .fee-table td:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .fee-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  .fee-table td:before {
+    font-size: 0.85rem;
   }
 }
 
