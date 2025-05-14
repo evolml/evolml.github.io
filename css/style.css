@@ -84,7 +84,7 @@ body {
   border-radius: 8px; /* Removed 50% to maintain rectangular shape */
   object-fit: cover;
   margin-bottom: 0.75rem;
-  background: #f2f2f2;
+  
   text-align: center;
   padding: 1.5rem;
   box-sizing: border-box;
@@ -93,6 +93,10 @@ body {
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+	
+  background: linear-gradient(#ffffff, #f9fafb);
+  border: 1px solid #e5e7eb;
+
 }
 .department-card img {
   width: 120px; /* Slightly increased for balance */
