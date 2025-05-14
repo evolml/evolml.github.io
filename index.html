@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
- 
+   
   </style>
 </head>
 <body class="min-h-screen">
@@ -43,37 +43,30 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="active">About</a></li>
-        <li><a href="#registration-link">Registration</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#">Poster</a></li>
-        <li><a href="#">Accommodation</a></li>
-	
-        <li><a href="#">Live</a></li>
+      <ul class="nav-links" id="nav-links" role="navigation">
+        <li><a href="#about" class="active" aria-label="Navigate to About section">About</a></li>
+        <li><a href="#registration-link" aria-label="Navigate to Registration section">Registration</a></li>
+        <li><a href="#schedule" aria-label="Navigate to Schedule section">Schedule</a></li>
+        <li><a href="#poster" aria-label="Navigate to Poster section">Poster</a></li>
+        <li><a href="#accommodation" aria-label="Navigate to Accommodation section">Accommodation</a></li>
+        <li><a href="#live" aria-label="Navigate to Live section">Live</a></li>
       </ul>
     </div>
   </header>
 
   <!-- Header Image -->
-<section class="header-image" role="img" aria-label="Summer School on EVOML 2025 Banner" aria-describedby="header-tagline" >
-  <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img">
-  <div class="overlay">
-    <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)<br>
-	    <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p></h1>
-    
-  </div>
-	
-</section>
-
-<style>
-
-</style>
+  <section class="header-image" role="img" aria-label="Summer School on EVOML 2025 Banner" aria-describedby="header-tagline">
+    <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img" loading="eager">
+    <div class="overlay">
+      <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
+      <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p>
+    </div>
+  </section>
 
   <!-- About Section -->
-  <section id="about" class="py-12 px-4" role="region" aria-labelledby="about">
+  <section id="about" class="py-12 px-4" role="region" aria-labelledby="about-heading">
     <div class="max-w-full px-4">
-      <h2 id="about" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">About</h2>
+      <h2 id="about-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">About</h2>
       <p class="text-lg text-gray-600 leading-relaxed">
         The <strong>"Evolutionary Algorithms and Machine Learning: Theory and Applications"</strong> 
         summer school offers a comprehensive and intensive exploration of the intersection 
@@ -98,396 +91,257 @@
     </div>
   </section>
 
-
- <!-- Keynote Speakers -->
-  <section class="py-12 px-4" id="keynote" role="region" aria-labelledby="keynote-speakers">
+  <!-- Keynote Speakers -->
+  <section class="py-12 px-4" id="keynote" role="region" aria-labelledby="keynote-heading">
     <div class="max-w-7xl mx-auto">
-      <h2 id="keynote-speakers" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
+      <h2 id="keynote-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
       <div class="speakers-grid">
-        <!-- Speaker 1 -->
         <article class="speaker-card">
-         <div class="speaker-card">
-				<img src="w_files/lipo_wang.jpg" alt="">
-				<h3>Prof Lipo Wang</h3>
-				<p>Nanyang Technological University</p>
-				<p>Singapore</p>
-			        </div>
+          <img src="w_files/lipo_wang.jpg" alt="Portrait of Prof Lipo Wang" loading="lazy">
+          <h3>Prof Lipo Wang</h3>
+          <p>Nanyang Technological University</p>
+          <p>Singapore</p>
         </article>
-        <!-- Speaker 2 -->
         <article class="speaker-card">
-          <div class="speaker-card">
-				<img src="w_files/Kusum_Deep.jpg" alt="Simge Küçükyavuz">
-				<h3>Prof Kusum Deep</h3>
-				<p>Indian Institute of Technology</p>
-				<p>Roorkee</p>
-                                </div>
+          <img src="w_files/Kusum_Deep.jpg" alt="Portrait of Prof Kusum Deep" loading="lazy">
+          <h3>Prof Kusum Deep</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Roorkee</p>
         </article>
-	       <article class="speaker-card">
-         <div class="speaker-card">	
-				<img src="w_files/Efren.jpg">
-				<h3>Dr Efrén Mezura-Montes</h3>
-				<p>University of Veracruz</p>
-				<p>Mexico</p>
-				</div>
-        </article>
-        <!-- Speaker 3 -->
-       <article class="speaker-card">
-         <div class="speaker-card">
-			 	<img src="w_files/donghwi_jung.jpg" alt="Claudia Sagastizábal">
-			 	<h3>Dr Donghwi Jung</h3>
-			 	<p>Korea University</p>
-			 	<p>Korea</p>
-		  		</div>
-        </article>
-	      
-        <!-- Speaker 4 -->
         <article class="speaker-card">
-         <div class="speaker-card">	
-				<img src="w_files/Anupum_Trivedi.jpg">
-				<h3>Dr Anupam Trivedi</h3>
-				<p>National University of Singapore</p>
-				<p>Singapore</p>
-				</div>
-			
+          <img src="w_files/Efren.jpg" alt="Portrait of Dr Efrén Mezura-Montes" loading="lazy">
+          <h3>Dr Efrén Mezura-Montes</h3>
+          <p>University of Veracruz</p>
+          <p>Mexico</p>
         </article>
-        <!-- Speaker 5 -->
         <article class="speaker-card">
-          <div class="speaker-card">	  
-				<img src="w_files/manoj_thakur.jpg"> 
-				<h3>Dr Manoj Thakur</h3>
-				<p>Indian Institute of Technology</p>
-				<p>Mandi</p>
-				</div> 
-			
+          <img src="w_files/donghwi_jung.jpg" alt="Portrait of Dr Donghwi Jung" loading="lazy">
+          <h3>Dr Donghwi Jung</h3>
+          <p>Korea University</p>
+          <p>Korea</p>
         </article>
-        <!-- Speaker 6 -->
         <article class="speaker-card">
-          <div class="speaker-card">	
-				<img src="w_files/Dr._Sanjay.jpg">
-				<h3>Prof Sanjay Singh</h3>
-				<p>Senior Pr. Scientist</p>
-				<p>Head CSIR-CEERI</p>
-				</div>
+          <img src="w_files/Anupum_Trivedi.jpg" alt="Portrait of Dr Anupam Trivedi" loading="lazy">
+          <h3>Dr Anupam Trivedi</h3>
+          <p>National University of Singapore</p>
+          <p>Singapore</p>
         </article>
-        <!-- Speaker 7 -->
         <article class="speaker-card">
-        <div class="speaker-card">	
-		    		<img src="w_files/JC_bansal.jpg">
-				<h3>Dr JC Bansal</h3>
-				<p>South Asian University</p>
-				<p></p>
-				</div>
-			
+          <img src="w_files/manoj_thakur.jpg" alt="Portrait of Dr Manoj Thakur" loading="lazy">
+          <h3>Dr Manoj Thakur</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Mandi</p>
         </article>
-        <!-- Speaker 8 -->
         <article class="speaker-card">
-         <div class="speaker-card">	
-				<img src="w_files/abhishek_gupta.jpg">
-				<h3>Dr Abhishek Gupta</h3>
-				<p>Indian Institute of Technology</p>
-				<p>Goa</p>
-				</div>
+          <img src="w_files/Dr._Sanjay.jpg" alt="Portrait of Prof Sanjay Singh" loading="lazy">
+          <h3>Prof Sanjay Singh</h3>
+          <p>Senior Pr. Scientist</p>
+          <p>Head CSIR-CEERI</p>
         </article>
-        <!-- Speaker 9 -->
         <article class="speaker-card">
-         <div class="speaker-card">    
-				<img src="w_files/bapi_dutta.jpg">
-				<h3>Dr Bapi Dutta</h3>
-				<p>University of Jaen</p>
-				<p>Jaen, Spain</p>
-	      			</div> 
+          <img src="w_files/JC_bansal.jpg" alt="Portrait of Dr JC Bansal" loading="lazy">
+          <h3>Dr JC Bansal</h3>
+          <p>South Asian University</p>
         </article>
-        <!-- Speaker 10 -->
         <article class="speaker-card">
-          <div class="speaker-card">
-				<img src="w_files/indu.png">
-				<h3>Dr Indu Bala	</h3>
-				<p>University of Adelaide</p>
-				<p>Australia</p>
-				</div> 
+          <img src="w_files/abhishek_gupta.jpg" alt="Portrait of Dr Abhishek Gupta" loading="lazy">
+          <h3>Dr Abhishek Gupta</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Goa</p>
         </article>
-        <!-- Speaker 11 -->
         <article class="speaker-card">
-          <div class="speaker-card">	
-				<img src="w_files/kedar_nath.jpg">
-				<h3>Dr Kedar Nath Das</h3>
-				<p>National Institute of Technology</p>
-				<p>Silchar</p>
-				</div>
+          <img src="w_files/bapi_dutta.jpg" alt="Portrait of Dr Bapi Dutta" loading="lazy">
+          <h3>Dr Bapi Dutta</h3>
+          <p>University of Jaen</p>
+          <p>Jaen, Spain</p>
         </article>
-        <!-- Speaker 12 -->
         <article class="speaker-card">
-         <div class="speaker-card">	
-				<img src="w_files/hemant_kumar.jpg">
-				<h3>Dr Hemant Kumar Singh</h3>
-				<p>University of New South Wales</p>
-				<p>Australia</p>
-				</div>
-
+          <img src="w_files/indu.png" alt="Portrait of Dr Indu Bala" loading="lazy">
+          <h3>Dr Indu Bala</h3>
+          <p>University of Adelaide</p>
+          <p>Australia</p>
         </article>
-        <!-- Speaker 13 -->
         <article class="speaker-card">
-         <div class="speaker-card">	
-				<img src="w_files/harish_sharma.jpg">
-				<h3>Dr Harish Sharma</h3>
-				<p>Rajasthan Technical University</p>
-				<p>Rajasthan</p>
-				</div>
-
+          <img src="w_files/kedar_nath.jpg" alt="Portrait of Dr Kedar Nath Das" loading="lazy">
+          <h3>Dr Kedar Nath Das</h3>
+          <p>National Institute of Technology</p>
+          <p>Silchar</p>
         </article>
-        <!-- Speaker 14 -->
         <article class="speaker-card">
-         <div class="speaker-card">	
-				<img src="w_files/anupam_sir.png">
-				<h3>Dr Anupam Yadav</h3>
-				<p>Dr B R Ambedkar National Institute of Technology</p>
-				<p>Jalandhar</p>
-				</div>
-
+          <img src="w_files/hemant_kumar.jpg" alt="Portrait of Dr Hemant Kumar Singh" loading="lazy">
+          <h3>Dr Hemant Kumar Singh</h3>
+          <p>University of New South Wales</p>
+          <p>Australia</p>
         </article>
-        <!-- Speaker 15 -->
-	 <article class="speaker-card">
-        <div class="speaker-card">	
-				<img src="w_files/op_sir.png">
-				<h3>Dr OP Verma</h3>
-				<p>Dr B R Ambedkar National Institute of Technology</p>
-				<p>Jalandhar</p>
-				</div>
-
-        </article>
-        <!-- Speaker 16 -->
-      	<article class="speaker-card">
-        <div class="speaker-card">	
-				<img src="w_files/2388-Dr._Shubham_Photo.jpg">
-				<h3>Dr Shubham Gupta</h3>
-				<p>Motilal Nehru National Institute of Technology</p>
-				<p>Allahabad</p>
-				</div>
-
-        </article>
-        <!-- Speaker 17 -->
         <article class="speaker-card">
-        <div class="speaker-card">	
-				<img src="w_files/dikshit.jpg">
-				<h3>Dr Dikshit Chauhan</h3>
-				<p>National University of Singapore</p>
-				<p>Singapore</p>
-				</div>
-
-
+          <img src="w_files/harish_sharma.jpg" alt="Portrait of Dr Harish Sharma" loading="lazy">
+          <h3>Dr Harish Sharma</h3>
+          <p>Rajasthan Technical University</p>
+          <p>Rajasthan</p>
         </article>
-        <!-- Speaker 18 -->
-	 <article class="speaker-card">
-	 <div class="speaker-card">	
-				<img src="w_files/Aninda+Bose.jpg">
-				<h3>Mr Aninda Bose</h3>
-				<p>Executive Editor Springer Nature group</p>
-				<p></p>
-				</div>
-
-         </article>
-        <!-- Speaker 19 -->
-	 <article class="speaker-card">
-	 <div class="speaker-card">	
-				<img src="w_files/scindhiya.jpg">
-				<h3>Scindhiya Laxmi</h3>
-				<p>Indian Institute of Technology</p>
-				<p>Dhanbad</p>
-				</div>
-
-         </article>
-       
+        <article class="speaker-card">
+          <img src="w_files/anupam_sir.png" alt="Portrait of Dr Anupam Yadav" loading="lazy">
+          <h3>Dr Anupam Yadav</h3>
+          <p>Dr B R Ambedkar National Institute of Technology</p>
+          <p>Jalandhar</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/op_sir.png" alt="Portrait of Dr OP Verma" loading="lazy">
+          <h3>Dr OP Verma</h3>
+          <p>Dr B R Ambedkar National Institute of Technology</p>
+          <p>Jalandhar</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/2388-Dr._Shubham_Photo.jpg" alt="Portrait of Dr Shubham Gupta" loading="lazy">
+          <h3>Dr Shubham Gupta</h3>
+          <p>Motilal Nehru National Institute of Technology</p>
+          <p>Allahabad</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/dikshit.jpg" alt="Portrait of Dr Dikshit Chauhan" loading="lazy">
+          <h3>Dr Dikshit Chauhan</h3>
+          <p>National University of Singapore</p>
+          <p>Singapore</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Aninda+Bose.jpg" alt="Portrait of Mr Aninda Bose" loading="lazy">
+          <h3>Mr Aninda Bose</h3>
+          <p>Executive Editor Springer Nature group</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/scindhiya.jpg" alt="Portrait of Dr Scindhiya Laxmi" loading="lazy">
+          <h3>Dr Scindhiya Laxmi</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Dhanbad</p>
+        </article>
       </div>
     </div>
-	    
   </section>
- <!-- All Speakers List -->
-  <section class="py-12 px-4" id="speakers-list" role="region" aria-labelledby="speakers-list">
+
+  <!-- All Speakers List -->
+  <section class="py-12 px-4" id="speakers-list" role="region" aria-labelledby="speakers-list-heading">
     <div class="max-w-7xl mx-auto">
       <div class="info-card p-8">
-        <h2 id="speakers-list" class="text-4xl font-bold text-gray-900 tracking-tight">All Speakers</h2>
+        <h2 id="speakers-list-heading" class="text-4xl font-bold text-gray-900 tracking-tight">All Speakers</h2>
         <div class="speakers-list">
           <ul>
-           <li><a href="https://personal.ntu.edu.sg/elpwang/" aria-label="Visit Dr Lipo Wang's profile">Dr. Lipo Wang</a>, Nanyang Technological University, Singapore</li>
-            <li><a href="https://www.iitr.ac.in/~MA/Deep_Kusum" aria-label="Visit Prof Kusum Deep's profile">Prof Kusum Deep</a>, Indian Institute of Technology, Roorkee </li>
+            <li><a href="https://personal.ntu.edu.sg/elpwang/" aria-label="Visit Dr Lipo Wang's profile">Dr. Lipo Wang</a>, Nanyang Technological University, Singapore</li>
+            <li><a href="https://www.iitr.ac.in/~MA/Deep_Kusum" aria-label="Visit Prof Kusum Deep's profile">Prof Kusum Deep</a>, Indian Institute of Technology, Roorkee</li>
             <li><a href="https://uv-mx.academia.edu/Efr%C3%A9nMezuraMontes" aria-label="Visit Dr Efrén Mezura-Montes's profile">Dr. Efrén Mezura-Montes</a>, University of Veracruz, Mexico</li>
             <li><a href="https://pure.korea.ac.kr/en/persons/donghwi-jung/fingerprints/" aria-label="Visit Dr Donghwi Jung's profile">Dr. Donghwi Jung</a>, Korea University, Korea</li>
-	    <li><a href="https://scholar.google.com.sg/citations?user=WFpIByoAAAAJ&hl=en" aria-label="Visit Dr Anupam Trivedi's profile">Dr. Anupam Trivedi</a>, National University of Singapore, Singapore</li>
-	    <li><a href="https://som.iitmandi.ac.in/people/faculty/manoj-thakur" aria-label="Visit Dr. Manoj Thakur's profile">Dr. Manoj Thakur</a>, Indian Institute of Technology, Mandi</li>
-	    <li><a href="https://sites.google.com/site/sanjaycsirceeri/" aria-label="Visit Dr. Prof Sanjay Singh's profile"> Prof Sanjay Singh</a>, Senior Pr. Scientist Head CSIR-CEERI</li>	  
-	    <li><a href="https://people.sau.int/~jcbansal/" aria-label="Visit Dr. JC Bansal's profile">Dr. JC Bansal</a>, South Asian University</li>
-	    <li><a href="https://iitgoa.ac.in/SMS-faculty-profile/?uid=abhishekgupta&&exp=ME" aria-label="Visit Dr. Abhishek Gupta's profile">Dr. Abhishek Gupta</a>, Indian Institute of Technology, Goa</li>
-            <li><a href="https://scholar.google.co.in/citations?user=qTB0f40AAAAJ&hl=en " aria-label="Visit Dr. Bapi Dutta's profile">Dr. Bapi Dutta</a>, University of Jaen, Jaen, Spain</li>
+            <li><a href="https://scholar.google.com.sg/citations?user=WFpIByoAAAAJ&hl=en" aria-label="Visit Dr Anupam Trivedi's profile">Dr. Anupam Trivedi</a>, National University of Singapore, Singapore</li>
+            <li><a href="https://som.iitmandi.ac.in/people/faculty/manoj-thakur" aria-label="Visit Dr. Manoj Thakur's profile">Dr. Manoj Thakur</a>, Indian Institute of Technology, Mandi</li>
+            <li><a href="https://sites.google.com/site/sanjaycsirceeri/" aria-label="Visit Prof Sanjay Singh's profile">Prof Sanjay Singh</a>, Senior Pr. Scientist Head CSIR-CEERI</li>
+            <li><a href="https://people.sau.int/~jcbansal/" aria-label="Visit Dr. JC Bansal's profile">Dr. JC Bansal</a>, South Asian University</li>
+            <li><a href="https://iitgoa.ac.in/SMS-faculty-profile/?uid=abhishekgupta&&exp=ME" aria-label="Visit Dr. Abhishek Gupta's profile">Dr. Abhishek Gupta</a>, Indian Institute of Technology, Goa</li>
+            <li><a href="https://scholar.google.co.in/citations?user=qTB0f40AAAAJ&hl=en" aria-label="Visit Dr. Bapi Dutta's profile">Dr. Bapi Dutta</a>, University of Jaen, Jaen, Spain</li>
             <li><a href="https://www.adelaide.edu.au/directory/indu.bala" aria-label="Visit Dr. Indu Bala's profile">Dr. Indu Bala</a>, University of Adelaide, Australia</li>
             <li><a href="https://www.nits.ac.in/faculties/kedar-nath-das" aria-label="Visit Dr. Kedar Nath Das's profile">Dr. Kedar Nath Das</a>, National Institute of Technology, Silchar</li>
             <li><a href="https://www.unsw.edu.au/staff/hemant-singh" aria-label="Visit Dr. Hemant Kumar Singh's profile">Dr. Hemant Kumar Singh</a>, University of New South Wales, Australia</li>
             <li><a href="https://www.rtu.ac.in/index/viewdata.php?page=Dr-Harish-Sharma183" aria-label="Visit Dr. Harish Sharma's profile">Dr. Harish Sharma</a>, Rajasthan Technical University, Rajasthan</li>
-	    <li><a href="https://departments.nitj.ac.in/dept/ma/Faculty/6430446b38bff038a7808524 " aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
-            <li><a href="https://departments.nitj.ac.in/dept/ice/Faculty/6430446638bff038a7807a2f " aria-label="Visit Dr. OP Verma's profile">Dr. OP Verma</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
-            <li><a href="https://mnnit.ac.in/profile/shubham.gupta " aria-label="Visit Dr. Shubham Gupta's profile">Dr. Shubham Gupta</a>, Motilal Nehru National Institute of Technology, Allahabad</li>
-            <li><a href="https://sites.google.com/view/dikshitchauhan/home" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
+            <li><a href="https://departments.nitj.ac.in/dept/ma/Faculty/6430446b38bff038a7808524" aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
+            <li><a href="https://departments.nitj.ac.in/dept/ice/Faculty/6430446638bff038a7807a2f" aria-label="Visit Dr. OP Verma's profile">Dr. OP Verma</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
+            <li><a href="https://mnnit.ac.in/profile/shubham.gupta" aria-label="Visit Dr. Shubham Gupta's profile">Dr. Shubham Gupta</a>, Motilal Nehru National Institute of Technology, Allahabad</li>
+            <li><a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
             <li><a href="https://www.springer.com/fr/authors-editors/aninda-bose/5084?srsltid=AfmBOopFWGzPJSaKR7WPADMOKNJRzBbTPRMBfMJDx0uZPKEEfdoIFsL1" aria-label="Visit Mr Aninda Bose's profile">Mr Aninda Bose</a>, Executive Editor Springer Nature group</li>
-            <li><a href="https://www.iitism.ac.in/faculty-details?faculty=scindhiya" aria-label="Visit Scindhiya Laxmi's profile"> Dr. Scindhiya Laxmi</a>,Indian Institute of Technology Dhanbad</li>
+            <li><a href="https://www.iitism.ac.in/faculty-details?faculty=scindhiya" aria-label="Visit Dr. Scindhiya Laxmi's profile">Dr. Scindhiya Laxmi</a>, Indian Institute of Technology Dhanbad</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
- 
-  <!-- Organizing Committee -->
-  <section class="py-12 px-4" id="organizing-committee" role="region" aria-labelledby="organizing-committee">
-    <div class="max-w-7xl mx-auto">
-      <h2 id="organizing-committee" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Organizers</h2>
-      <!-- Department Card -->
-	    <div class="speakers-grid" id="department-card">
-  <article class="department-card">
-    <img src="images/nitj.png" alt="Department of Mathematics and Computing, NIT Jalandhar">
-    <h3>Department of Mathematics and Computing</h3>
-    <p>Dr B R Ambedkar National Institute of Technology Jalandhar, Punjab, India</p>
-  </article>
-</div>
-     
-      <!-- Researchers -->
-      <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4 text-center">Researchers</h3>
-     <div class="speakers-grid" id="student-cards">
-		 
-		  <div class="profile-card student-card">
-			<img src="w_files/Deepika.jpeg" alt="">
-			<h3>Deepika Khurana</h3>
-			<p>PhD Student</p>
-		        </div>
-			
-		  <div class="profile-card student-card">
-			<img src="w_files/Shrishti.png" alt="">
-			<h3>Shrishti Chamoli</h3>
-			<p>PhD Student</p>
-		        </div>
-			
-		  <div class="profile-card student-card">
-			<img src="w_files/nitin01__1.png" alt="">
-			<h3>Nitin Gupta</h3>
-			<p>PhD Student</p>
-		        </div>
-	          <div class="profile-card student-card">
-			<img src="w_files/myphoto.jpg" alt="">
-			<h3>Bablu Kumar Sah</h3>
-			<p>PhD Student</p>
-		        </div>
-		
-			
-		  <div class="profile-card student-card">
-			<img src="w_files/Ram_S.png" alt="">
-			<h3>Ram Sundar</h3>
-			<p>PhD Student</p>
-		        </div>
 
-		<div class="profile-card student-card">
-			<img src="w_files/vidhi.jpeg" alt="">
-			<h3>Vidhi Sharma</h3>
-			<p>PhD Student</p>
-		        </div>
-		</div>
+  <!-- Organizing Committee -->
+  <section class="py-12 px-4" id="organizing-committee" role="region" aria-labelledby="organizing-committee-heading">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="organizing-committee-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Organizers</h2>
+      <div class="speakers-grid">
+        <article class="department-card">
+          <img src="images/nitj.png" alt="Department of Mathematics and Computing, NIT Jalandhar" loading="lazy">
+          <h3>Department of Mathematics and Computing</h3>
+          <p>Dr B R Ambedkar National Institute of Technology Jalandhar, Punjab, India</p>
+        </article>
+      </div>
+      <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4 text-center">Researchers</h3>
+      <div class="speakers-grid" id="student-cards">
+        <article class="student-card">
+          <img src="w_files/Deepika.jpeg" alt="Portrait of Deepika Khurana" loading="lazy">
+          <h3>Deepika Khurana</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/Shrishti.png" alt="Portrait of Shrishti Chamoli" loading="lazy">
+          <h3>Shrishti Chamoli</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/nitin01__1.png" alt="Portrait of Nitin Gupta" loading="lazy">
+          <h3>Nitin Gupta</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/myphoto.jpg" alt="Portrait of Bablu Kumar Sah" loading="lazy">
+          <h3>Bablu Kumar Sah</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/Ram_S.png" alt="Portrait of Ram Sundar" loading="lazy">
+          <h3>Ram Sundar</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/vidhi.jpeg" alt="Portrait of Vidhi Sharma" loading="lazy">
+          <h3>Vidhi Sharma</h3>
+          <p>PhD Student</p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- Schedule (PDF Viewer) -->
   <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule">
-    <div class="max-w-7xl mx-auto" >
+    <div class="max-w-7xl mx-auto">
       <h2 id="schedule" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
-
-
-	    <div id="pdf-container">
-    <canvas id="pdf-render"></canvas>
-    <div id="controls">
-      <button id="prev-page">Previous</button>
-      <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
-      <button id="next-page">Next</button>
-	   
-	      <a href="pdfs/schedule.pdf" download class="download-btn">Download PDF</a>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-  <script>
-    const url = 'pdfs/schedule.pdf';
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
-	   
-    let pdfDoc = null,
-        pageNum = 1,
-        canvas = document.getElementById('pdf-render'),
-        ctx = canvas.getContext('2d');
-
-    function renderPage(num) {
-      pdfDoc.getPage(num).then(function(page) {
-        const viewport = page.getViewport({ scale: 1.5 });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        const renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        page.render(renderContext).promise.then(function () {
-          document.getElementById('page-num').textContent = num;
-        });
-      });
-    }
-
-    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-      pdfDoc = pdfDoc_;
-      document.getElementById('page-count').textContent = pdfDoc.numPages;
-      renderPage(pageNum);
-    });
-
-    document.getElementById('next-page').addEventListener('click', function () {
-      if (pageNum >= pdfDoc.numPages) return;
-      pageNum++;
-      renderPage(pageNum);
-    });
-
-    document.getElementById('prev-page').addEventListener('click', function () {
-      if (pageNum <= 1) return;
-      pageNum--;
-      renderPage(pageNum);
-    });
-  </script>
-	  
+      <div id="pdf-container">
+        <canvas id="pdf-render" aria-label="PDF schedule viewer"></canvas>
+        <div id="controls">
+          <button id="prev-page" aria-label="Previous page">Previous</button>
+          <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
+          <button id="next-page" aria-label="Next page">Next</button>
+          <a href="pdfs/schedule.pdf" download class="download-btn" aria-label="Download schedule PDF">Download PDF</a>
+        </div>
+        <div id="error-message" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
+      </div>
     </div>
   </section>
 
-  
-
-  <div class="bg-pattern"></div>
-
-  <!-- Main Content -->
-  <section class="pt-12 pb-20 px-4">
+  <!-- Registration Section -->
+  <section class="pt-12 pb-20 px-4" id="registration">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-      <!-- Card 7: Registration Link -->
       <article class="info-card p-8 text-center" role="region" aria-labelledby="registration-link">
         <h2 id="registration-link" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Link</h2>
-        <p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
+        <p class="text-gray-600 text-lg leading-relaxed">
           Register and pay the fee through the official portal:
-         
         </p>
-        <img src="images/EVO_ QR.png" alt="Registration QR Code" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description">
+        <img src="images/EVO_QR.png" alt="Registration QR Code for Summer School" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description" loading="lazy">
         <p id="qr-code-description" class="sr-only">QR code for Summer School registration</p>
-	       <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-            Go to Registration
-          </a><br>
-	       <strong> Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+        <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration page">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+          Go to Registration
+        </a>
+        <p class="text-gray-600 text-lg leading-relaxed mt-2">
+          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+        </p>
       </article>
-
-      <!-- Card 8: Registration Fee -->
       <article class="info-card p-8" role="region" aria-labelledby="registration-fee">
         <h2 id="registration-fee" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Fee</h2>
-        <p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
+        <p class="text-gray-600 text-lg leading-relaxed">
           The non-refundable registration fee structure is as follows:
         </p>
-	<p class="text-gray-600 text-lg leading-relaxed" style="text-align:center">
-        <strong> Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
-         
+        <p class="text-gray-600 text-lg leading-relaxed">
+          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
         </p>
         <div class="table-wrapper">
           <table class="fee-table" role="grid" aria-describedby="fee-table-description">
@@ -527,11 +381,11 @@
     </div>
   </section>
 
- <!-- Sponsors (unchanged) -->
-  <section class="py-12 px-4" id="sponsors" role="region" aria-labelledby="sponsors" aria-describedby="sponsors-tagline">
+  <!-- Sponsors -->
+  <section class="py-12 px-4" id="sponsors" role="region" aria-labelledby="sponsors-heading" aria-describedby="sponsors-tagline">
     <div class="max-w-7xl mx-auto">
       <div class="info-card">
-        <h2 id="sponsors" class="text-4xl font-bold text-gray-900 tracking-tight">Sponsors</h2>
+        <h2 id="sponsors-heading" class="text-4xl font-bold text-gray-900 tracking-tight">Sponsors</h2>
         <p class="text-lg text-gray-600 leading-relaxed mb-6 text-center">
           We are grateful for the support of our sponsors, whose contributions make this event possible.
         </p>
@@ -539,88 +393,50 @@
         <div class="sponsors-grid">
           <article class="sponsor-card">
             <a href="https://www.scrs.in/" target="_blank" aria-label="Visit Soft Computing Research Society website">
-              <img src="images/scrs.png" alt="Soft Computing Research Society logo">
+              <img src="images/scrs.png" alt="Soft Computing Research Society logo" loading="lazy">
               <h3>Soft Computing Research Society</h3>
             </a>
           </article>
-       
         </div>
       </div>
     </div>
   </section>
-
-
-	<!-- <section class="py-12 px-4" id="speakers-list" role="region" aria-labelledby="speakers-list">
-    <div class="max-w-7xl mx-auto">
-      <div class="info-card p-8">
-        <h2 id="speakers-list" class="text-4xl font-bold text-gray-900 tracking-tight">All Speakers</h2>
-        <div class="speakers-list">
-          <ul>
-            <li><a href="https://personal.ntu.edu.sg/elpwang/" target="_blank" aria-label="Visit Dr Lipo Wang's profile">Dr Lipo Wang</a>, Nanyang Technological University, Singapore</li>
-            <li><a href="https://example.com/donghwi-jung" aria-label="Visit Dr. Donghwi Jung's profile">Dr. Donghwi Jung</a>, Korea University, Korea</li>
-            <li><a href="https://example.com/swagatam-das" aria-label="Visit Dr. Swagatam Das's profile">Dr. Swagatam Das</a>, Indian Statistical Institute, Kolkata</li>
-            <li><a href="https://example.com/andres-l-medaglia" aria-label="Visit Andrés L. Medaglia's profile">Andrés L. Medaglia</a>, Universidad de los Andes, Colombia</li>
-            <li><a href="https://example.com/bapi-dutta" aria-label="Visit Dr. Bapi Dutta's profile">Dr. Bapi Dutta</a>, University of Jaen, Jaen, Spain</li>
-            <li><a href="https://example.com/indu-bala" aria-label="Visit Dr. Indu Bala's profile">Dr. Indu Bala</a>, University of Adelaide, Australia</li>
-            <li><a href="https://example.com/manoj-thakur" aria-label="Visit Dr. Manoj Thakur's profile">Dr. Manoj Thakur</a>, Indian Institute of Technology, Mandi</li>
-            <li><a href="https://example.com/jc-bansal" aria-label="Visit Dr. JC Bansal's profile">Dr. JC Bansal</a>, South Asian University</li>
-            <li><a href="https://example.com/shubham-gupta" aria-label="Visit Dr. Shubham Gupta's profile">Dr. Shubham Gupta</a>, Motilal Nehru National Institute of Technology, Allahabad</li>
-            <li><a href="https://example.com/dikshit-chauhan" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
-            <li><a href="https://example.com/kedar-nath-das" aria-label="Visit Dr. Kedar Nath Das's profile">Dr. Kedar Nath Das</a>, National Institute of Technology, Silchar</li>
-            <li><a href="https://example.com/anupam-yadav" aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
-            <li><a href="https://example.com/op-verma" aria-label="Visit Dr. OP Verma's profile">Dr. OP Verma</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
-            <li><a href="https://example.com/harish-sharma" aria-label="Visit Dr. Harish Sharma's profile">Dr. Harish Sharma</a>, Rajasthan Technical University, Rajasthan</li>
-            <li><a href="https://example.com/nilanjan-dey" aria-label="Visit Dr. Nilanjan Dey's profile">Dr. Nilanjan Dey</a>, Techno International New Town, Kolkata</li>
-            <li><a href="https://example.com/hemant-kumar-singh" aria-label="Visit Dr. Hemant Kumar Singh's profile">Dr. Hemant Kumar Singh</a>, University of New South Wales, Australia</li>
-            <li><a href="https://example.com/carlos-a-coello-coello" aria-label="Visit Prof. Carlos A. Coello Coello's profile">Prof. Carlos A. Coello Coello</a>, CINVESTAV-IPN, Mexico</li>
-            <li><a href="https://example.com/abhishek-gupta" aria-label="Visit Dr. Abhishek Gupta's profile">Dr. Abhishek Gupta</a>, Indian Institute of Technology, Goa</li>
-            <li><a href="https://example.com/efren-mezura-montes" aria-label="Visit Dr. Efrén Mezura-Montes's profile">Dr. Efrén Mezura-Montes</a>, University of Veracruz, Mexico</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>-->
-
 
   <!-- Footer -->
   <footer class="bg-gray-50 py-12 px-4 relative">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d4ed8] to-[#06b6d4]"></div>
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-600">
       <div>
-        <img src="images/nitj.png" alt="NIT Jalandhar Logo" class="h-12 mb-4" aria-label="NIT Jalandhar Logo">
+        <img src="images/nitj.png" alt="NIT Jalandhar Logo" class="h-12 mb-4" aria-label="NIT Jalandhar Logo" loading="lazy">
         <p>Dr B R Ambedkar National Institute of Technology</p>
         <p>Jalandhar, Punjab, India</p>
       </div>
       <div>
         <h3 class="text-lg font-medium mb-4">Contact Us</h3>
         <p>Dr. Anupam Yadav<br>
-            Associate Professor<br>
-            Department of Mathematics<br>
-            Dr B. R. Ambedkar National Institute of Technology Jalandhar, Punjab, India.
-            Mobile : +91 9627273447<br>
-            </p>
-            <p>Email: <a  type="email" href="mailto:anupam@nitj.ac.in" class="link-button">anupam@nitj.ac.in</a></p>
-       
+           Associate Professor<br>
+           Department of Mathematics<br>
+           Dr B. R. Ambedkar National Institute of Technology Jalandhar, Punjab, India.<br>
+           Mobile: +91 9627273447
+        </p>
+        <p>Email: <a href="mailto:anupam@nitj.ac.in" class="link-button">anupam@nitj.ac.in</a></p>
       </div>
       <div>
         <h3 class="text-lg font-medium mb-4">Query</h3>
         <p><a href="#" class="link-button">Events</a></p>
-	       <p> <a href="pdfs/brochure.pdf" download class="link-button">Brochure PDF</a></p>
-	
+        <p><a href="pdfs/brochure.pdf" download class="link-button">Brochure PDF</a></p>
         <p><a href="https://departments.nitj.ac.in/dept/ma/Home" class="link-button">Official Website</a></p>
-        
-        <p>Email: <a  type="email" href="mailto:evoml@nitj.ac.in" class="link-button">evoml@nitj.ac.in</a></p>
-        <p></p>
+        <p>Email: <a href="mailto:evoml@nitj.ac.in" class="link-button">evoml@nitj.ac.in</a></p>
       </div>
       <div>
         <h3 class="text-lg font-medium mb-4">Follow Us</h3>
         <div class="flex space-x-4">
-          <a href="https://twitter.com/nitj" class="social-icon text-gray-600" aria-label="Twitter">
+          <a href="https://twitter.com/nitj" class="social-icon text-gray-600" aria-label="Follow NIT Jalandhar on Twitter">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
             </svg>
           </a>
-          <a href="https://linkedin.com" class="social-icon text-gray-600" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/school/nitjalandhar/" class="social-icon text-gray-600" aria-label="Follow NIT Topics">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
             </svg>
@@ -632,10 +448,10 @@
   </footer>
 
   <!-- PDF.js Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
   <script>
     const url = 'pdfs/schedule.pdf';
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.worker.min.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
 
     let pdfDoc = null,
         pageNum = 1,
@@ -645,21 +461,29 @@
 
     function renderPage(num) {
       pdfDoc.getPage(num).then(function(page) {
-        const scale = window.innerWidth < 768 ? 1.0 : 1.5;
-        const viewport = page.getViewport({ scale: scale });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+        const containerWidth = document.getElementById('pdf-container').offsetWidth - 32; // Account for padding
+        const viewport = page.getViewport({ scale: 1.0 });
+        const scale = Math.min(containerWidth / viewport.width, 1.8); // Responsive scaling
+        const scaledViewport = page.getViewport({ scale: scale });
+
+        canvas.width = scaledViewport.width;
+        canvas.height = scaledViewport.height;
 
         const renderContext = {
           canvasContext: ctx,
-          viewport: viewport
+          viewport: scaledViewport
         };
         page.render(renderContext).promise.then(function () {
           document.getElementById('page-num').textContent = num;
           errorMessage.classList.add('hidden');
+        }).catch(function(error) {
+          console.error('Error rendering page:', error);
+          errorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
+          errorMessage.classList.remove('hidden');
         });
       }).catch(function(error) {
-        console.error('Error rendering page:', error);
+        console.error('Error loading page:', error);
+        errorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
         errorMessage.classList.remove('hidden');
       });
     }
@@ -670,7 +494,19 @@
       renderPage(pageNum);
     }).catch(function(error) {
       console.error('Error loading PDF:', error);
+      errorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
       errorMessage.classList.remove('hidden');
+    });
+
+    // Update canvas size on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (pdfDoc) {
+          renderPage(pageNum);
+        }
+      }, 100);
     });
 
     document.getElementById('next-page').addEventListener('click', function () {
@@ -695,8 +531,5 @@
       document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
     });
   </script>
-
-
-
 </body>
 </html>
