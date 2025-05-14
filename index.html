@@ -60,6 +60,7 @@
     <div class="overlay">
       <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
       <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p>
+      <a href="https://example.com/quiz" target="_blank" class="download-btn" aria-label="Take the quiz">Take Quiz</a>
     </div>
   </section>
 
@@ -299,9 +300,9 @@
   </section>
 
   <!-- Schedule (PDF Viewer) -->
-  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule">
+  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule-heading">
     <div class="max-w-7xl mx-auto">
-      <h2 id="schedule" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
+      <h2 id="schedule-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
       <div id="pdf-container">
         <canvas id="pdf-render" aria-label="PDF schedule viewer"></canvas>
         <div id="controls">
@@ -309,6 +310,7 @@
           <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
           <button id="next-page" aria-label="Next page">Next</button>
           <a href="pdfs/schedule.pdf" download class="download-btn" aria-label="Download schedule PDF">Download PDF</a>
+          <a href="https://example.com/quiz" target="_blank" class="download-btn" aria-label="Take the quiz">Take Quiz</a>
         </div>
         <div id="error-message" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
       </div>
@@ -323,7 +325,7 @@
         <p class="text-gray-600 text-lg leading-relaxed">
           Register and pay the fee through the official portal:
         </p>
-        <img src="images/EVO_ QR.png" alt="Registration QR Code for Summer School" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description" loading="lazy">
+        <img src="images/EVO_QR.png" alt="Registration QR Code for Summer School" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description" loading="lazy">
         <p id="qr-code-description" class="sr-only">QR code for Summer School registration</p>
         <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration page">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -461,9 +463,9 @@
 
     function renderPage(num) {
       pdfDoc.getPage(num).then(function(page) {
-        const containerWidth = document.getElementById('pdf-container').offsetWidth - 32; // Account for padding
+        const containerWidth = document.getElementById('pdf-container').offsetWidth - 32;
         const viewport = page.getViewport({ scale: 1.0 });
-        const scale = Math.min(containerWidth / viewport.width, 1.8); // Responsive scaling
+        const scale = Math.min(containerWidth / viewport.width, 1.8);
         const scaledViewport = page.getViewport({ scale: scale });
 
         canvas.width = scaledViewport.width;
@@ -498,7 +500,6 @@
       errorMessage.classList.remove('hidden');
     });
 
-    // Update canvas size on window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
@@ -530,6 +531,18 @@
       const isExpanded = navLinks.classList.contains('active');
       document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
     });
+
+    // Intersection Observer for overlay heading animation
+    const heading = document.querySelector('.overlay h1');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          heading.classList.add('visible');
+          observer.unobserve(heading);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(heading);
   </script>
 </body>
 </html>
