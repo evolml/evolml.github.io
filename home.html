@@ -540,8 +540,8 @@
       }
       .speaker-card,
       .student-card {
-        width: 200px; /* Updated: Decreased size */
-        height: 260px; /* Updated: Decreased size */
+        width: 200px;
+        height: 260px;
       }
       .department-card {
         width: 240px;
@@ -596,8 +596,8 @@
       }
       .speaker-card,
       .student-card {
-        width: 180px; /* Updated: Decreased size */
-        height: 240px; /* Updated: Decreased size */
+        width: 180px;
+        height: 240px;
       }
       .department-card {
         width: 220px;
@@ -930,9 +930,9 @@
   </section>
 
   <!-- Schedule (PDF Viewer) -->
-  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule-heading">
+  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule">
     <div class="max-w-7xl mx-auto">
-      <h2 id="schedule-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
+      <h2 id="schedule" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
       <div id="pdf-container">
         <canvas id="pdf-render" aria-label="PDF schedule viewer"></canvas>
         <div id="controls">
@@ -1079,10 +1079,10 @@
   </footer>
 
   <!-- PDF.js Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
   <script>
     const url = 'pdfs/schedule.pdf';
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.worker.min.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
 
     let pdfDoc = null,
         pageNum = 1,
@@ -1094,7 +1094,7 @@
       pdfDoc.getPage(num).then(function(page) {
         const containerWidth = document.getElementById('pdf-container').offsetWidth - 32; // Account for padding
         const viewport = page.getViewport({ scale: 1.0 });
-        const scale = Math.min(containerWidth / viewport.width, 1.8);
+        const scale = Math.min(containerWidth / viewport.width, 1.8); // Responsive scaling
         const scaledViewport = page.getViewport({ scale: scale });
 
         canvas.width = scaledViewport.width;
@@ -1107,9 +1107,14 @@
         page.render(renderContext).promise.then(function () {
           document.getElementById('page-num').textContent = num;
           errorMessage.classList.add('hidden');
+        }).catch(function(error) {
+          console.error('Error rendering page:', error);
+          errorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
+          errorMessage.classList.remove('hidden');
         });
       }).catch(function(error) {
-        console.error('Error rendering page:', error);
+        console.error('Error loading page:', error);
+        errorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
         errorMessage.classList.remove('hidden');
       });
     }
@@ -1120,14 +1125,19 @@
       renderPage(pageNum);
     }).catch(function(error) {
       console.error('Error loading PDF:', error);
+      errorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
       errorMessage.classList.remove('hidden');
     });
 
     // Update canvas size on window resize
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-      if (pdfDoc) {
-        renderPage(pageNum);
-      }
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (pdfDoc) {
+          renderPage(pageNum);
+        }
+      }, 100);
     });
 
     document.getElementById('next-page').addEventListener('click', function () {
