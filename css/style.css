@@ -77,7 +77,44 @@ body {
     margin-top: 0.5rem;
     padding: 0.5rem;
     animation: fadeIn 0.6s ease-out;
-  }
+  }.department-card {
+  width: 400px; /* Increased from 360px */
+  height: 460px; /* Increased from 400px */
+  border-radius: 8px; /* Removed 50% to maintain rectangular shape */
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  background: #f2f2f2;
+  text-align: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.department-card img {
+  width: 140px; /* Slightly increased for balance */
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+.department-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.department-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.35rem; /* Slightly larger for emphasis */
+  color: #000000;
+  font-weight: 500;
+}
+.department-card p {
+  margin: 0.2rem 0;
+  font-size: 1.1rem; /* Slightly larger for readability */
+  color: #4b5563;
+}
 
   /* Animation for fade-in effect */
   @keyframes fadeIn {
