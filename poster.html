@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EvoML-2025</title>
+  <meta name="description" content="Summer School on EVOML 2025 at NIT Jalandhar">
+  <meta name="keywords" content="conference, summer school, EVOML, NIT Jalandhar, machine learning">
+  <meta name="author" content="NIT Jalandhar">
+
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="Summer School on EVOML 2025">
+  <meta property="og:image" content="https://via.placeholder.com/200">
+  <meta property="og:url" content="https://evolml.github.io/">
+  <meta property="og:site_name" content="Summer School on EVOML">
+  <meta property="og:description" content="Join the Summer School on EVOML 2025 at NIT Jalandhar.">
+  <meta name="twitter:title" content="Summer School on EVOML 2025">
+  <meta name="twitter:image" content="https://via.placeholder.com/200">
+  <meta name="twitter:url" content="https://evolml.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      color: #1f2937;
+      background: #ffffff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .navbar-brand {
+      color: black;
+      font-size: clamp(1.25rem, 3vw, 1.5rem);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links li a {
+      color: black;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #f84f4f;
+    }
+
+    .nav-links li a:focus {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      color: black;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .nav-toggle svg {
+      stroke: black;
+      width: 24px;
+      height: 24px;
+    }
+
+    .nav-toggle:focus {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+
+    /* Header Image */
+    .header-image {
+      position: relative;
+      width: 95%;
+      margin: 0 auto;
+      height: 400px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+
+    .header-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: clamp(0.5rem, 2vw, 1rem);
+    }
+
+    .overlay h1 {
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.05em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      margin-bottom: 0.5rem;
+    }
+
+    .overlay h1.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tag-line {
+      font-size: clamp(0.7rem, 2.5vw, 1.1rem);
+      color: #ffffff;
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.4rem;
+      padding: 0.4rem;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* About Section */
+    #about {
+      padding: clamp(1rem, 5vw, 2rem) clamp(1rem, 3vw, 1.5rem);
+      text-align: center;
+    }
+
+    #about p {
+      text-align: justify;
+      font-size: clamp(0.9rem, 2.5vw, 1.125rem);
+      color: #4b5563;
+      line-height: 1.6;
+      max-width: 100%;
+      margin: 0 auto 1rem;
+    }
+
+    #about p strong {
+      color: #1f2937;
+    }
+    #about mark {
+      background: #e0f2fe;
+      padding: 0.2rem 0.4rem;
+    }
+
+    /* Speakers Section */
+    .speakers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(0.8rem, 2vw, 1.2rem);
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .speaker-card,
+    .student-card,
+    .department-card,
+    .sponsor-card {
+      border-radius: 8px;
+      background: #f2f2f2;
+      text-align: center;
+      padding: clamp(0.8rem, 2vw, 1.2rem);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .speaker-card,
+    .student-card {
+      width: clamp(160px, 25vw, 220px);
+      height: clamp(220px, 35vw, 280px);
+    }
+
+    .department-card {
+      width: clamp(200px, 30vw, 260px);
+      height: clamp(260px, 40vw, 320px);
+      background: linear-gradient(#ffffff, #f9fafb);
+      border: 1px solid #e5e7eb;
+      padding: clamp(0.8rem, 2vw, 1.2rem);
+    }
+
+    .speaker-card:hover,
+    .student-card:hover,
+    .department-card:hover,
+    .sponsor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .speaker-card img,
+    .student-card img,
+    .department-card img,
+    .sponsor-card img {
+      width: clamp(80px, 15vw, 120px);
+      height: clamp(80px, 15vw, 120px);
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.75rem;
+    }
+
+    .department-card img {
+      width: clamp(80px, 12vw, 110px);
+      height: clamp(80px, 12vw, 110px);
+      object-fit: contain;
+    }
+
+    .sponsor-card img {
+      width: clamp(100px, 20vw, 150px);
+      height: clamp(100px, 20vw, 150px);
+      object-fit: contain;
+    }
+
+    .speaker-card h3,
+    .student-card h3,
+    .department-card h3,
+    .sponsor-card h3 {
+      margin: 0.5rem 0;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: #000000;
+      font-weight: 500;
+    }
+
+    .department-card h3 {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+    }
+
+    .sponsor-card h3 {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+    }
+
+    .speaker-card p,
+    .student-card p,
+    .department-card p,
+    .sponsor-card p {
+      margin: 0.2rem 0;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: #4b5563;
+    }
+
+    .department-card p {
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+
+    /* All Speakers List */
+    .info-card {
+      padding: clamp(1rem, 3vw, 2rem);
+      text-align: center;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(45deg, #1d4ed8, #06b6d4) border-box;
+      animation: fadeIn 0.6s ease-out;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .speakers-list {
+      margin: 0 auto;
+      padding: clamp(1rem, 2vw, 1.5rem);
+      text-align: left;
+    }
+
+    .speakers-list ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 800px;
+      margin: 0;
+    }
+
+    .speakers-list li {
+      font-size: clamp(0.9rem, 2.5vw, 1.125rem);
+      color: #1f2937;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .speakers-list li a {
+      color: #2563eb;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    .speakers-list li a:hover {
+      color: #1e40af;
+    }
+
+    /* PDF Viewer */
+    #pdf-container,
+    #pdf-container-poster {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: clamp(1rem, 2vw, 1.5rem);
+      background: #ffffff;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(45deg, #1d4ed8, #06b6d4) border-box;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    #pdf-render,
+    #pdf-render-poster {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+
+    #controls,
+    #controls-poster {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.5rem, 2vw, 1rem);
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #controls button,
+    #controls-poster button {
+      background: #1d4ed8;
+      color: #ffffff;
+      padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      transition: background 0.3s;
+    }
+
+    #controls button:hover,
+    #controls-poster button:hover {
+      background: #1e40af;
+    }
+
+    .download-btn {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px);
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: linear-gradient(90deg, #1e40af, #0ea5e9);
+      transform: translateY(-2px);
+    }
+
+    .download-btn:focus {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Registration Section */
+    .cta-button {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px);
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      animation: pulse 2s infinite;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(90deg, #1e40af, #0ea5e9);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Fee Table */
+    .table-wrapper {
+      margin-top: 1rem;
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    .fee-table th,
+    .fee-table td {
+      border: 1px solid #d1d5db;
+      padding: clamp(8px, 2vw, 12px);
+      text-align: center;
+      font-size: clamp(0.8rem, 2vw, 0.95rem);
+      font-weight: 400;
+    }
+
+    .fee-table th {
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      color: white;
+      font-weight: 600;
+    }
+
+    .fee-table tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .fee-table tr:hover {
+      background: #e0f2fe;
+    }
+
+    /* Sponsors Section */
+    .sponsor-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .sponsors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(0.8rem, 2vw, 1.2rem);
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer .link-button {
+      color: #1d4ed8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+
+    footer .link-button:hover {
+      color: #06b6d4;
+    }
+
+    .social-icon {
+      transition: color 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: #1d4ed8;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+      .speakers-grid,
+      .sponsors-grid {
+        gap: 1rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 200px;
+        height: 260px;
+      }
+      .department-card {
+        width: 240px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .nav-bar {
+        padding: 1rem 1.5rem;
+      }
+      .header-image {
+        height: 350px;
+      }
+      .overlay {
+        padding: 0.8rem;
+      }
+      #about {
+        padding: 1.5rem 1rem;
+      }
+      .info-card {
+        padding: 1.5rem;
+      }
+      #pdf-container,
+      #pdf-container-poster {
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 0;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .header-image {
+        width: 95%;
+        height: 300px;
+      }
+      .overlay h1 {
+        font-size: 2rem;
+      }
+      .tag-line {
+        font-size: 0.75rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 276px;
+        height: 359px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 115px;
+        height: 115px;
+      }
+      .speaker-card h3,
+      .student-card h3 {
+        font-size: 1.2rem;
+      }
+      .speaker-card p,
+      .student-card p {
+        font-size: 0.95rem;
+      }
+      .department-card {
+        width: 304px;
+        height: 380px;
+      }
+      .department-card img {
+        width: 99px;
+        height: 99px;
+      }
+      .department-card h3 {
+        font-size: 1.3rem;
+      }
+      .department-card p {
+        font-size: 1.05rem;
+      }
+      .sponsor-card {
+        width: 220px;
+        height: 240px;
+      }
+      .fee-table {
+        display: block;
+      }
+      .fee-table thead {
+        display: none;
+      }
+      .fee-table tbody,
+      .fee-table tr {
+        display: block;
+        margin-bottom: 1.25rem;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+      }
+      .fee-table td {
+        display: block;
+        text-align: left;
+        padding: 14px;
+        border: none;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .fee-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #1d4ed8;
+        display: block;
+        margin-bottom: 6px;
+      }
+      footer .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      footer .flex {
+        justify-content: center;
+      }
+      #registration-fee,
+      #registration-link {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-image {
+        height: 200px;
+      }
+      .overlay h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+      }
+      .overlay {
+        padding: 0.5rem;
+      }
+      .download-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 248px;
+        height: 331px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 115px;
+        height: 115px;
+      }
+      .speaker-card h3,
+      .student-card h3 {
+        font-size: 1.2rem;
+      }
+      .speaker-card p,
+      .student-card p {
+        font-size: 0.95rem;
+      }
+      .department-card {
+        width: 278px;
+        height: 354px;
+      }
+      .department-card img {
+        width: 99px;
+        height: 99px;
+      }
+      .department-card h3 {
+        font-size: 1.3rem;
+      }
+      .department-card p {
+        font-size: 1.05rem;
+      }
+      .sponsor-card {
+        width: 180px;
+        height: 210px;
+      }
+      #about p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      #pdf-container,
+      #pdf-container-poster {
+        padding: 0.8rem;
+      }
+      #controls,
+      #controls-poster {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .info-card {
+        padding: 1rem;
+      }
+      #registration-fee,
+      #registration-link {
+        font-size: 1.5rem;
+      }
+      .cta-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      .fee-table th,
+      .fee-table td {
+        padding: 10px;
+        font-size: 0.85rem;
+      }
+      footer .grid {
+        gap: 1.5rem;
+      }
+      footer p,
+      footer .link-button {
+        font-size: 0.85rem;
+      }
+      .social-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+      .nav-links li a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+      }
+      .nav-toggle svg {
+        width: 20px;
+        height: 20px;
+      }
+      .header-image {
+        height: 180px;
+      }
+      .overlay h1 {
+        font-size: 1.25rem;
+      }
+      .tag-line {
+        font-size: 0.65rem;
+        margin-top: 0.2rem;
+      }
+      .download-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+      .speakers-grid,
+      .sponsors-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .speaker-card,
+      .student-card {
+        width: 221px;
+        height: 304px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 104px;
+        height: 104px;
+      }
+      .speaker-card h3,
+      .student-card h3 {
+        font-size: 1.1rem;
+      }
+      .speaker-card p,
+      .student-card p {
+        font-size: 0.9rem;
+      }
+      .department-card {
+        width: 253px;
+        height: 329px;
+      }
+      .department-card img {
+        width: 88px;
+        height: 88px;
+      }
+      .department-card h3 {
+        font-size: 1.2rem;
+      }
+      .department-card p {
+        font-size: 0.95rem;
+      }
+      .sponsor-card {
+        width: 160px;
+        height: 200px;
+      }
+      .sponsor-card img {
+        width: 100px;
+        height: 100px;
+      }
+      #about {
+        padding: 1rem 0.8rem;
+      }
+      #about p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+      .info-card {
+        padding: 0.8rem;
+      }
+      .speakers-list {
+        padding: 1rem;
+      }
+      .speakers-list li {
+        font-size: 0.95rem;
+      }
+      #pdf-container,
+      #pdf-container-poster {
+        padding: 0.5rem;
+      }
+      #controls button,
+      #controls-poster button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+      .fee-table th,
+      .fee-table td {
+        padding: 8px;
+        font-size: 0.8rem;
+      }
+      .table-wrapper {
+        margin-top: 0.5rem;
+      }
+      .cta-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+      footer .grid {
+        gap: 1rem;
+      }
+      footer h3 {
+        font-size: 1rem;
+      }
+      footer p,
+      footer .link-button {
+        font-size: 0.8rem;
+      }
+      .social-ishal-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+      .nav-links li a {
+        font-size: 0.85rem;
+      }
+      .header-image {
+        height: 160px;
+      }
+      .overlay h1 {
+        font-size: 1.1rem;
+      }
+      .tag-line {
+        font-size: 0.6rem;
+      }
+      .download-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+      }
+      .speaker-card,
+      .student-card {
+        width: 193px;
+        height: 276px;
+      }
+      .speaker-card img,
+      .student-card img {
+        width: 92px;
+        height: 92px;
+      }
+      .speaker-card h3,
+      .student-card h3 {
+        font-size: 1rem;
+      }
+      .speaker-card p,
+      .student-card p {
+        font-size: 0.85rem;
+      }
+      .department-card {
+        width: 228px;
+        height: 304px;
+      }
+      .department-card img {
+        width: 77px;
+        height: 77px;
+      }
+      .department-card h3 {
+        font-size: 1.1rem;
+      }
+      .department-card p {
+        font-size: 0.9rem;
+      }
+      .sponsor-card {
+        width: 140px;
+        height: 180px;
+      }
+      .sponsor-card img {
+        width: 80px;
+        height: 80px;
+      }
+      #about p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+      }
+      .speakers-list li {
+        font-size: 0.85rem;
+      }
+      .info-card {
+        padding: 0.6rem;
+      }
+      #registration-fee,
+      #registration-link {
+        font-size: 1.25rem;
+      }
+      .fee-table td:before {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Enhanced Styles for Registration Headers */
+    #registration-fee, #registration-link {
+      position: relative;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 800;
+      text-align: center;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 0.8s ease-out;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.3s ease;
+    }
+
+    #registration-fee::after, #registration-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4);
+      border-radius: 2px;
+    }
+
+    #registration-fee:hover, #registration-link:hover {
+      transform: scale(1.05);
+    }
+
+    #registration-link {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #registration-link::before {
+      content: '★';
+      color: #1d4ed8;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <!-- Navigation -->
+  <header class="nav-bar" role="banner">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="https://evolml.github.io/" class="navbar-brand">Summer School on EvoML-2025</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <svg class="w-6 h-6" fill="none" stroke="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <ul class="nav-links" id="nav-links" role="navigation">
+        <li><a href="#about" class="active" aria-label="Navigate to About section">About</a></li>
+        <li><a href="#registration-link" aria-label="Navigate to Registration section">Registration</a></li>
+        <li><a href="#schedule" aria-label="Navigate to Schedule section">Schedule</a></li>
+        <li><a href="#poster" aria-label="Navigate to Poster section">Poster Competition</a></li>
+        <li><a href="#accommodation" aria-label="Navigate to Accommodation section">Accommodation</a></li>
+        <li><a href="#live" aria-label="Navigate to Live section">Live</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Header Image -->
+  <section class="header-image" role="img" aria-label="Summer School on EVOML 2025 Banner" aria-describedby="header-tagline">
+    <img src="images/header1.png" alt="Summer School on EVOML 2025 conference banner" class="header-img" loading="eager">
+    <div class="overlay">
+      <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
+      <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p>
+      <a href="https://example.com/quiz" target="_blank" class="download-btn" aria-label="Take the quiz">Take Quiz</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-12 px-4" role="region" aria-labelledby="about-heading">
+    <div class="max-w-full px-4">
+      <h2 id="about-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">About</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        The <strong>"Evolutionary Algorithms and Machine Learning: Theory and Applications"</strong> 
+        summer school offers a comprehensive and intensive exploration of the intersection 
+        between <strong>Evolutionary Algorithms (EAs)</strong> and <strong>Machine Learning (ML)</strong>. This program is 
+        designed to provide participants with both theoretical foundations and practical 
+        insights into how evolutionary strategies can enhance machine 
+        learning models and vice versa. Participants will delve into the principles of 
+        evolutionary algorithms, including genetic algorithms, genetic programming, and
+        other optimization techniques that draw inspiration from natural evolution. 
+        The program covers how these algorithms can be used to solve complex optimization 
+        problems, optimize neural networks, or even evolve new machine learning models. 
+        Furthermore, the summer school incorporates hands-on sessions where attendees will 
+        apply these concepts in real-world scenarios, such as optimizing hyperparameters in ML models, 
+        designing adaptive learning systems, or tackling large-scale computational problems. Leading experts 
+        in the field will share their research and experiences, offering valuable perspectives on both the 
+        challenges and breakthroughs in this rapidly evolving domain. The summer school aims to foster a collaborative learning environment, where participants can
+        engage in discussions, work on projects, and gain insights into the latest trends 
+        and future directions of research at the intersection of evolutionary algorithms and machine learning.
+      </p>
+      <p class="text-lg text-gray-600 mt-4"><strong>When?</strong> <mark>16th June 2025 – 20th June 2025 (Hybrid Mode)</mark></p>
+      <p class="text-lg text-gray-600"><strong>Where?</strong> Department of Mathematics and Computing, Dr B R Ambedkar National Institute of Technology Jalandhar, Punjab, India.</p>
+    </div>
+  </section>
+
+  <!-- Keynote Speakers -->
+  <section class="py-12 px-4" id="keynote" role="region" aria-labelledby="keynote-heading">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="keynote-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Speakers</h2>
+      <div class="speakers-grid">
+        <article class="speaker-card">
+          <img src="w_files/lipo_wang.jpg" alt="Portrait of Prof Lipo Wang" loading="lazy">
+          <h3>Prof Lipo Wang</h3>
+          <p>Nanyang Technological University</p>
+          <p>Singapore</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Kusum_Deep.jpg" alt="Portrait of Prof Kusum Deep" loading="lazy">
+          <h3>Prof Kusum Deep</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Roorkee</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Efren.jpg" alt="Portrait of Dr Efrén Mezura-Montes" loading="lazy">
+          <h3>Dr Efrén Mezura-Montes</h3>
+          <p>University of Veracruz</p>
+          <p>Mexico</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/donghwi_jung.jpg" alt="Portrait of Dr Donghwi Jung" loading="lazy">
+          <h3>Dr Donghwi Jung</h3>
+          <p>Korea University</p>
+          <p>Korea</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Anupum_Trivedi.jpg" alt="Portrait of Dr Anupam Trivedi" loading="lazy">
+          <h3>Dr Anupam Trivedi</h3>
+          <p>National University of Singapore</p>
+          <p>Singapore</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/manoj_thakur.jpg" alt="Portrait of Dr Manoj Thakur" loading="lazy">
+          <h3>Dr Manoj Thakur</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Mandi</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Dr._Sanjay.jpg" alt="Portrait of Prof Sanjay Singh" loading="lazy">
+          <h3>Prof Sanjay Singh</h3>
+          <p>Senior Pr. Scientist</p>
+          <p>Head CSIR-CEERI</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/JC_bansal.jpg" alt="Portrait of Dr JC Bansal" loading="lazy">
+          <h3>Dr JC Bansal</h3>
+          <p>South Asian University</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/abhishek_gupta.jpg" alt="Portrait of Dr Abhishek Gupta" loading="lazy">
+          <h3>Dr Abhishek Gupta</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Goa</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/bapi_dutta.jpg" alt="Portrait of Dr Bapi Dutta" loading="lazy">
+          <h3>Dr Bapi Dutta</h3>
+          <p>University of Jaen</p>
+          <p>Jaen, Spain</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/indu.png" alt="Portrait of Dr Indu Bala" loading="lazy">
+          <h3>Dr Indu Bala</h3>
+          <p>University of Adelaide</p>
+          <p>Australia</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/kedar_nath.jpg" alt="Portrait of Dr Kedar Nath Das" loading="lazy">
+          <h3>Dr Kedar Nath Das</h3>
+          <p>National Institute of Technology</p>
+          <p>Silchar</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/hemant_kumar.jpg" alt="Portrait of Dr Hemant Kumar Singh" loading="lazy">
+          <h3>Dr Hemant Kumar Singh</h3>
+          <p>University of New South Wales</p>
+          <p>Australia</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/harish_sharma.jpg" alt="Portrait of Dr Harish Sharma" loading="lazy">
+          <h3>Dr Harish Sharma</h3>
+          <p>Rajasthan Technical University</p>
+          <p>Rajasthan</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/anupam_sir.png" alt="Portrait of Dr Anupam Yadav" loading="lazy">
+          <h3>Dr Anupam Yadav</h3>
+          <p>Dr B R Ambedkar National Institute of Technology</p>
+          <p>Jalandhar</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/op_sir.png" alt="Portrait of Dr OP Verma" loading="lazy">
+          <h3>Dr OP Verma</h3>
+          <p>Dr B R Ambedkar National Institute of Technology</p>
+          <p>Jalandhar</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/2388-Dr._Shubham_Photo.jpg" alt="Portrait of Dr Shubham Gupta" loading="lazy">
+          <h3>Dr Shubham Gupta</h3>
+          <p>Motilal Nehru National Institute of Technology</p>
+          <p>Allahabad</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/dikshit.jpg" alt="Portrait of Dr Dikshit Chauhan" loading="lazy">
+          <h3>Dr Dikshit Chauhan</h3>
+          <p>National University of Singapore</p>
+          <p>Singapore</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Aninda+Bose.jpg" alt="Portrait of Mr Aninda Bose" loading="lazy">
+          <h3>Mr Aninda Bose</h3>
+          <p>Executive Editor Springer Nature group</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/scindhiya.jpg" alt="Portrait of Dr Scindhiya Laxmi" loading="lazy">
+          <h3>Dr Scindhiya Laxmi</h3>
+          <p>Indian Institute of Technology</p>
+          <p>Dhanbad</p>
+        </article>
+        <article class="speaker-card">
+          <img src="w_files/Dr neha (2).jpg" alt="Portrait of Dr Neha Yadav" loading="lazy">
+          <h3>Dr Neha Yadav</h3>
+          <p>Dr B R Ambedkar National Institute of Technology</p>
+          <p>Jalandhar</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Speakers List -->
+  <section class="py-12 px-4" id="speakers-list" role="region" aria-labelledby="speakers-list-heading">
+    <div class="max-w-7xl mx-auto">
+      <div class="info-card p-8">
+        <h2 id="speakers-list-heading" class="text-4xl font-bold text-gray-900 tracking-tight">All Speakers</h2>
+        <div class="speakers-list">
+          <ul>
+            <li><a href="https://personal.ntu.edu.sg/elpwang/" aria-label="Visit Dr Lipo Wang's profile">Dr. Lipo Wang</a>, Nanyang Technological University, Singapore</li>
+            <li><a href="https://www.iitr.ac.in/~MA/Deep_Kusum" aria-label="Visit Prof Kusum Deep's profile">Prof Kusum Deep</a>, Indian Institute of Technology, Roorkee</li>
+            <li><a href="https://uv-mx.academia.edu/Efr%C3%A9nMezuraMontes" aria-label="Visit Dr Efrén Mezura-Montes's profile">Dr. Efrén Mezura-Montes</a>, University of Veracruz, Mexico</li>
+            <li><a href="https://pure.korea.ac.kr/en/persons/donghwi-jung/fingerprints/" aria-label="Visit Dr Donghwi Jung's profile">Dr. Donghwi Jung</a>, Korea University, Korea</li>
+            <li><a href="https://scholar.google.com.sg/citations?user=WFpIByoAAAAJ&hl=en" aria-label="Visit Dr Anupam Trivedi's profile">Dr. Anupam Trivedi</a>, National University of Singapore, Singapore</li>
+            <li><a href="https://som.iitmandi.ac.in/people/faculty/manoj-thakur" aria-label="Visit Dr. Manoj Thakur's profile">Dr. Manoj Thakur</a>, Indian Institute of Technology, Mandi</li>
+            <li><a href="https://sites.google.com/site/sanjaycsirceeri/" aria-label="Visit Prof Sanjay Singh's profile">Prof Sanjay Singh</a>, Senior Pr. Scientist Head CSIR-CEERI</li>
+            <li><a href="https://people.sau.int/~jcbansal/" aria-label="Visit Dr. JC Bansal's profile">Dr. JC Bansal</a>, South Asian University</li>
+            <li><a href="https://iitgoa.ac.in/SMS-faculty-profile/?uid=abhishekgupta&&exp=ME" aria-label="Visit Dr. Abhishek Gupta's profile">Dr. Abhishek Gupta</a>, Indian Institute of Technology, Goa</li>
+            <li><a href="https://scholar.google.co.in/citations?user=qTB0f40AAAAJ&hl=en" aria-label="Visit Dr. Bapi Dutta's profile">Dr. Bapi Dutta</a>, University of Jaen, Jaen, Spain</li>
+            <li><a href="https://www.adelaide.edu.au/directory/indu.bala" aria-label="Visit Dr. Indu Bala's profile">Dr. Indu Bala</a>, University of Adelaide, Australia</li>
+            <li><a href="https://www.nits.ac.in/faculties/kedar-nath-das" aria-label="Visit Dr. Kedar Nath Das's profile">Dr. Kedar Nath Das</a>, National Institute of Technology, Silchar</li>
+            <li><a href="https://www.unsw.edu.au/staff/hemant-singh" aria-label="Visit Dr. Hemant Kumar Singh's profile">Dr. Hemant Kumar Singh</a>, University of New South Wales, Australia</li>
+            <li><a href="https://www.rtu.ac.in/index/viewdata.php?page=Dr-Harish-Sharma183" aria-label="Visit Dr. Harish Sharma's profile">Dr. Harish Sharma</a>, Rajasthan Technical University, Rajasthan</li>
+            <li><a href="https://departments.nitj.ac.in/dept/ma/Faculty/6430446b38bff038a7808524" aria-label="Visit Dr. Anupam Yadav's profile">Dr. Anupam Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
+            <li><a href="https://departments.nitj.ac.in/dept/ice/Faculty/6430446638bff038a7807a2f" aria-label="Visit Dr. OP Verma's profile">Dr. OP Verma</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
+            <li><a href="https://mnnit.ac.in/profile/shubham.gupta" aria-label="Visit Dr. Shubham Gupta's profile">Dr. Shubham Gupta</a>, Motilal Nehru National Institute of Technology, Allahabad</li>
+            <li><a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
+            <li><a href="https://www.springer.com/fr/authors-editors/aninda-bose/5084?srsltid=AfmBOopFWGzPJSaKR7WPADMOKNJRzBbTPRMBfMJDx0uZPKEEfdoIFsL1" aria-label="Visit Mr Aninda Bose's profile">Mr Aninda Bose</a>, Executive Editor Springer Nature group</li>
+            <li><a href="https://www.iitism.ac.in/faculty-details?faculty=scindhiya" aria-label="Visit Dr. Scindhiya Laxmi's profile">Dr. Scindhiya Laxmi</a>, Indian Institute of Technology Dhanbad</li>
+            <li><a href="https://scholar.google.com/citations?user=H46redUAAAAJ&hl=en&oi=ao" aria-label="Visit Dr. Neha Yadav's profile">Dr. Neha Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organizing Committee -->
+  <section class="py-12 px-4" id="organizing-committee" role="region" aria-labelledby="organizing-committee-heading">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="organizing-committee-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Organizers</h2>
+      <div class="speakers-grid">
+        <article class="department-card">
+          <img src="images/nitj.png" alt="Department of Mathematics and Computing, NIT Jalandhar" loading="lazy">
+          <h3>Department of Mathematics and Computing</h3>
+          <p>Dr B R Ambedkar National Institute of Technology Jalandhar, Punjab, India</p>
+        </article>
+      </div>
+      <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4 text-center">Researchers</h3>
+      <div class="speakers-grid" id="student-cards">
+        <article class="student-card">
+          <img src="w_files/Deepika.jpeg" alt="Portrait of Deepika Khurana" loading="lazy">
+          <h3>Deepika Khurana</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/Shrishti.png" alt="Portrait of Shrishti Chamoli" loading="lazy">
+          <h3>Shrishti Chamoli</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/nitin01__1.png" alt="Portrait of Nitin Gupta" loading="lazy">
+          <h3>Nitin Gupta</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/myphoto.jpg" alt="Portrait of Bablu Kumar Sah" loading="lazy">
+          <h3>Bablu Kumar Sah</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/Ram_S.png" alt="Portrait of Ram Sundar" loading="lazy">
+          <h3>Ram Sundar</h3>
+          <p>PhD Student</p>
+        </article>
+        <article class="student-card">
+          <img src="w_files/vidhi.jpeg" alt="Portrait of Vidhi Sharma" loading="lazy">
+          <h3>Vidhi Sharma</h3>
+          <p>PhD Student</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule (PDF Viewer) -->
+  <section class="py-12 px-4" id="schedule" role="region" aria-labelledby="schedule-heading">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="schedule-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Schedule</h2>
+      <div id="pdf-container">
+        <canvas id="pdf-render" aria-label="PDF schedule viewer"></canvas>
+        <div id="controls">
+          <button id="prev-page" aria-label="Previous page">Previous</button>
+          <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
+          <button id="next-page" aria-label="Next page">Next</button>
+          <a href="pdfs/schedule.pdf" download class="download-btn" aria-label="Download schedule PDF">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+          </a>
+          
+        </div>
+        <div id="error-message" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poster Section -->
+  <section class="py-12 px-4" id="poster" role="region" aria-labelledby="poster-heading">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="poster-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Poster</h2>
+      <div id="pdf-container-poster">
+        <p class="text-gray-600 text-lg leading-relaxed mb-6 text-center">
+       <strong> Poster Competition during Summer School on EvoML-2025.</strong>  
+        </p>
+        <canvas id="pdf-render-poster" aria-label="PDF poster viewer"></canvas>
+        <div id="controls-poster">
+          <button id="prev-page-poster" aria-label="Previous page">Previous</button>
+          <span>Page: <span id="page-num-poster">1</span> / <span id="page-count-poster">?</span></span>
+          <button id="next-page-poster" aria-label="Next page">Next</button>
+          <a href="pdfs/poster.pdf" download class="download-btn" aria-label="Download poster PDF">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+             <a href="pdfs/guideline.pdf" download class="download-btn" aria-label="Download schedule PDF">Guideline PDF</a>
+          </a>
+          
+        </div>
+        <div id="error-message-poster" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+  <section class="pt-12 pb-20 px-4" id="registration">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <article class="info-card p-8 text-center" role="region" aria-labelledby="registration-link">
+        <h2 id="registration-link" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Link</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Register and pay the fee through the official portal:
+        </p>
+        <img src="images/EVO_ QR.png" alt="Registration QR Code for Summer School" class="w-full max-w-[200px] mx-auto rounded-lg shadow-md mt-4" aria-describedby="qr-code-description" loading="lazy">
+        <p id="qr-code-description" class="sr-only">QR code for Summer School registration</p>
+        <a href="https://v1.nitj.ac.in/events_registration/workshop_sseaml_2025/login" target="_blank" class="cta-button mt-4" aria-label="Go to Registration page">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+          Go to Registration
+        </a>
+        <p class="text-gray-600 text-lg leading-relaxed mt-2">
+          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+        </p>
+      </article>
+      <article class="info-card p-8" role="region" aria-labelledby="registration-fee">
+        <h2 id="registration-fee" class="text-4xl font-bold text-gray-900 tracking-tight">Registration Fee</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          The non-refundable registration fee structure is as follows:
+        </p>
+       
+        <div class="table-wrapper">
+          <table class="fee-table" role="grid" aria-describedby="fee-table-description">
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Online</th>
+                <th scope="col">Offline</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Category">Students</td>
+                <td data-label="Online">Rs. 1500/-</td>
+                <td data-label="Offline">Rs. 2500/-</td>
+              </tr>
+              <tr>
+                <td data-label="Category">Faculty</td>
+                <td data-label="Online">Rs. 2500/-</td>
+                <td data-label="Offline">Rs. 3500/-</td>
+              </tr>
+              <tr>
+                <td data-label="Category">Industry Person</td>
+                <td data-label="Online">Rs. 4000/-</td>
+                <td data-label="Offline">Rs. 5000/-</td>
+              </tr>
+              <tr>
+                <td data-label="Category">International</td>
+                <td data-label="Online">USD 100/-</td>
+                <td data-label="Offline">USD 150/-</td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="fee-table-description" class="sr-only">Table listing registration fees for different categories and modes</p>
+        </div>
+         <p class="text-gray-600 text-lg leading-relaxed">
+          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+        </p>
+      </article>
+      
+    </div>
+  </section>
+
+  <!-- Sponsors -->
+  <section class="py-12 px-4" id="sponsors" role="region" aria-labelledby="sponsors-heading" aria-describedby="sponsors-tagline">
+    <div class="max-w-7xl mx-auto">
+      <div class="info-card">
+        <h2 id="sponsors-heading" class="text-4xl font-bold text-gray-900 tracking-tight">Sponsors</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6 text-center">
+          We are grateful for the support of our sponsors, whose contributions make this event possible.
+        </p>
+        <p class="tag-line" id="sponsors-tagline">Technically and Financially Sponsored by SCRS</p>
+        <div class="sponsors-grid">
+          <article class="sponsor-card">
+            <a href="https://www.scrs.in/" target="_blank" aria-label="Visit Soft Computing Research Society website">
+              <img src="images/scrs.png" alt="Soft Computing Research Society logo" loading="lazy">
+              <h3>Soft Computing Research Society</h3>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-50 py-12 px-4 relative">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d4ed8] to-[#06b6d4]"></div>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-600">
+      <div>
+        <img src="images/nitj.png" alt="NIT Jalandhar Logo" class="h-12 mb-4" aria-label="NIT Jalandhar Logo" loading="lazy">
+        <p>Dr B R Ambedkar National Institute of Technology</p>
+        <p>Jalandhar, Punjab, India</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-medium mb-4">Contact Us</h3>
+        <p>Dr. Anupam Yadav<br>
+           Associate Professor<br>
+           Department of Mathematics<br>
+           Dr B. R. Ambedkar National Institute of Technology Jalandhar, Punjab, India.<br>
+           Mobile: +91 9627273447
+        </p>
+        <p>Email: <a href="mailto:anupam@nitj.ac.in" class="link-button">anupam@nitj.ac.in</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg font-medium mb-4">Query</h3>
+        <p><a href="#" class="link-button">Events</a></p>
+        <p><a href="pdfs/brochure.pdf" download class="link-button">Brochure PDF</a></p>
+        <p><a href="https://departments.nitj.ac.in/dept/ma/Home" class="link-button">Official Website</a></p>
+        <p>Email: <a href="mailto:evoml@nitj.ac.in" class="link-button">evoml@nitj.ac.in</a></p>
+      </div>
+      <div>
+        <h3 class="text-lg font-medium mb-4">Follow Us</h3>
+        <div class="flex space-x-4">
+          <a href="https://twitter.com/nitj" class="social-icon text-gray-600" aria-label="Follow NIT Jalandhar on Twitter">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/school/nitjalandhar/" class="social-icon text-gray-600" aria-label="Follow NIT Jalandhar on LinkedIn">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-gray-500 mt-8 text-sm">© 2025 NIT Jalandhar. All rights reserved.</p>
+  </footer>
+
+  <!-- PDF.js Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script>
+    // Schedule PDF Viewer
+    const scheduleUrl = 'pdfs/schedule.pdf';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+    let schedulePdfDoc = null,
+        schedulePageNum = 1,
+        scheduleCanvas = document.getElementById('pdf-render'),
+        scheduleCtx = scheduleCanvas.getContext('2d'),
+        scheduleErrorMessage = document.getElementById('error-message');
+
+    function renderSchedulePage(num) {
+      schedulePdfDoc.getPage(num).then(function(page) {
+        const containerWidth = document.getElementById('pdf-container').offsetWidth - 32;
+        const viewport = page.getViewport({ scale: 1.0 });
+        const scale = Math.min(containerWidth / viewport.width, 1.8);
+        const scaledViewport = page.getViewport({ scale: scale });
+
+        scheduleCanvas.width = scaledViewport.width;
+        scheduleCanvas.height = scaledViewport.height;
+
+        const renderContext = {
+          canvasContext: scheduleCtx,
+          viewport: scaledViewport
+        };
+        page.render(renderContext).promise.then(function () {
+          document.getElementById('page-num').textContent = num;
+          scheduleErrorMessage.classList.add('hidden');
+        }).catch(function(error) {
+          console.error('Error rendering schedule page:', error);
+          scheduleErrorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
+          scheduleErrorMessage.classList.remove('hidden');
+        });
+      }).catch(function(error) {
+        console.error('Error loading schedule page:', error);
+        scheduleErrorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
+        scheduleErrorMessage.classList.remove('hidden');
+      });
+    }
+
+    pdfjsLib.getDocument(scheduleUrl).promise.then(function(pdfDoc_) {
+      schedulePdfDoc = pdfDoc_;
+      document.getElementById('page-count').textContent = schedulePdfDoc.numPages;
+      renderSchedulePage(schedulePageNum);
+    }).catch(function(error) {
+      console.error('Error loading schedule PDF:', error);
+      scheduleErrorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
+      scheduleErrorMessage.classList.remove('hidden');
+    });
+
+    let scheduleResizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(scheduleResizeTimeout);
+      scheduleResizeTimeout = setTimeout(() => {
+        if (schedulePdfDoc) {
+          renderSchedulePage(schedulePageNum);
+        }
+      }, 100);
+    });
+
+    document.getElementById('next-page').addEventListener('click', function () {
+      if (schedulePageNum >= schedulePdfDoc.numPages) return;
+      schedulePageNum++;
+      renderSchedulePage(schedulePageNum);
+    });
+
+    document.getElementById('prev-page').addEventListener('click', function () {
+      if (schedulePageNum <= 1) return;
+      schedulePageNum--;
+      renderSchedulePage(schedulePageNum);
+    });
+
+    // Poster PDF Viewer
+    const posterUrl = 'pdfs/poster.pdf';
+    let posterPdfDoc = null,
+        posterPageNum = 1,
+        posterCanvas = document.getElementById('pdf-render-poster'),
+        posterCtx = posterCanvas.getContext('2d'),
+        posterErrorMessage = document.getElementById('error-message-poster');
+
+    function renderPosterPage(num) {
+      posterPdfDoc.getPage(num).then(function(page) {
+        const containerWidth = document.getElementById('pdf-container-poster').offsetWidth - 32;
+        const viewport = page.getViewport({ scale: 1.0 });
+        const scale = Math.min(containerWidth / viewport.width, 1.8);
+        const scaledViewport = page.getViewport({ scale: scale });
+
+        posterCanvas.width = scaledViewport.width;
+        posterCanvas.height = scaledViewport.height;
+
+        const renderContext = {
+          canvasContext: posterCtx,
+          viewport: scaledViewport
+        };
+        page.render(renderContext).promise.then(function() {
+          document.getElementById('page-num-poster').textContent = num;
+          posterErrorMessage.classList.add('hidden');
+        }).catch(function(error) {
+          console.error('Error rendering poster page:', error);
+          posterErrorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
+          posterErrorMessage.classList.remove('hidden');
+        });
+      }).catch(function(error) {
+        console.error('Error loading poster page:', error);
+        posterErrorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
+        posterErrorMessage.classList.remove('hidden');
+      });
+    }
+
+    pdfjsLib.getDocument(posterUrl).promise.then(function(pdfDoc_) {
+  posterPdfDoc = pdfDoc_;
+  document.getElementById('page-count-poster').textContent = posterPdfDoc.numPages;
+  renderPosterPage(posterPageNum);
+}).catch(function(error) {
+  console.error('Error loading poster PDF:', error);
+  posterErrorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
+  posterErrorMessage.classList.remove('hidden');
+});
+
+let posterResizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(posterResizeTimeout);
+  posterResizeTimeout = setTimeout(() => {
+    if (posterPdfDoc) {
+      renderPosterPage(posterPageNum);
+    }
+  }, 100);
+});
+
+document.getElementById('next-page-poster').addEventListener('click', function() {
+  if (posterPageNum >= posterPdfDoc.numPages) return;
+  posterPageNum++;
+  renderPosterPage(posterPageNum);
+});
+
+document.getElementById('prev-page-poster').addEventListener('click', function() {
+  if (posterPageNum <= 1) return;
+  posterPageNum--;
+  renderPosterPage(posterPageNum);
+});
+
+// Mobile navigation toggle
+document.querySelector('.nav-toggle').addEventListener('click', () => {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+  const isExpanded = navLinks.classList.contains('active');
+  document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
+});
+
+// Intersection Observer for overlay heading animation
+const heading = document.querySelector('.overlay h1');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      heading.classList.add('visible');
+      observer.unobserve(heading);
+    }
+  });
+}, { threshold: 0.5 });
+observer.observe(heading);
+</script>
+</body>
+</html>
