@@ -27,7 +27,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css">
 
   <style>
    
@@ -47,7 +47,7 @@
         <li><a href="#about" class="active" aria-label="Navigate to About section">About</a></li>
         <li><a href="#registration-link" aria-label="Navigate to Registration section">Registration</a></li>
         <li><a href="#schedule" aria-label="Navigate to Schedule section">Schedule</a></li>
-        <li><a href="#poster" aria-label="Navigate to Poster section">Poster </a></li>
+        <li><a href="#poster" aria-label="Navigate to Poster section">Poster Competition</a></li>
         <li><a href="#accommodation" aria-label="Navigate to Accommodation section">Accommodation</a></li>
         <li><a href="#live" aria-label="Navigate to Live section">Live</a></li>
       </ul>
@@ -60,7 +60,7 @@
     <div class="overlay">
       <h1>Summer School on Evolutionary Algorithms and Machine Learning (EvoML-2025)</h1>
       <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p>
-      <a href="#" target="_blank" class="download-btn" aria-label="Take the quiz">Take Quiz</a>
+      <a href="https://example.com/quiz" target="_blank" class="download-btn" aria-label="Take the quiz">Take Quiz</a>
     </div>
   </section>
 
@@ -252,7 +252,7 @@
             <li><a href="https://scholar.google.com/citations?user=gbxBzMMAAAAJ&hl=en" aria-label="Visit Dr. Dikshit Chauhan's profile">Dr. Dikshit Chauhan</a>, National University of Singapore, Singapore</li>
             <li><a href="https://www.springer.com/fr/authors-editors/aninda-bose/5084?srsltid=AfmBOopFWGzPJSaKR7WPADMOKNJRzBbTPRMBfMJDx0uZPKEEfdoIFsL1" aria-label="Visit Mr Aninda Bose's profile">Mr Aninda Bose</a>, Executive Editor Springer Nature group</li>
             <li><a href="https://www.iitism.ac.in/faculty-details?faculty=scindhiya" aria-label="Visit Dr. Scindhiya Laxmi's profile">Dr. Scindhiya Laxmi</a>, Indian Institute of Technology Dhanbad</li>
-             <li><a href="https://scholar.google.com/citations?user=H46redUAAAAJ&hl=en&oi=ao" aria-label="Visit Dr. Neha Yadav's profile">Dr. Neha Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
+            <li><a href="https://scholar.google.com/citations?user=H46redUAAAAJ&hl=en&oi=ao" aria-label="Visit Dr. Neha Yadav's profile">Dr. Neha Yadav</a>, Dr B R Ambedkar National Institute of Technology, Jalandhar</li>
           </ul>
         </div>
       </div>
@@ -316,10 +316,40 @@
           <button id="prev-page" aria-label="Previous page">Previous</button>
           <span>Page: <span id="page-num">1</span> / <span id="page-count">?</span></span>
           <button id="next-page" aria-label="Next page">Next</button>
-          <a href="pdfs/schedule.pdf" download class="download-btn" aria-label="Download schedule PDF">Download PDF</a>
-         
+          <a href="pdfs/schedule.pdf" download class="download-btn" aria-label="Download schedule PDF">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+          </a>
+          
         </div>
         <div id="error-message" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poster Section -->
+  <section class="py-12 px-4" id="poster" role="region" aria-labelledby="poster-heading">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="poster-heading" class="text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Poster</h2>
+      <div id="pdf-container-poster">
+        <p class="text-gray-600 text-lg leading-relaxed mb-6 text-center">
+       <strong> Poster Competition during Summer School on EvoML-2025.</strong>  
+        </p>
+        <canvas id="pdf-render-poster" aria-label="PDF poster viewer"></canvas>
+        <div id="controls-poster">
+          <button id="prev-page-poster" aria-label="Previous page">Previous</button>
+          <span>Page: <span id="page-num-poster">1</span> / <span id="page-count-poster">?</span></span>
+          <button id="next-page-poster" aria-label="Next page">Next</button>
+          <a href="pdfs/poster.pdf" download class="download-btn" aria-label="Download poster PDF">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+             <a href="pdfs/guideline.pdf" download class="download-btn" aria-label="Download schedule PDF">Guideline PDF</a>
+          </a>
+          
+        </div>
+        <div id="error-message-poster" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
       </div>
     </div>
   </section>
@@ -349,9 +379,7 @@
         <p class="text-gray-600 text-lg leading-relaxed">
           The non-refundable registration fee structure is as follows:
         </p>
-        <p class="text-gray-600 text-lg leading-relaxed">
-          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
-        </p>
+       
         <div class="table-wrapper">
           <table class="fee-table" role="grid" aria-describedby="fee-table-description">
             <thead>
@@ -386,7 +414,11 @@
           </table>
           <p id="fee-table-description" class="sr-only">Table listing registration fees for different categories and modes</p>
         </div>
+         <p class="text-gray-600 text-lg leading-relaxed">
+          <strong>Note:</strong> 20% Discount on Registration Fee for <strong>SCRS Members</strong>.
+        </p>
       </article>
+      
     </div>
   </section>
 
@@ -396,10 +428,9 @@
       <div class="info-card">
         <h2 id="sponsors-heading" class="text-4xl font-bold text-gray-900 tracking-tight">Sponsors</h2>
         <p class="text-lg text-gray-600 leading-relaxed mb-6 text-center">
-          We are grateful for the support of our sponsors, whose contributions make this event possible.<br>
-           <p class="tag-line" id="header-tagline" style="color:black;">Technically and Financially Sponsored by SCRS</p>
+          We are grateful for the support of our sponsors, whose contributions make this event possible.
         </p>
-        <p class="tag-line" id="header-tagline">Technically and Financially Sponsored by SCRS</p>
+        <p class="tag-line" id="sponsors-tagline">Technically and Financially Sponsored by SCRS</p>
         <div class="sponsors-grid">
           <article class="sponsor-card">
             <a href="https://www.scrs.in/" target="_blank" aria-label="Visit Soft Computing Research Society website">
@@ -446,7 +477,7 @@
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
             </svg>
           </a>
-          <a href="https://www.linkedin.com/school/nitjalandhar/" class="social-icon text-gray-600" aria-label="Follow NIT Topics">
+          <a href="https://www.linkedin.com/school/nitjalandhar/" class="social-icon text-gray-600" aria-label="Follow NIT Jalandhar on LinkedIn">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
             </svg>
@@ -460,97 +491,165 @@
   <!-- PDF.js Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
   <script>
-    const url = 'pdfs/schedule.pdf';
+    // Schedule PDF Viewer
+    const scheduleUrl = 'pdfs/schedule.pdf';
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
 
-    let pdfDoc = null,
-        pageNum = 1,
-        canvas = document.getElementById('pdf-render'),
-        ctx = canvas.getContext('2d'),
-        errorMessage = document.getElementById('error-message');
+    let schedulePdfDoc = null,
+        schedulePageNum = 1,
+        scheduleCanvas = document.getElementById('pdf-render'),
+        scheduleCtx = scheduleCanvas.getContext('2d'),
+        scheduleErrorMessage = document.getElementById('error-message');
 
-    function renderPage(num) {
-      pdfDoc.getPage(num).then(function(page) {
+    function renderSchedulePage(num) {
+      schedulePdfDoc.getPage(num).then(function(page) {
         const containerWidth = document.getElementById('pdf-container').offsetWidth - 32;
         const viewport = page.getViewport({ scale: 1.0 });
         const scale = Math.min(containerWidth / viewport.width, 1.8);
         const scaledViewport = page.getViewport({ scale: scale });
 
-        canvas.width = scaledViewport.width;
-        canvas.height = scaledViewport.height;
+        scheduleCanvas.width = scaledViewport.width;
+        scheduleCanvas.height = scaledViewport.height;
 
         const renderContext = {
-          canvasContext: ctx,
+          canvasContext: scheduleCtx,
           viewport: scaledViewport
         };
         page.render(renderContext).promise.then(function () {
           document.getElementById('page-num').textContent = num;
-          errorMessage.classList.add('hidden');
+          scheduleErrorMessage.classList.add('hidden');
         }).catch(function(error) {
-          console.error('Error rendering page:', error);
-          errorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
-          errorMessage.classList.remove('hidden');
+          console.error('Error rendering schedule page:', error);
+          scheduleErrorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
+          scheduleErrorMessage.classList.remove('hidden');
         });
       }).catch(function(error) {
-        console.error('Error loading page:', error);
-        errorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
-        errorMessage.classList.remove('hidden');
+        console.error('Error loading schedule page:', error);
+        scheduleErrorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
+        scheduleErrorMessage.classList.remove('hidden');
       });
     }
 
-    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-      pdfDoc = pdfDoc_;
-      document.getElementById('page-count').textContent = pdfDoc.numPages;
-      renderPage(pageNum);
+    pdfjsLib.getDocument(scheduleUrl).promise.then(function(pdfDoc_) {
+      schedulePdfDoc = pdfDoc_;
+      document.getElementById('page-count').textContent = schedulePdfDoc.numPages;
+      renderSchedulePage(schedulePageNum);
     }).catch(function(error) {
-      console.error('Error loading PDF:', error);
-      errorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
-      errorMessage.classList.remove('hidden');
+      console.error('Error loading schedule PDF:', error);
+      scheduleErrorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
+      scheduleErrorMessage.classList.remove('hidden');
     });
 
-    let resizeTimeout;
+    let scheduleResizeTimeout;
     window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        if (pdfDoc) {
-          renderPage(pageNum);
+      clearTimeout(scheduleResizeTimeout);
+      scheduleResizeTimeout = setTimeout(() => {
+        if (schedulePdfDoc) {
+          renderSchedulePage(schedulePageNum);
         }
       }, 100);
     });
 
     document.getElementById('next-page').addEventListener('click', function () {
-      if (pageNum >= pdfDoc.numPages) return;
-      pageNum++;
-      renderPage(pageNum);
+      if (schedulePageNum >= schedulePdfDoc.numPages) return;
+      schedulePageNum++;
+      renderSchedulePage(schedulePageNum);
     });
 
     document.getElementById('prev-page').addEventListener('click', function () {
-      if (pageNum <= 1) return;
-      pageNum--;
-      renderPage(pageNum);
-    });
-  </script>
-
-  <script>
-    // Mobile navigation toggle
-    document.querySelector('.nav-toggle').addEventListener('click', () => {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('active');
-      const isExpanded = navLinks.classList.contains('active');
-      document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
+      if (schedulePageNum <= 1) return;
+      schedulePageNum--;
+      renderSchedulePage(schedulePageNum);
     });
 
-    // Intersection Observer for overlay heading animation
-    const heading = document.querySelector('.overlay h1');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          heading.classList.add('visible');
-          observer.unobserve(heading);
-        }
+    // Poster PDF Viewer
+    const posterUrl = 'pdfs/poster.pdf';
+    let posterPdfDoc = null,
+        posterPageNum = 1,
+        posterCanvas = document.getElementById('pdf-render-poster'),
+        posterCtx = posterCanvas.getContext('2d'),
+        posterErrorMessage = document.getElementById('error-message-poster');
+
+    function renderPosterPage(num) {
+      posterPdfDoc.getPage(num).then(function(page) {
+        const containerWidth = document.getElementById('pdf-container-poster').offsetWidth - 32;
+        const viewport = page.getViewport({ scale: 1.0 });
+        const scale = Math.min(containerWidth / viewport.width, 1.8);
+        const scaledViewport = page.getViewport({ scale: scale });
+
+        posterCanvas.width = scaledViewport.width;
+        posterCanvas.height = scaledViewport.height;
+
+        const renderContext = {
+          canvasContext: posterCtx,
+          viewport: scaledViewport
+        };
+        page.render(renderContext).promise.then(function() {
+          document.getElementById('page-num-poster').textContent = num;
+          posterErrorMessage.classList.add('hidden');
+        }).catch(function(error) {
+          console.error('Error rendering poster page:', error);
+          posterErrorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
+          posterErrorMessage.classList.remove('hidden');
+        });
+      }).catch(function(error) {
+        console.error('Error loading poster page:', error);
+        posterErrorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
+        posterErrorMessage.classList.remove('hidden');
       });
-    }, { threshold: 0.5 });
-    observer.observe(heading);
-  </script>
+    }
+
+    pdfjsLib.getDocument(posterUrl).promise.then(function(pdfDoc_) {
+  posterPdfDoc = pdfDoc_;
+  document.getElementById('page-count-poster').textContent = posterPdfDoc.numPages;
+  renderPosterPage(posterPageNum);
+}).catch(function(error) {
+  console.error('Error loading poster PDF:', error);
+  posterErrorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
+  posterErrorMessage.classList.remove('hidden');
+});
+
+let posterResizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(posterResizeTimeout);
+  posterResizeTimeout = setTimeout(() => {
+    if (posterPdfDoc) {
+      renderPosterPage(posterPageNum);
+    }
+  }, 100);
+});
+
+document.getElementById('next-page-poster').addEventListener('click', function() {
+  if (posterPageNum >= posterPdfDoc.numPages) return;
+  posterPageNum++;
+  renderPosterPage(posterPageNum);
+});
+
+document.getElementById('prev-page-poster').addEventListener('click', function() {
+  if (posterPageNum <= 1) return;
+  posterPageNum--;
+  renderPosterPage(posterPageNum);
+});
+
+// Mobile navigation toggle
+document.querySelector('.nav-toggle').addEventListener('click', () => {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+  const isExpanded = navLinks.classList.contains('active');
+  document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
+});
+
+// Intersection Observer for overlay heading animation
+const heading = document.querySelector('.overlay h1');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      heading.classList.add('visible');
+      observer.unobserve(heading);
+    }
+  });
+}, { threshold: 0.5 });
+observer.observe(heading);
+</script>
 </body>
 </html>
