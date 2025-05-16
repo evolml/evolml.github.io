@@ -1,4 +1,4 @@
- /* Reset and Base Styles */
+  /* Reset and Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -319,7 +319,8 @@
     }
 
     /* PDF Viewer */
-    #pdf-container {
+    #pdf-container,
+    #pdf-container-poster {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -334,7 +335,8 @@
       width: 100%;
     }
 
-    #pdf-render {
+    #pdf-render,
+    #pdf-render-poster {
       border: 1px solid #d1d5db;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -343,7 +345,8 @@
       height: auto;
     }
 
-    #controls {
+    #controls,
+    #controls-poster {
       display: flex;
       align-items: center;
       gap: clamp(0.5rem, 2vw, 1rem);
@@ -352,7 +355,8 @@
       justify-content: center;
     }
 
-    #controls button {
+    #controls button,
+    #controls-poster button {
       background: #1d4ed8;
       color: #ffffff;
       padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem);
@@ -363,7 +367,8 @@
       transition: background 0.3s;
     }
 
-    #controls button:hover {
+    #controls button:hover,
+    #controls-poster button:hover {
       background: #1e40af;
     }
 
@@ -536,7 +541,8 @@
       .info-card {
         padding: 1.5rem;
       }
-      #pdf-container {
+      #pdf-container,
+      #pdf-container-poster {
         padding: 1rem;
       }
     }
@@ -701,10 +707,12 @@
         font-size: 0.95rem;
         line-height: 1.5;
       }
-      #pdf-container {
+      #pdf-container,
+      #pdf-container-poster {
         padding: 0.8rem;
       }
-      #controls {
+      #controls,
+      #controls-poster {
         flex-direction: column;
         gap: 0.5rem;
       }
@@ -824,10 +832,12 @@
       .speakers-list li {
         font-size: 0.95rem;
       }
-      #pdf-container {
+      #pdf-container,
+      #pdf-container-poster {
         padding: 0.5rem;
       }
-      #controls button {
+      #controls button,
+      #controls-poster button {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
       }
@@ -853,7 +863,7 @@
       footer .link-button {
         font-size: 0.8rem;
       }
-      .social-icon svg {
+      .social-ishal-icon svg {
         width: 20px;
         height: 20px;
       }
