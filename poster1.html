@@ -84,7 +84,112 @@
     </div>
   </section>
 
- 
+
+  <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-16 relative z-10">
+            <div class="bg-white bg-opacity-90 rounded-2xl shadow-2xl p-10 mb-12 section-reveal hover-scale glow">
+                <h2 class="text-4xl font-bold mb-6 text-blue-900 animate-pulse">About the Competition</h2>
+                <p class="text-gray-800 mb-6 text-lg leading-relaxed">
+                    Ignite your passion for AI, machine learning, and bio-inspired algorithms! This electrifying poster competition is your stage to dazzle the world with bold ideas.
+                </p>
+                <p class="text-center font-semibold text-2xl mb-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white p-4 rounded-xl glow">
+                    “Innovate with Antibody Machine Learning and Evolutionary Algorithms”
+                </p>
+                <p class="text-gray-800 text-lg">
+                    From revolutionary applications to ethical frontiers, create stunning posters that inspire and captivate!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Suggested Topics -->
+                <div class="bg-white bg-opacity-90 rounded-2xl shadow-2xl p-10 section-reveal hover-scale glow">
+                    <h2 class="text-4xl font-bold mb-6 text-blue-900">Suggested Topics</h2>
+                    <ul class="list-none space-y-4">
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-brain mr-3 text-2xl text-purple-500 fa-icon"></i> Cutting-edge ML models</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-code-branch mr-3 text-2xl text-purple-500 fa-icon"></i> ML + Evolutionary Algorithm hybrids</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-eye mr-3 text-2xl text-purple-500 fa-icon"></i> Explainable AI systems</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-cogs mr-3 text-2xl text-purple-500 fa-icon"></i> Genetic Algorithms, PSO, DE optimization</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-robot mr-3 text-2xl text-purple-500 fa-icon"></i> Applications in healthcare, finance, robotics</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-shield-alt mr-3 text-2xl text-purple-500 fa-icon"></i> Fairness and robustness in ML</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-globe mr-3 text-2xl text-purple-500 fa-icon"></i> Ethical challenges and future trends</li>
+                    </ul>
+                </div>
+
+                <!-- Important Dates -->
+                <div class="bg-white bg-opacity-90 rounded-2xl shadow-2xl p-10 section-reveal hover-scale glow">
+                    <h2 class="text-4xl font-bold mb-6 text-blue-900">Important Dates</h2>
+                    <ul class="space-y-5">
+                        <li class="text-gray-800 text-lg"><strong class="text-purple-600">Registration & Submission:</strong> 15 June 2025</li>
+                        <li class="text-gray-800 text-lg"><strong class="text-purple-600">Event & Judging:</strong> 19 June 2025</li>
+                        <li class="text-gray-800 text-lg"><strong class="text-purple-600">Results:</strong> 20 June 2025</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Prizes & Guidelines -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+                <div class="bg-white bg-opacity-90 rounded-2xl shadow-2xl p-10 section-reveal hover-scale glow">
+                    <h2 class="text-4xl font-bold mb-6 text-blue-900">Prizes & Recognition</h2>
+                    <ul class="list-none space-y-4">
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-trophy mr-3 text-2xl text-yellow-500 fa-icon"></i> Top 3 posters win certificates + prizes</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-share-alt mr-3 text-2xl text-yellow-500 fa-icon"></i> Showcase on website & social media</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-chalkboard-teacher mr-3 text-2xl text-yellow-500 fa-icon"></i> Pitch to AI/ML experts</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white bg-opacity-90 rounded-2xl shadow-2xl p-10 section-reveal hover-scale glow">
+                    <h2 class="text-4xl font-bold mb-6 text-blue-900">Guidelines</h2>
+                    <ul class="list-none space-y-4">
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-align-left mr-3 text-2xl text-green-500 fa-icon"></i> Align with competition theme</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-ruler mr-3 text-2xl text-green-500 fa-icon"></i> A1 (594 x 841 mm), vertical preferred</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-file-image mr-3 text-2xl text-green-500 fa-icon"></i> PDF or high-res PNG/JPG</li>
+                        <li class="flex items-center text-lg"><i class="fa-solid fa-list mr-3 text-2xl text-green-500 fa-icon"></i> Include Title, Author(s), Affiliation, Abstract</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Poster Section -->
+            <section class="py-12 px-4" id="poster" role="region" aria-labelledby="poster-heading">
+                <div class="max-w-7xl mx-auto bg-white bg-opacity-90 rounded-2xl shadow-2xl p-10 section-reveal hover-scale glow">
+                    <h2 id="poster-heading" class="text-4xl font-bold text-blue-900 mb-8 text-center tracking-tight animate-pulse">Poster Competition</h2>
+                    <div id="pdf-container-poster">
+                        <p class="text-gray-800 text-lg leading-relaxed mb-6 text-center">
+                            <strong>Poster Competition during Summer School on EvoML-2025.</strong>
+                        </p>
+                        <canvas id="pdf-render-poster" aria-label="PDF poster viewer" class="mx-auto"></canvas>
+                        <div id="controls-poster">
+                            <button id="prev-page-poster" aria-label="Previous page">Previous</button>
+                            <span>Page: <span id="page-num-poster">1</span> / <span id="page-count-poster">?</span></span>
+                            <button id="next-page-poster" aria-label="Next page">Next</button>
+                            <a href="pdfs/poster.pdf" download class="download-btn" aria-label="Download poster PDF">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                            </a>
+                            <a href="pdfs/guideline.pdf" download class="download-btn" aria-label="Download guideline PDF">Guideline PDF</a>
+                        </div>
+                        <div id="error-message-poster" class="hidden">Failed to load PDF. Please try downloading it instead.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Participate -->
+            <div id="participate" class="bg-white bg-opacity-90 rounded-2xl shadow-2xl p-10 mt-10 section-reveal hover-scale glow">
+                <h2 class="text-4xl font-bold mb-6 text-blue-900">How to Participate</h2>
+                <ol class="list-decimal list-inside text-gray-800 space-y-4 text-lg">
+                    <li>Eligibility: EvoML-2025 registered participants.</li>
+                    <li>Register: <a href="#" class="text-purple-600 hover:underline font-semibold">[Insert Link or QR Code]</a></li>
+                    <li>Submit: <a href="#" class="text-purple-600 hover:underline font-semibold">Link coming soon</a></li>
+                    <li>Await confirmation.</li>
+                </ol>
+                <div class="mt-6 text-center">
+                    <a href="#" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-110 transition-transform glow">Submit Now!</a>
+                </div>
+            </div>
+
+
+
+  
   <!-- Footer -->
   <footer class="bg-gray-50 py-12 px-4 relative">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1d4ed8] to-[#06b6d4]"></div>
