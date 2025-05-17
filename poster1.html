@@ -339,168 +339,112 @@
     <p class="text-center text-gray-500 mt-8 text-sm">© 2025 NIT Jalandhar. All rights reserved.</p>
   </footer>
 
-  <!-- PDF.js Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-  <script>
-    // Schedule PDF Viewer
-    const scheduleUrl = 'pdfs/schedule.pdf';
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+ <script>
+        // GSAP and ScrollTrigger animations
+        gsap.registerPlugin(ScrollTrigger);
 
-    let schedulePdfDoc = null,
-        schedulePageNum = 1,
-        scheduleCanvas = document.getElementById('pdf-render'),
-        scheduleCtx = scheduleCanvas.getContext('2d'),
-        scheduleErrorMessage = document.getElementById('error-message');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Section reveal animations
+            gsap.utils.toArray('.section-reveal').forEach((section, index) => {
+                gsap.fromTo(section, 
+                    { opacity: 0, y: 80, scale: 0.95 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 80%',
+                            toggleActions: 'play none none reverse'
+                        },
+                        delay: index * 0.2
+                    }
+                );
+            });
 
-    function renderSchedulePage(num) {
-      schedulePdfDoc.getPage(num).then(function(page) {
-        const containerWidth = document.getElementById('pdf-container').offsetWidth - 32;
-        const viewport = page.getViewport({ scale: 1.0 });
-        const scale = Math.min(containerWidth / viewport.width, 1.8);
-        const scaledViewport = page.getViewport({ scale: scale });
+            // Particle effect
+            const particleContainer = document.getElementById('particle-container');
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${Math.random() * 100}vw`;
+                particleContainer.appendChild(particle);
+                setTimeout(() => particle.remove(), 4000);
+            }
+            setInterval(createParticle, 200);
 
-        scheduleCanvas.width = scaledViewport.width;
-        scheduleCanvas.height = scaledViewport.height;
+            // PDF viewer for poster
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
-        const renderContext = {
-          canvasContext: scheduleCtx,
-          viewport: scaledViewport
-        };
-        page.render(renderContext).promise.then(function () {
-          document.getElementById('page-num').textContent = num;
-          scheduleErrorMessage.classList.add('hidden');
-        }).catch(function(error) {
-          console.error('Error rendering schedule page:', error);
-          scheduleErrorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
-          scheduleErrorMessage.classList.remove('hidden');
+            const url = 'pdfs/poster.pdf';
+            let pdfDoc = null,
+                pageNum = 1,
+                pageIsRendering = false,
+                pageNumIsPending = null;
+
+            const canvas = document.getElementById('pdf-render-poster'),
+                  ctx = canvas.getContext('2d');
+
+            const renderPage = num => {
+                pageIsRendering = true;
+                pdfDoc.getPage(num).then(page => {
+                    const viewport = page.getViewport({ scale: 1 });
+                    const scale = Math.min((canvas.parentElement.offsetWidth - 20) / viewport.width, 1.5);
+                    const scaledViewport = page.getViewport({ scale });
+
+                    canvas.height = scaledViewport.height;
+                    canvas.width = scaledViewport.width;
+
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: scaledViewport
+                    };
+                    page.render(renderContext).promise.then(() => {
+                        pageIsRendering = false;
+                        if (pageNumIsPending !== null) {
+                            renderPage(pageNumIsPending);
+                            pageNumIsPending = null;
+                        }
+                    });
+
+                    document.getElementById('page-num-poster').textContent = num;
+                });
+            };
+
+            const queueRenderPage = num => {
+                if (pageIsRendering) {
+                    pageNumIsPending = num;
+                } else {
+                    renderPage(num);
+                }
+            };
+
+            const showPrevPage = () => {
+                if (pageNum <= 1) return;
+                pageNum--;
+                queueRenderPage(pageNum);
+            };
+
+            const showNextPage = () => {
+                if (pageNum >= pdfDoc.numPages) return;
+                pageNum++;
+                queueRenderPage(pageNum);
+            };
+
+            pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+                pdfDoc = pdfDoc_;
+                document.getElementById('page-count-poster').textContent = pdfDoc.numPages;
+                renderPage(pageNum);
+            }).catch(err => {
+                document.getElementById('error-message-poster').classList.remove('hidden');
+                console.error('PDF loading error:', err);
+            });
+
+            document.getElementById('prev-page-poster').addEventListener('click', showPrevPage);
+            document.getElementById('next-page-poster').addEventListener('click', showNextPage);
         });
-      }).catch(function(error) {
-        console.error('Error loading schedule page:', error);
-        scheduleErrorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
-        scheduleErrorMessage.classList.remove('hidden');
-      });
-    }
-
-    pdfjsLib.getDocument(scheduleUrl).promise.then(function(pdfDoc_) {
-      schedulePdfDoc = pdfDoc_;
-      document.getElementById('page-count').textContent = schedulePdfDoc.numPages;
-      renderSchedulePage(schedulePageNum);
-    }).catch(function(error) {
-      console.error('Error loading schedule PDF:', error);
-      scheduleErrorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
-      scheduleErrorMessage.classList.remove('hidden');
-    });
-
-    let scheduleResizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(scheduleResizeTimeout);
-      scheduleResizeTimeout = setTimeout(() => {
-        if (schedulePdfDoc) {
-          renderSchedulePage(schedulePageNum);
-        }
-      }, 100);
-    });
-
-    document.getElementById('next-page').addEventListener('click', function () {
-      if (schedulePageNum >= schedulePdfDoc.numPages) return;
-      schedulePageNum++;
-      renderSchedulePage(schedulePageNum);
-    });
-
-    document.getElementById('prev-page').addEventListener('click', function () {
-      if (schedulePageNum <= 1) return;
-      schedulePageNum--;
-      renderSchedulePage(schedulePageNum);
-    });
-
-    // Poster PDF Viewer
-    const posterUrl = 'pdfs/poster.pdf';
-    let posterPdfDoc = null,
-        posterPageNum = 1,
-        posterCanvas = document.getElementById('pdf-render-poster'),
-        posterCtx = posterCanvas.getContext('2d'),
-        posterErrorMessage = document.getElementById('error-message-poster');
-
-    function renderPosterPage(num) {
-      posterPdfDoc.getPage(num).then(function(page) {
-        const containerWidth = document.getElementById('pdf-container-poster').offsetWidth - 32;
-        const viewport = page.getViewport({ scale: 1.0 });
-        const scale = Math.min(containerWidth / viewport.width, 1.8);
-        const scaledViewport = page.getViewport({ scale: scale });
-
-        posterCanvas.width = scaledViewport.width;
-        posterCanvas.height = scaledViewport.height;
-
-        const renderContext = {
-          canvasContext: posterCtx,
-          viewport: scaledViewport
-        };
-        page.render(renderContext).promise.then(function() {
-          document.getElementById('page-num-poster').textContent = num;
-          posterErrorMessage.classList.add('hidden');
-        }).catch(function(error) {
-          console.error('Error rendering poster page:', error);
-          posterErrorMessage.textContent = 'Error rendering PDF page. Please try downloading it.';
-          posterErrorMessage.classList.remove('hidden');
-        });
-      }).catch(function(error) {
-        console.error('Error loading poster page:', error);
-        posterErrorMessage.textContent = 'Failed to load PDF page. Please try downloading it.';
-        posterErrorMessage.classList.remove('hidden');
-      });
-    }
-
-    pdfjsLib.getDocument(posterUrl).promise.then(function(pdfDoc_) {
-  posterPdfDoc = pdfDoc_;
-  document.getElementById('page-count-poster').textContent = posterPdfDoc.numPages;
-  renderPosterPage(posterPageNum);
-}).catch(function(error) {
-  console.error('Error loading poster PDF:', error);
-  posterErrorMessage.textContent = 'Failed to load PDF. Please try downloading it instead.';
-  posterErrorMessage.classList.remove('hidden');
-});
-
-let posterResizeTimeout;
-window.addEventListener('resize', () => {
-  clearTimeout(posterResizeTimeout);
-  posterResizeTimeout = setTimeout(() => {
-    if (posterPdfDoc) {
-      renderPosterPage(posterPageNum);
-    }
-  }, 100);
-});
-
-document.getElementById('next-page-poster').addEventListener('click', function() {
-  if (posterPageNum >= posterPdfDoc.numPages) return;
-  posterPageNum++;
-  renderPosterPage(posterPageNum);
-});
-
-document.getElementById('prev-page-poster').addEventListener('click', function() {
-  if (posterPageNum <= 1) return;
-  posterPageNum--;
-  renderPosterPage(posterPageNum);
-});
-
-// Mobile navigation toggle
-document.querySelector('.nav-toggle').addEventListener('click', () => {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('active');
-  const isExpanded = navLinks.classList.contains('active');
-  document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
-});
-
-// Intersection Observer for overlay heading animation
-const heading = document.querySelector('.overlay h1');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      heading.classList.add('visible');
-      observer.unobserve(heading);
-    }
-  });
-}, { threshold: 0.5 });
-observer.observe(heading);
-</script>
+    </script>
 </body>
 </html>
