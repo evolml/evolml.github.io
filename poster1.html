@@ -427,6 +427,13 @@ exhibit</strong> their ideas through well-designed posters.
             document.getElementById('prev-page-poster').addEventListener('click', showPrevPage);
             document.getElementById('next-page-poster').addEventListener('click', showNextPage);
         });
+   // Mobile navigation toggle
+document.querySelector('.nav-toggle').addEventListener('click', () => {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+  const isExpanded = navLinks.classList.contains('active');
+  document.querySelector('.nav-toggle').setAttribute('aria-expanded', isExpanded);
+});
     </script>
 </body>
 </html>
