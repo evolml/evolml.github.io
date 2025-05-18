@@ -137,7 +137,312 @@
             margin-top: 1rem;
             text-align: center;
         }
+   /* Card Container */
+    .card {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
 
+    /* Gradient Border Effect */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, #2563eb, #1e40af, #6b7280);
+      z-index: -1;
+      border-radius: 18px;
+      animation: gradientFlow 6s ease-in-out infinite;
+    }
+
+    @keyframes gradientFlow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Heading Styles */
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 4px solid #2563eb;
+      background: linear-gradient(270deg, #1e3a8a, #6b7280, #2563eb);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: waveGradient 4s ease-in-out infinite;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      border-left: 6px solid #2563eb;
+      padding-left: 12px;
+      margin-bottom: 16px;
+      background: linear-gradient(270deg, #1e3a8a, #6b7280, #2563eb);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: waveGradient 4s ease-in-out infinite;
+    }
+
+    @keyframes waveGradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Layout */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .content {
+        flex-direction: row;
+      }
+      .content > div {
+        flex: 1;
+      }
+    }
+
+    /* Topic List */
+    ul.modern-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.modern-bullets li {
+      position: relative;
+      padding-left: 32px;
+      color: #374151;
+      font-weight: 500;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+      padding: 8px 8px 8px 32px;
+    }
+
+    ul.modern-bullets li:hover {
+      transform: translateX(8px);
+    }
+
+    ul.modern-bullets li svg {
+      position: absolute;
+      left: 8px;
+      top: 12px;
+      width: 20px;
+      height: 20px;
+      fill: #2563eb;
+      transition: transform 0.3s ease;
+    }
+
+    ul.modern-bullets li:hover svg {
+      transform: translateX(5px) scale(1.2);
+    }
+
+    /* Expert Section */
+    .expert {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .expert:hover {
+      transform: scale(1.02);
+    }
+
+    .expert img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .expert:hover img {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .expert p {
+      color: #374151;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .expert .name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    .expert .company {
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    /* Button */
+    .register-btn {
+      background: linear-gradient(45deg, #2563eb, #1e40af);
+      color: white;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 32px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .register-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      transform: translateY(-20px);
+      animation: slideIn 0.3s ease-in-out forwards;
+    }
+
+    @keyframes slideIn {
+      to { transform: translateY(0); }
+    }
+
+    .modal-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+    }
+
+    .modal-content label {
+      display: block;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .modal-content input:hover {
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .modal-content input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .modal-content .btn-group {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+
+    .modal-content button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .modal-content .cancel-btn {
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    .modal-content .cancel-btn:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content .submit-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .modal-content .submit-btn:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 640px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      .card {
+        padding: 16px;
+      }
+
+      .expert img {
+        width: 60px;
+        height: 60px;
+      }
+    }
 
    
   </style>
@@ -186,6 +491,81 @@ exhibit</strong> their ideas through well-designed posters.
     </div>
   </section>
 
+ <div class="card">
+    <h2>Mastering Prompt Engineering for Effective Large Language Model Applications</h2>
+    <div class="content">
+      <div>
+        <h3>Topics Covered</h3>
+        <ul class="modern-bullets">
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Introduction to Large Language Models
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Principles of Prompt Engineering
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Advanced Prompt Techniques
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Hands-On Labs
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Special Session
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Industry Expert</h3>
+        <div class="expert">
+          <img src="https://via.placeholder.com/100" alt="Ravi Srivastava" />
+          <div>
+            <p class="name">Mr. Ravi Srivastava</p>
+            <p>
+              Full Stack Developer<br />
+              (Agentic AI, US, Generative AI, C#, Angular, Web Services)<br />
+              <span class="company">Rohde & Schwarz</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="register-btn" onclick="openModal()">Fix Your Spot</button>
+    </div>
+  </div>
+
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <h3>Register Now</h3>
+      <form onsubmit="handleSubmit(event)">
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+        <div class="btn-group">
+          <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
 
   <!-- Main Content -->
         <main class="flex-grow container mx-auto px-4 py-16 relative z-10">
