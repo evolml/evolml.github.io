@@ -135,6 +135,64 @@
             margin-top: 1rem;
             text-align: center;
         }
+
+
+     @keyframes waveGradient {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes verticalBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .animate-waveText {
+      background: linear-gradient(270deg, #1e3a8a, #6b7280, #2563eb);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: waveGradient 4s ease-in-out infinite, verticalBounce 2.5s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    ul.modern-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.modern-bullets li {
+      position: relative;
+      padding-left: 2rem;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #374151; /* Tailwind gray-700 */
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      cursor: default;
+    }
+
+    ul.modern-bullets li svg {
+      position: absolute;
+      left: 0;
+      top: 0.25rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: #2563eb; /* Tailwind blue-600 */
+      transition: transform 0.3s ease, fill 0.3s ease;
+    }
+
+    ul.modern-bullets li:hover svg {
+      fill: #1e40af; /* Tailwind blue-800 */
+      transform: translateX(5px) scale(1.1);
+    }
   </style>
 </head>
 <body class="min-h-screen">
@@ -159,6 +217,80 @@
     </div>
   </header>
 
+  <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-4 transition hover:-translate-y-1 hover:shadow-2xl">
+
+   
+    
+    <h2 class="text-2xl md:text-3xl font-extrabold text-center border-b-4 border-blue-600 pb-3 animate-waveText">
+      Mastering Prompt Engineering for Effective Large Language Model Applications
+    </h2>
+
+    <div class="flex flex-col md:flex-row gap-6 mt-4">
+
+      <div class="flex-1">
+        <h3 class="text-xl font-semibold border-l-6 border-blue-600 pl-3 mb-3 animate-waveText">
+          Topics Covered
+        </h3>
+        <ul class="modern-bullets text-base">
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Introduction to Large Language Models
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Principles of Prompt Engineering
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Advanced Prompt Techniques
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Hands-On Labs
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M7 5l5 5-5 5" />
+            </svg>
+            Special Session
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex-1">
+        <h3 class="text-xl font-semibold border-l-6 border-blue-600 pl-3 mb-3 animate-waveText">
+          Industry Expert
+        </h3>
+        <div class="flex items-center gap-4">
+          <img src="https://via.placeholder.com/100" alt="Ravi Srivastava" class="w-20 h-20 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+          <div>
+            <p class="text-lg font-bold text-blue-900">Mr. Ravi Srivastava</p>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Full Stack Developer<br />
+              (Agentic AI, AI/ML, Generative AI, C#, Angular, Web Services)<br />
+              <span class="text-blue-600 font-semibold">Rohde & Schwarz</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-8">
+      <button class="bg-blue-600 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+        Fix Your Spot
+      </button>
+    </div>
+
+  </div>
 
 
   <!-- About Section -->
