@@ -30,17 +30,17 @@
    <link rel="stylesheet" href="css/style.css">
 
   <style>
-           .button-container {
+                 .button-container {
             display: flex;
             gap: 20px; /* Space between buttons */
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            justify-content: center;
+            justify-content: flex-start; /* Left-align buttons in container */
         }
 
         .dynamic-button {
             display: inline-flex;
             align-items: center;
-            padding: 15px 30px;
+            padding: 10px 30px; /* Reduced height */
             background: linear-gradient(45deg, #6b48ff, #00ddeb);
             color: white;
             text-decoration: none;
@@ -121,7 +121,7 @@
 
         @media (max-width: 600px) {
             .dynamic-button {
-                padding: 12px 24px;
+                padding: 8px 24px; /* Reduced height for mobile */
                 font-size: 16px;
             }
 
@@ -133,6 +133,10 @@
 
             .button-container {
                 gap: 10px; /* Reduced gap for mobile */
+            }
+
+            body {
+                padding-left: 10px; /* Reduced padding for mobile */
             }
         }
   </style>
